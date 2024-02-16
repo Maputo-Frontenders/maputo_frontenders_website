@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar/Navbar";
+import { Footer } from "@/components/footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
+const mont = Montserrat({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Maputo Frontenders - Comunidade Frontend de Moçambique",
   description: "A maior comunidade frontend de Moçambique",
@@ -16,7 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${mont.className} h-screen bg-main`}>
+        <div className='flex flex-col h-full'>
+
+          <Navbar />
+          <main className='h-full'>
+            {children}
+          </main>
+          <Footer />
+
+        </div>
+
+      </body>
     </html>
   );
 }
