@@ -6,13 +6,13 @@ Bem-vindo ao projeto do website da comunidade Maputo Frontenders! Este documento
 
 A estrutura de arquivos do projeto é a seguinte:
 
-* components/
-| |-- Header/
-| | |-- header.js
-| | |-- HeaderData.ts (se aplicável)
-* pages/
-| |-- app/
-| | |-- index.js
+- components/
+  - | |-- Header/
+  - | |-- header.tsx
+  - | | |-- HeaderData.ts (se aplicável)
+- pages/
+  - | |-- app/
+  - | | |-- index.tsx
 
 
 ## Regras de Desenvolvimento
@@ -42,13 +42,13 @@ A estrutura de arquivos do projeto é a seguinte:
 2. Instale as dependências:
 
     ```bash
-    npm install
+    yarn install
     ```
 
 3. Inicie o servidor de desenvolvimento:
 
     ```bash
-    npm start
+    yarn dev
     ```
 
 4. Faça as alterações necessárias e crie um novo branch para sua funcionalidade/correção:
