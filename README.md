@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Website da Comunidade Maputo Frontenders
 
-## Getting Started
+Bem-vindo ao projeto do website da comunidade Maputo Frontenders! Este documento descreve as diretrizes de desenvolvimento e regras para garantir consistência, eficiência e colaboração dentro do projeto.
 
-First, run the development server:
+## Estrutura de Arquivos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A estrutura de arquivos do projeto é a seguinte:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* components/
+| |-- Header/
+| | |-- header.js
+| | |-- HeaderData.ts (se aplicável)
+* pages/
+| |-- app/
+| | |-- index.js
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Regras de Desenvolvimento
 
-## Learn More
+1. **Manipulação de Dados do Componente**:
+    - Ao desenvolver um componente que requer dados, crie um arquivo de dados dentro da pasta do componente.
+    - Após a aprovação da mesclagem, se o arquivo de dados específico do componente for considerado adequado, ele será integrado ao arquivo de dados principal.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Pull Requests**:
+    - Antes de abrir um pull request (PR), certifique-se de que não há conflitos com o branch principal.
+    - Os PRs devem ser descritivos e concisos, resumindo as alterações feitas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Commits Convencionais**:
+    - Utilize [Commits Convencionais](https://www.conventionalcommits.org/) para mensagens de commit. Siga as diretrizes fornecidas no site.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. **Acesso ao Design no Figma**:
+    - Pedidos de acesso ao design no Figma podem ser feitos entrando em contato com o gerente do projeto ou membro designado da equipe.
 
-## Deploy on Vercel
+## Como Começar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone o repositório:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    git clone <url_do_repositório>
+    ```
+
+2. Instale as dependências:
+
+    ```bash
+    npm install
+    ```
+
+3. Inicie o servidor de desenvolvimento:
+
+    ```bash
+    npm start
+    ```
+
+4. Faça as alterações necessárias e crie um novo branch para sua funcionalidade/correção:
+
+    ```bash
+    git checkout -b feature/sua-funcionalidade
+    ```
+
+5. Após concluir as alterações, faça commit seguindo as diretrizes de Commits Convencionais:
+
+    ```bash
+    git commit -m "feat: adicionar nova funcionalidade"
+    ```
+
+6. Envie suas alterações para o repositório forkado:
+
+    ```bash
+    git push origin feature/sua-funcionalidade
+    ```
+
+7. Abra um pull request no repositório principal.
+
+## Colaboração
+
+A colaboração é fundamental para o sucesso deste projeto. Sinta-se à vontade para pedir ajuda, fornecer feedback ou sugerir melhorias em qualquer estágio do processo de desenvolvimento.
+
+Vamos construir juntos um website incrível para a nossa comunidade!
+
+Se tiver alguma dúvida ou precisar de mais assistência, não hesite em entrar em contato com os mantenedores do projeto.
