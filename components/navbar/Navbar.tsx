@@ -15,7 +15,7 @@ export const Navbar = () => {
                         ))}
                     </div>
                     <div className="text-white font-semibold text-lg uppercase text-center">
-                        <Link href="#" className="flex flex-row text-white rounded-lg p-2 bg-mf-secondary hover:bg-mf-secondaryVariation focus:ring-4  text-sm">
+                        <Link href="#" className="flex flex-row items-center text-white rounded-lg p-2 bg-mf-secondary hover:bg-mf-secondaryVariation focus:ring-4  text-sm">
                             Join Community
                             <ArrowUpRight className='text-white' />
                         </Link>

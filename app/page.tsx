@@ -1,7 +1,11 @@
+import Hero from '@/components/Hero/Hero'; 
+
 export default function Home() {
   return (
-    <main className="h-full flex justify-center items-center ">
-      <h1 className="text-6xl font-extrabold text-mf-secondary">Maputo Frontenders</h1>
+    <main className="h-full flex-col justify-center py-5 items-center ">
+
+     <Hero/>
+
     </main>
   );
 }
