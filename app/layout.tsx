@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={
-        cn(` h-screen bg-mf-primary`, mont.className)
+        cn(`bg-mf-primary`, mont.className)
       }>
         <div className='flex flex-col h-full'>
 
