@@ -3,10 +3,13 @@ import { Button } from "../ui/button";
 import { cards, goals } from "./itens";
 import GoalImage from "@/assets/purpose/purpose-image.png";
 import { cn } from "@/lib/utils";
+import { InfiniteMovingCards } from "./infinite-moving-cards";
+
+// todo: inifinity scroll
 
 export const Purpose = () => {
   return (
-    <section className="text-mf-white space-y-8 px-8">
+    <section className="w-full text-mf-white space-y-8 px-8">
       <h4 className="uppercase text-sm text-center">Quem somos?</h4>
 
       <div className="flex flex-col items-center">
@@ -29,10 +32,13 @@ export const Purpose = () => {
         </Button>
       </div>
 
-      <div className="flex justify-between px-24">
-        <div className="flex flex-col gap-4 max-w-lg px-10">
+      <div className="flex justify-between container">
+        <div className="flex flex-col gap-4 max-w-lg">
           {goals.map((item) => (
-            <div className="border-l-2 border-mf-secondaryVariation px-2">
+            <div
+              className="border-l-2 border-mf-secondaryVariation px-2"
+              key={item}
+            >
               {item}
             </div>
           ))}
@@ -41,16 +47,7 @@ export const Purpose = () => {
       </div>
 
       <div className="pt-4 flex justify-between gap-4">
-        {cards.map((item) => (
-          <div className="bg-mf-dark rounded-3xl p-8 space-y-4">
-            <h3
-              className={cn("border-l-2 px-2 text-lg", `border-${item.color}`)}
-            >
-              {item.title}
-            </h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
+        <InfiniteMovingCards />
       </div>
     </section>
   );

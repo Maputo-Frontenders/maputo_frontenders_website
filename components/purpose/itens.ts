@@ -6,13 +6,13 @@ export const goals = [
 
 export const cards = [
   {
-    color: "",
+    color: "orange-500",
     title: "Networking",
     description:
       "Experimente uma cultura de colaboração onde ideias são compartilhadas",
   },
   {
-    color: "",
+    color: "#FF9F24",
     title: "Oportunidades",
     description:
       "Experimente uma cultura de colaboração onde ideias são compartilhadas",
