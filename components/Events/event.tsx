@@ -4,6 +4,14 @@ import Image from "next/image";
 import { events } from "./itens";
 import CodeImage from "@/assets/event/code.png";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import { Card, CardContent } from "../ui/card";
 
 export const Event = () => {
   return (
@@ -13,35 +21,49 @@ export const Event = () => {
         Junte-se a nós e participe dos eventos que estão moldando o futuro do
         desenvolvimento frontend em Moçambique
       </h2>
-      <Button className="uppercase bg-mf-secondaryVariation text-mf-least">
+      <Button className="uppercase bg-mf-secondaryVariation hover:bg-mf-secondaryVariation text-mf-least">
         Ver todos <ArrowUpRight className="w-4 h-4 ml-2" />
       </Button>
 
-      <div className="flex justify-between gap-4">
-        {events.map((item) => (
-          <div
-            className="bg-mf-least rounded-md max-w-80 overflow-hidden flex flex-col gap-4"
-            key={item.urlImage}
-          >
-            <Image src={CodeImage} alt="" className="w-full" />
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        className="w-full container"
+      >
+        <CarouselContent>
+          {events.map((item) => (
+            <CarouselItem
+              key={item.urlImage}
+              className="md:basis-1/2 lg:basis-1/3"
+            >
+              <div
+                className="bg-mf-least rounded-md  overflow-hidden col-span-1 flex flex-col gap-4"
+                key={item.urlImage}
+              >
+                <Image src={CodeImage} alt="" className="w-full" />
 
-            <div className="px-4 pb-7 flex flex-col gap-2">
-              <span className=" w-min rounded-2xl bg-[#262B42] p-2 px-4 text-mf-secondary text-xs font-bold">
-                {item.eventType}
-              </span>
-              <p className="font-semibold">{item.description}</p>
-              <Link href={""}>
-                <Button
-                  variant={"link"}
-                  className="p-0 underline text-mf-secondary font-bold"
-                >
-                  Ver detalhes
-                </Button>
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+                <div className="px-4 pb-7 flex flex-col gap-2">
+                  <span className=" w-min rounded-2xl bg-[#262B42] p-2 px-4 text-mf-secondary text-xs font-bold">
+                    {item.eventType}
+                  </span>
+                  <p className="font-semibold">{item.description}</p>
+                  <Link href={""}>
+                    <Button
+                      variant={"link"}
+                      className="p-0 hover:underline text-mf-secondary font-bold"
+                    >
+                      Ver detalhes
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="border-transparent bg-mf-secondary hover:bg-mf-secondProposal text-mf-dark disabled:bg-transparent" />
+        <CarouselNext className=" border-transparent bg-mf-secondary hover:bg-mf-secondProposal text-mf-dark disabled:bg-transparent" />
+      </Carousel>
     </section>
   );
 };
