@@ -4,8 +4,8 @@ import React from "react";
 
 export const CFP = () => {
   return (
-    <section className="  bg-gradient-to-r from-teal-300 to-teal-700 rounded-lg container py-16 px-24">
-      <div className="flex justify-between">
+    <section className=" container bg-gradient-to-r from-mf-secondProposal to-mf-least rounded-lg py-10 px-20">
+      <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center basis-3/5">
           <span className=" rounded-full bg-white p-10" />
 
@@ -17,10 +17,10 @@ export const CFP = () => {
         <div className=" font-semibold text-lg uppercase text-center items-center">
           <Link
             href="#"
-            className="flex flex-row items-center rounded-lg w-full p-2 gap-2 bg-mf-secondary hover:bg-mf-secondaryVariation focus:ring-4  text-sm"
+            className="w-52 flex items-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondaryVariation  text-sm text-mf-least group"
           >
             Join Community
-            <ArrowUpRight className="" />
+            <ArrowUpRight className="ml-2 group-hover:" />
           </Link>
         </div>
       </div>
