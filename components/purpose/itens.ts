@@ -4,6 +4,12 @@ export const goals = [
   "Temos interesse em construir conexões úteis e saudáveis, por isso oferecemos apoio com a mesma frequência com que recebemos apoio.",
 ];
 
+export const values = [
+  "Nossa comunidade valoriza o compartilhamento de ideias e conhecimento em tecnologias frontend, promovendo acessibilidade e boas práticas de desenvolvimento.",
+  "Buscamos fortalecer o ecossistema tecnológico moçambicano, comprometendo-nos a contribuir para sua evolução através da colaboração com outras comunidades e da realização de projetos com impacto social.",
+  "Priorizamos a construção de conexões úteis e saudáveis, oferecendo suporte de forma recíproca e constante.",
+];
+
 export const cards = [
   {
     color: "orange-500",
