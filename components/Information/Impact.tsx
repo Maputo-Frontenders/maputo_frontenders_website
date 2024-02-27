@@ -1,6 +1,4 @@
 import { impactCards } from "@/data/mainData";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 export const Impact = () => {
   return (
@@ -19,10 +17,7 @@ export const Impact = () => {
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap gap-6">
         {impactCards.map((card) => {
           return (
-            <div
-              className="bg-mf-least pt-16 px-8 overflow-hidden col-span-1 h-full rounded-lg"
-              key={card.title}
-            >
+            <div className="bg-mf-least pt-16 px-8 overflow-hidden col-span-1 h-full rounded-lg border-2 border-mf-white/5 hover:border-mf-white/10 duration-150">
               <div className={`flex flex-col gap-2 text-center ${"pb-16"}`}>
                 <span className="text-gradient text-5xl font-bold">
                   {card.number}
