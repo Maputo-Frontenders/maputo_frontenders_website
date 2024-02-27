@@ -18,7 +18,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.05) {
+      if (scrollYProgress.get() < 0.03) {
         setVisible(false);
       } else {
         if (direction < 0) {
@@ -31,7 +31,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
   });
 
   return (
-    <AnimatePresence mode="sync">
+    <AnimatePresence mode="wait">
       <motion.div
         initial={{
           opacity: 1,
