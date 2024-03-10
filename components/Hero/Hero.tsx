@@ -17,10 +17,10 @@ function Hero() {
       <div className="flex mx-auto justify-center py-3 w-full hover:underline">
         <Link
           href={"#"}
-          className="flex items-center font-medium text-sm text-white uppercase"
+          className="flex items-center font-medium text-sm text-white uppercase group"
         >
           Saiba do nosso próximo evento em{" "}
-          <ArrowRight className="text-white h-4 w-4 ml-2" />
+          <ArrowRight className="text-white h-4 w-4 ml-2 group-hover:-translate-x-1 hover:scale-110 duration-300" />
         </Link>
       </div>
       <div className="mx-auto py-3 w-full text-center">
@@ -31,14 +31,17 @@ function Hero() {
       </div>
       <div className="flex mx-auto justify-center py-3 w-full">
         <Link
-          href="#"
-          className="flex items-center flex-row outline outline-1 outline-mf-secondary hover:bg-gray-700 text-mf-secondary font-bold py-2 px-4 rounded"
+          href="https://community.codecademy.com/maputo-frontenders/"
+          target="_blank"
+          className="flex items-center flex-row outline outline-1 outline-mf-secondary hover:bg-gray-700 text-mf-secondary font-bold py-2 px-4 rounded group"
         >
           SAIBA MAIS
-          <ArrowUpRight className="text-mf-secondary ml-2 h-5 w-5" />
+          <ArrowUpRight className="text-mf-secondary ml-2 h-5 w-5 group-hover:-translate-y-1 hover:scale-110 duration-300" />
         </Link>
       </div>
-      <InfiniteMovingCards />
+      <div className="w-full">
+        <InfiniteMovingCards />
+      </div>
     </section>
   );
 }
