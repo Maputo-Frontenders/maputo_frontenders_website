@@ -10,15 +10,15 @@ export const NavData: NavItem[] = [
         link: '#'
     },
     {
-        label: 'Comunidade',
-        link: '#'
+        label: 'Sobre',
+        link: '#impacto'
     },
     {
-        label: 'Evento',
-        link: '#'
+        label: 'Eventos',
+        link: '#eventos'
     },
     {
-        label: 'Contacto',
-        link: '#'
+        label: 'FAQ',
+        link: '#faq'
     },
 ]
