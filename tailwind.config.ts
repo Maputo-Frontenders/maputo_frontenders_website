@@ -38,6 +38,7 @@ const config = {
           primary: "#201C39",
           secondary: "#4ED4C5",
           secondProposal: "#16F8B6",
+          secondProposalHover: "#10e3a6",
           secondaryVariation: "#15F8B6",
           white: "#E4E5E7",
           least: "#17253D",
