@@ -1,20 +1,24 @@
-import { Instagram, InstagramIcon, LinkedinIcon, Twitter } from "lucide-react";
-
+import { Instagram, InstagramIcon, LinkedinIcon, Twitter, YoutubeIcon } from "lucide-react";
 const socialMediaLinks = [
     {
         description: "LinkedIn",
         icon: LinkedinIcon,
-        href: ""
+        href: "https://linkedin.com/company/maputo-frontenders"
     },
     {
         description: "Instagram",
         icon: InstagramIcon,
-        href: ""
+        href: "https://www.instagram.com/mptfrontenders/"
     },
     {
         description: "X",
         icon: Twitter,
-        href: ""
+        href: "https://twitter.com/mptfrontenders"
+    },
+    {
+        description: "YouTube",
+        icon: YoutubeIcon,
+        href: "http://www.youtube.com/@mptfrontenders"
     }
 ]
 
