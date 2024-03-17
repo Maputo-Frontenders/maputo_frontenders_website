@@ -44,7 +44,7 @@ const config = {
           least: "#17253D",
           blue: "#191737",
           dark: "#030918",
-          purple: "#15F8B6",
+          purple: "#8244FF",
           orange: "#FF9F24",
           pink: "#FF5FCC",
         },
