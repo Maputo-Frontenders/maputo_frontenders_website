@@ -38,7 +38,7 @@ export const Navbar = ({ className }: { className?: string }) => {
               className="w-full truncate text-clip  flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
             >
               Junte-se a nós
-              <ArrowUpRight className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 hover:scale-110 duration-300" />
+              <ArrowUpRight className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1  hover:scale-110 duration-300" />
             </Link>
 
           </div>
