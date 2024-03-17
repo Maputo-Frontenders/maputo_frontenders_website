@@ -13,6 +13,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "dompurify": "^3.0.9",
     "embla-carousel-react": "^8.0.0",
     "framer-motion": "^11.0.6",
     "lucide-react": "^0.331.0",
