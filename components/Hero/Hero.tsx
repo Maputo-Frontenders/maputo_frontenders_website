@@ -20,7 +20,7 @@ function Hero() {
           className="flex items-center font-medium text-sm text-white uppercase group"
         >
           Saiba do nosso próximo evento em{" "}
-          <ArrowRight className="text-white h-4 w-4 ml-2 group-hover:-translate-x-1 hover:scale-110 duration-300" />
+          <ArrowRight className="text-white h-4 w-4 ml-2 group-hover:translate-x-2 hover:scale-110 duration-300" />
         </Link>
       </div>
       <div className="mx-auto py-3 w-full text-center">
@@ -36,7 +36,7 @@ function Hero() {
           className="flex items-center flex-row outline outline-1 outline-mf-secondary hover:bg-gray-700 text-mf-secondary font-bold py-2 px-4 rounded group"
         >
           SAIBA MAIS
-          <ArrowUpRight className="text-mf-secondary ml-2 h-5 w-5 group-hover:-translate-y-1 hover:scale-110 duration-300" />
+          <ArrowUpRight className="text-mf-secondary ml-2 h-5 w-5 group-hover:-translate-y-1 group-hover:translate-x-1 hover:scale-110 duration-300" />
         </Link>
       </div>
       <div className="w-full">
