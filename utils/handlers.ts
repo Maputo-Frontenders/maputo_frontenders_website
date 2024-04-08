@@ -2,7 +2,7 @@
 
 export const formatDateTime = (dateTimeIso: string): string => {
     const dateTime = new Date(dateTimeIso);
-    const options = { month: 'string', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const options: any = { month: 'string', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' };
     return dateTime.toLocaleDateString('en-US', options);
 };
 
@@ -13,7 +13,7 @@ export const isSameDate = (startDate: string, endDate: string): boolean => {
     return start === end;
 };
 
-export function formatTime(dateString) {
+export function formatTime(dateString: string) {
     const date = new Date(dateString);
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
