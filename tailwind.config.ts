@@ -47,6 +47,7 @@ const config = {
           purple: "#15F8B6",
           orange: "#FF9F24",
           pink: "#FF5FCC",
+          surfacePrimary: "#2C243B",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
