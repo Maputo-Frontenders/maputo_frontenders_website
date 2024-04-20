@@ -22,23 +22,11 @@ export const sponsorsLogos = [
   },
   {
     id: 3,
-    src: "/sponsors/mozdevz.png",
+    src: "/sponsors/standard-bank.png",
   },
   {
     id: 4,
-    src: "/sponsors/kabum.png",
-  },
-  {
-    id: 5,
-    src: "/sponsors/mozdevz.png",
-  },
-  {
-    id: 6,
-    src: "/sponsors/kabum.png",
-  },
-  {
-    id: 7,
-    src: "/sponsors/mozdevz.png",
+    src: "/sponsors/baoba-hub.png",
   },
 ];
 
