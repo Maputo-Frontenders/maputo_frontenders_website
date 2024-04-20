@@ -20,7 +20,7 @@ export const Impact = () => {
             <div className="bg-mf-least pt-16 px-8 overflow-hidden col-span-1 h-full rounded-lg border-2 border-mf-white/5 hover:border-mf-white/10 duration-150">
               <div className={`flex flex-col gap-2 text-center ${"pb-16"}`}>
                 <span className="text-gradient text-5xl font-bold">
-                  {card.number}
+                  +{card.number}
                 </span>
                 <span className="text-lg font-bold">{card.title}</span>
                 <span className=" text-left">{card.description}</span>

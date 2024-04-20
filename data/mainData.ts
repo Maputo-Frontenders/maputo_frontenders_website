@@ -35,18 +35,18 @@ export const impactCards = [
     number: 500,
     title: "Membros",
     description:
-      "Esses encontros, realizados tanto de forma virtual quanto presencial, proporcionam um espaço valioso para  networking e partilha de conhecimento",
+      "Esses encontros, virtuais ou presenciais, são espaços valiosos para networking e compartilhamento de conhecimento, promovendo interações significativas entre os participantes.",
   },
   {
     number: 26,
-    title: "Encontros",
+    title: "Spaces",
     description:
-      "Esses encontros, realizados tanto de forma virtual quanto presencial, proporcionam um espaço valioso para  networking e partilha de conhecimento",
+      "A escuta activa é uma habilidade fundamental na comunicação eficaz. Integrada nos nossos Spaces, através do X (Twitter) criamos oportunidades para construir comunidades mais inclusivas e colaborativas, onde as vozes são ouvidas e as experiências são valorizadas.",
   },
   {
     number: 1000,
     title: "Membros",
     description:
-      "A interação e o engajamento não se limitam apenas aos eventos formais, e nosso grupo no WhatsApp é a prova disso. ",
+      "Eventos realizados presencial ou virtualmente, visando a troca de experiências e proporcionando um dos maiores ganhos da vida profissional, o Networking. Neste sentido, buscamos trazer temas inclusivos e que despertem interesse no mundo da tecnologia.",
   },
 ];
