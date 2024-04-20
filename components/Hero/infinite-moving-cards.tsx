@@ -7,14 +7,16 @@ import Img1 from "@/public/hero/img1.png";
 import Img2 from "@/public/hero/img2.png";
 import Img3 from "@/public/hero/img3.png";
 import Img4 from "@/public/hero/img4.png";
+import Img5 from "@/public/hero/img5.png";
+import Img6 from "@/public/hero/img6.png";
+import Img7 from "@/public/hero/img7.png";
+import Img8 from "@/public/hero/img8.png";
 import TransparentCirclesBackground from "@/public/transparent-circles.svg";
 import BlurBackground from "@/public/blur-background.svg";
 
-// TODO: border colorr dynamic
-
 export const InfiniteMovingCards = ({
   direction = "left",
-  speed = "normal",
+  speed = "slow",
   pauseOnHover = true,
   className,
 }: {
@@ -93,45 +95,45 @@ export const InfiniteMovingCards = ({
             <Image
               src={Img1}
               alt=""
-              className=" w-[300px] h-[200px] rounded-lg"
+              className=" w-[300px] h-[200px] rounded-lg object-cover"
             />
             <Image
-              src={Img4}
+              src={Img2}
               alt=""
-              className=" w-[300px] h-[200px] rounded-lg"
+              className=" w-[300px] h-[200px] rounded-lg object-cover"
             />
           </div>
           <Image
             src={Img3}
             alt=""
-            className=" w-[600px] h-[416px] rounded-lg"
+            className=" w-[600px] h-[416px] rounded-lg object-cover"
           />
           <Image
-            src={Img2}
+            src={Img4}
             alt=""
-            className=" w-[300px] h-[416px] rounded-lg"
+            className=" w-[300px] h-[416px] rounded-lg object-cover"
           />
           <div className="flex flex-col gap-4">
             <Image
-              src={Img4}
+              src={Img5}
               alt=""
-              className=" w-[300px] h-[200px] rounded-lg"
+              className=" w-[300px] h-[200px] rounded-lg object-cover"
             />
             <Image
-              src={Img1}
+              src={Img6}
               alt=""
-              className=" w-[300px] h-[200px] rounded-lg"
+              className=" w-[300px] h-[200px] rounded-lg object-cover"
             />
           </div>
           <Image
-            src={Img3}
+            src={Img7}
             alt=""
-            className=" w-[600px] h-[416px] rounded-lg"
+            className=" w-[600px] h-[416px] rounded-lg object-cover"
           />
           <Image
-            src={Img2}
+            src={Img8}
             alt=""
-            className=" w-[300px] h-[416px] rounded-lg"
+            className=" w-[300px] h-[416px] rounded-lg object-cover"
           />
         </div>
       </ul>

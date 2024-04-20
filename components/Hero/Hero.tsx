@@ -11,7 +11,7 @@ function Hero() {
     <section className="w-full space-y-4 relative">
       <Image
         src={BlurBackground}
-        alt=""
+        alt="Backcground Blur"
         className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
       <div className="flex mx-auto justify-center py-3 w-full hover:underline">
