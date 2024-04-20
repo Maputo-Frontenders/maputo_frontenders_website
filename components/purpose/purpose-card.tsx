@@ -32,7 +32,7 @@ export const PurposeCard = () => {
               </div>
             ))}
           </div>
-          <Image src={GoalImage} alt="" />
+          <Image src={GoalImage} alt="" width={500} height={500} />
         </div>
       </TabsContent>
       <TabsContent value="values" className="mt-12">
@@ -47,7 +47,7 @@ export const PurposeCard = () => {
               </div>
             ))}
           </div>
-          <Image src={GoalImage} alt="" />
+          <Image src={GoalImage} alt="" width={500} height={500} />
         </div>
       </TabsContent>
     </Tabs>

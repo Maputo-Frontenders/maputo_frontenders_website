@@ -9,7 +9,7 @@ import { cards } from "./itens";
 export const InfiniteMovingCards = ({
   direction = "left",
   speed = "normal",
-  pauseOnHover = true,
+  pauseOnHover = false,
   className,
 }: {
   direction?: "left" | "right";
