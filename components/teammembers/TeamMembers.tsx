@@ -6,7 +6,7 @@ import BlurBackground from "@/public/blur-background.svg";
 
 export const TeamMembers = () => {
   return (
-    <div className="text-center gap-4 flex flex-col">
+    <section className="w-full container text-center gap-4 flex flex-col">
       <div className="flex flex-col ga-2">
         <h4 className=" font-normal text-sm text-white uppercase">
           Nossa team
@@ -15,10 +15,10 @@ export const TeamMembers = () => {
           Conheça a equipe por detrás da Maputo Frontenders
         </h2>
       </div>
-      <div className="relative grid grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden">
+      <div className="relative grid grid-cols-2 md:grid-cols-4  gap-4 overflow-hidden">
         <Image
           src={BlurBackground}
-          alt=""
+          alt="Blur Background"
           className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
         />
         {team.map((item) => (
@@ -27,6 +27,6 @@ export const TeamMembers = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
