@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-PT">
       <body className={cn(`bg-mf-background antialiased`, mont.className)}>
         <div className="flex flex-col h-full">
           <Navbar className="py-8" />

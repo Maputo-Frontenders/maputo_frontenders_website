@@ -5,6 +5,7 @@ import Link from "next/link";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 import BlurBackground from "@/public/blur-background.svg";
 import Image from "next/image";
+import { CODE_ACADEMY_MF } from "@/data/constants";
 
 function Hero() {
   return (
@@ -31,16 +32,16 @@ function Hero() {
       </div>
       <div className="flex mx-auto justify-center py-3 w-full">
         <Link
-          href="https://community.codecademy.com/maputo-frontenders/"
+          href={CODE_ACADEMY_MF}
           target="_blank"
           className="flex items-center flex-row outline outline-1 outline-mf-secondary hover:bg-gray-700 text-mf-secondary font-bold py-2 px-4 rounded group"
         >
           SAIBA MAIS
-          <ArrowUpRight className="text-mf-secondary ml-2 h-5 w-5 group-hover:-translate-y-1 group-hover:translate-x-1 hover:scale-110 duration-300" />
+          <ArrowUpRight className="text-mf-secondary ml-2 h-5 w-5 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
         </Link>
       </div>
       <div className="w-full">
-        <InfiniteMovingCards />
+        <InfiniteMovingCards pauseOnHover={false} />
       </div>
     </section>
   );

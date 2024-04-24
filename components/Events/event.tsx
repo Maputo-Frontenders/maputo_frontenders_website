@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
@@ -13,11 +13,15 @@ import {
 } from "../ui/carousel";
 import { Card, CardContent } from "../ui/card";
 import useGetEvents from "@/hooks/useGetEvents";
+import { Badge } from "../ui/badge";
 
 export const Event = () => {
   const { events, fetchMore } = useGetEvents();
   return (
-    <section className="w-full bg-mf-dark text-mf-white space-y-8 py-10 flex justify-center items-center flex-col">
+    <section
+      className="w-full bg-mf-dark text-mf-white space-y-8 py-10 flex justify-center items-center flex-col"
+      id="eventos"
+    >
       <h4 className="uppercase text-sm text-center">Eventos</h4>
       <h2 className="text-2xl font-bold text-center max-w-3xl">
         Junte-se a nós e participe dos eventos que estão moldando o futuro do
@@ -42,21 +46,25 @@ export const Event = () => {
       >
         <CarouselContent>
           {events?.results.map((item) => (
-            <CarouselItem
-              key={item.id}
-              className="md:basis-1/2 lg:basis-1/3"
-            >
+            <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
               <div
-                className="bg-mf-least rounded-md  overflow-hidden col-span-1 flex flex-col gap-4"
+                className="bg-mf-least h-full rounded-md  overflow-hidden col-span-1 flex flex-col gap-4"
                 key={item.id}
               >
-                <Image src={item.cropped_picture_url} alt="" width={450} height={50} />
+                <Image
+                  src={item.cropped_picture_url}
+                  alt=""
+                  width={450}
+                  height={50}
+                />
 
-                <div className="px-4 pb-7 flex flex-col gap-2">
-                  <span className=" w-min rounded-2xl bg-[#262B42] p-2 px-4 text-mf-secondary text-xs font-bold">
+                <div className="px-4 pb-7 flex flex-col justify-between h-full gap-2">
+                  <Badge className="w-fit text-mf-secondary">
                     {item.event_type_title}
-                  </span>
-                  <p className="font-semibold">{item.description_short}</p>
+                  </Badge>
+                  <p className="font-semibold line-clamp-4">
+                    {item.description_short}
+                  </p>
                   <Link href={""}>
                     <Button
                       variant={"link"}
@@ -70,8 +78,8 @@ export const Event = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="border-transparent bg-mf-secondary hover:bg-mf-secondProposal text-mf-dark disabled:bg-transparent" />
-        <CarouselNext className=" border-transparent bg-mf-secondary hover:bg-mf-secondProposal text-mf-dark disabled:bg-transparent" />
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </section>
   );

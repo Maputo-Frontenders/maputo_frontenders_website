@@ -4,6 +4,7 @@ import { ArrowExternalLink } from "@/components/ui/icons/arrow-external-link";
 import BanerImage from "@/public/design_liquido.png";
 import Image from "next/image";
 import BlurBackground from "@/public/blur-background.svg";
+import { Sponsor } from "@/components/Information/Sponsor";
 
 export default function EventDetails() {
   return (
@@ -85,7 +86,9 @@ export default function EventDetails() {
       </div>
 
       {/* PARCERIAS E PATROCINIOS  */}
-      <div></div>
+      <div className="mt-10">
+        <Sponsor />
+      </div>
     </main>
   );
 }

@@ -14,7 +14,7 @@ export default function Home() {
       <Purpose />
       <Event />
       <TeamMembers />
-      <ContactUs />
+      {/* <ContactUs /> */}
     </main>
   );
 }
