@@ -45,7 +45,7 @@ const DetalheEvento: FC<pageProps> = ({ params }) => {
   return (
     <main className="container h-full flex flex-col gap-12 justify-center py-5 items-center">
       {detalhesEvento === undefined ? (
-        <h2 className="text-white text-2xl">Loading...</h2>
+        <h2 className="text-white text-2xl">Carregando...</h2>
       ) : detalhesEvento !== null ? (
         <React.Fragment>
           <div className="flex flex-col-reverse md:flex-row gap-4 text-white ">
@@ -153,7 +153,7 @@ const DetalheEvento: FC<pageProps> = ({ params }) => {
             </div>
           </div>
 
-          <div className="w-full px-10 flex flex-col gap-4">
+          <div className="w-full px-4 flex flex-col gap-4">
             <div className="">
               <h3 className=" text-base font-semibold text-mf-secondaryVariation">
                 Descrição
