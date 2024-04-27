@@ -6,17 +6,16 @@ import BlurBackground from "@/public/blur-background.svg";
 
 export const TeamMembers = () => {
   return (
-    <section className="w-full container text-center flex flex-col space-y-8">
+    <section
+      id="team"
+      className="w-full container text-center flex flex-col space-y-8"
+    >
       <h4 className=" font-normal text-sm text-white uppercase">Nossa team</h4>
       <h2 className="text-white font-bold text-2xl">
         Conheça a equipe por detrás da Maputo Frontenders
       </h2>
-      <div className="relative grid grid-cols-2 md:grid-cols-4  gap-4 overflow-hidden">
-        <Image
-          src={BlurBackground}
-          alt="Blur Background"
-          className=" absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        />
+
+      <div className="relative grid grid-cols-2 md:grid-cols-5  gap-4 overflow-hidden">
         {team.map((item) => (
           <div key={item.name}>
             <TeamMember {...item} />
