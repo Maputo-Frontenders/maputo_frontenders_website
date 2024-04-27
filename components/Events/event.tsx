@@ -11,7 +11,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import { Card, CardContent } from "../ui/card";
 import useGetEvents from "@/hooks/useGetEvents";
 import { Badge } from "../ui/badge";
 
@@ -19,7 +18,7 @@ export const Event = () => {
   const { events, fetchMore } = useGetEvents();
   return (
     <section
-      className="w-full bg-mf-dark text-mf-white space-y-8 py-10 flex justify-center items-center flex-col"
+      className="w-full bg-mf-dark text-mf-white space-y-8 py-10 flex justify-center items-center flex-col container"
       id="eventos"
     >
       <h4 className="uppercase text-sm text-center">Eventos</h4>
@@ -78,8 +77,8 @@ export const Event = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="hidden md:flex" />
+        <CarouselNext className="hidden md:flex" />
       </Carousel>
     </section>
   );
