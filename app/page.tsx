@@ -1,7 +1,6 @@
 import { Event } from "@/components/Events/event";
 import Hero from "@/components/Hero/Hero";
 import { InformationSection } from "@/components/Information";
-import { CFP } from "@/components/cfp/CFP";
 import { ContactUs } from "@/components/contactUs/ContactUs";
 import { Purpose } from "@/components/purpose";
 import { TeamMembers } from "@/components/teammembers/TeamMembers";
