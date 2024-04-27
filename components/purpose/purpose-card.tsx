@@ -32,7 +32,13 @@ export const PurposeCard = () => {
               </div>
             ))}
           </div>
-          <Image src={GoalImage} alt="" width={500} height={500} />
+          <Image
+            src={GoalImage}
+            alt=""
+            width={500}
+            height={500}
+            className="hidden md:block"
+          />
         </div>
       </TabsContent>
       <TabsContent value="values" className="mt-12">
