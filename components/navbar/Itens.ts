@@ -17,7 +17,11 @@ export const NavData: NavItem[] = [
     link: "#eventos",
   },
   {
-    label: "Contacto",
-    link: "#contacto",
+    label: "Team",
+    link: "#team",
   },
+  // {
+  //   label: "Contacto",
+  //   link: "#contacto",
+  // },
 ];
