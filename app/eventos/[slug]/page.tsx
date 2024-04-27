@@ -11,6 +11,7 @@ import { formatTime, isSameDate } from "@/utils/handlers";
 import React from "react";
 import EventNotFound from "./error";
 import { Sponsor } from "@/components/Information/Sponsor";
+import Loading from "./loading";
 interface pageProps {
   params: { slug: string };
 }
@@ -45,7 +46,7 @@ const DetalheEvento: FC<pageProps> = ({ params }) => {
   return (
     <main className="container h-full flex flex-col gap-12 justify-center py-5 items-center">
       {detalhesEvento === undefined ? (
-        <h2 className="text-white text-2xl">Carregando...</h2>
+        <Loading />
       ) : detalhesEvento !== null ? (
         <React.Fragment>
           <div className="flex flex-col-reverse md:flex-row gap-4 text-white ">
