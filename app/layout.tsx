@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="pt-PT">
       <body className={cn(`bg-mf-background antialiased`, mont.className)}>
         <div className="flex flex-col h-full">
-          <Navbar className="py-8" />
+          <Navbar className="pt-8" />
           <FloatingNav />
           <main className="h-full">{children}</main>
           <Footer />
