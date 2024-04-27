@@ -20,7 +20,10 @@ export const Impact = () => {
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap gap-6">
         {impactCards.map((card) => {
           return (
-            <div className="bg-mf-least py-16 px-8 overflow-hidden col-span-1 rounded-lg border-2 border-mf-white/5 hover:border-mf-white/10 duration-150">
+            <div
+              className="bg-mf-least py-16 px-8 overflow-hidden col-span-1 rounded-lg border-2 border-mf-white/5 hover:border-mf-white/10 duration-150"
+              key={card.title}
+            >
               <div className={`flex flex-col gap-2 text-center`}>
                 <span className="text-gradient text-5xl font-bold">
                   +{card.number}
