@@ -41,7 +41,7 @@ export const Event = () => {
         opts={{
           align: "start",
         }}
-        className="w-full container"
+        className="w-full"
       >
         <CarouselContent>
           {events?.results.map((item) => (
