@@ -15,7 +15,7 @@ function Hero() {
         alt="Backcground Blur"
         className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
-      <div className="flex mx-auto justify-center py-3 w-full hover:underline">
+      <div className="flex mx-auto justify-center py-1 w-full hover:underline">
         <Link
           href={"#"}
           className="flex items-center font-medium text-sm text-white uppercase group"
@@ -24,13 +24,13 @@ function Hero() {
           <ArrowRight className="text-white h-4 w-4 ml-2 group-hover:translate-x-2 hover:scale-110 duration-300" />
         </Link>
       </div>
-      <div className="mx-auto py-3 w-full text-center">
+      <div className="mx-auto py-2 w-full text-center">
         <p className="text-4xl font-bold text-white uppercase">
           A maior comunidade de frontend em
         </p>
         <p className="text-4xl font-bold text-white uppercase">Moçambique </p>
       </div>
-      <div className="flex mx-auto justify-center py-3 w-full">
+      <div className="flex mx-auto justify-center py-2 w-full">
         <Link
           href={CODE_ACADEMY_MF}
           target="_blank"
