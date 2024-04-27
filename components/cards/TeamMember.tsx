@@ -17,11 +17,11 @@ export const TeamMember: React.FC<TeamMemberProps> = (props) => {
             alt={props.name}
             className="w-full rounded-xl"
           />
-          <div className="bg-gradient-to-b from-transparent via-transparent to-black py-2 absolute bottom-0 w-full opacity-500 transition-opacity duration-700 rounded-b-xl">
-            <div className="flex flex-col items-start text-white px-4">
-              <h3 className=" font-semibold text-lg">{props.name}</h3>
-              <h5 className=" font-light">{props.role}</h5>
-            </div>
+        </div>
+        <div className=" py-2 transition-opacity duration-700 rounded-b-xl">
+          <div className="flex flex-col items-start text-mf-white font-mono text-left">
+            <h3 className=" font-semibold text-lg">{props.name}</h3>
+            <h5 className=" font-light">{props.role}</h5>
           </div>
         </div>
       </div>
