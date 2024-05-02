@@ -15,19 +15,19 @@ export const cards = [
     color: "orange-500",
     title: "Networking",
     description:
-      "Experimente uma cultura de colaboração onde ideias são compartilhadas",
+      "Fortaleça a sua rede de contactos para alcançar novos níveis de sucesso.",
   },
   {
     color: "#FF9F24",
     title: "Oportunidades",
     description:
-      "Experimente uma cultura de colaboração onde ideias são compartilhadas",
+      "Descubra as inúmeras oportunidades que a comunidade tem a oferecer.",
   },
   {
     color: "",
     title: "Mentorias",
     description:
-      "Experimente uma cultura de colaboração onde ideias são compartilhadas",
+      "Receba conselhos valiosos de membros experientes que impulsionarão seu crescimento.",
   },
   {
     color: "",
