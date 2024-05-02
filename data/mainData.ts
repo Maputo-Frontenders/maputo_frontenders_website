@@ -28,6 +28,10 @@ export const sponsorsLogos = [
     id: 4,
     src: "/sponsors/baoba-hub.png",
   },
+  {
+    id: 5,
+    src: "/sponsors/propel.png",
+  },
 ];
 
 export const impactCards = [
