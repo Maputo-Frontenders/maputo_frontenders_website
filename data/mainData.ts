@@ -20,14 +20,14 @@ export const sponsorsLogos = [
     id: 2,
     src: "/sponsors/kabum.png",
   },
-  {
-    id: 3,
-    src: "/sponsors/standard-bank.png",
-  },
-  {
-    id: 4,
-    src: "/sponsors/baoba-hub.png",
-  },
+  // {
+  //   id: 3,
+  //   src: "/sponsors/standard-bank.png",
+  // },
+  // {
+  //   id: 4,
+  //   src: "/sponsors/baoba-hub.png",
+  // },
   {
     id: 5,
     src: "/sponsors/propel.png",
