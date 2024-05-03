@@ -5,7 +5,7 @@ import olimpioImg from "../../public/assets/images/Olimpio Adolfo.png"
 import sweydImg from "../../public/assets/images/Sweyd Manaf.png"
 import nelsaImg from "../../public/assets/images/Nelsa Vilanculos.png"
 import luisImg from "../../public/assets/images/Luis Milice.png"
-import mardelImg from "../../public/assets/images/Mardel Juma.png"
+import mardelImg from "../../public/assets/images/Mardel Juma.jpg"
 const team = [
     {
         photo: anchaImg,
