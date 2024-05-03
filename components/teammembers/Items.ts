@@ -1,5 +1,5 @@
-import anchaImg from "../../public/assets/images/Ancha Pedro.png"
-import raimundoImg from "../../public/assets/images/Raimundo Molide.png"
+import anchaImg from "../../public/assets/images/Ancha Pedro.jpeg"
+import raimundoImg from "../../public/assets/images/Raimundo Molide.jpg"
 import safuraImg from "../../public/assets/images/Safura Matsinhe.png"
 import olimpioImg from "../../public/assets/images/Olimpio Adolfo.png"
 import sweydImg from "../../public/assets/images/Sweyd Manaf.png"
@@ -15,17 +15,17 @@ const team = [
     {
         photo: raimundoImg,
         name: "Raimundo Molide",
-        role: "Community strategist"
+        role: "Vice-Presidente"
+    },
+    {
+        photo: mardelImg,
+        name: "Mardel Juma",
+        role: "Coordenador de Actividades"
     },
     {
         photo: safuraImg,
         name: "Safura Matsinhe",
-        role: "Communication strategist"
-    },
-    {
-        photo: olimpioImg,
-        name: "Olimpio Adolfo",
-        role: "Content creator"
+        role: "Gestora de Comunicação"
     },
     {
         photo: sweydImg,
@@ -33,9 +33,9 @@ const team = [
         role: "Tech Lead"
     },
     {
-        photo: nelsaImg,
-        name: "Nelsa Vilanculos",
-        role: "Marketeer"
+        photo: olimpioImg,
+        name: "Olimpio Adolfo",
+        role: "Coordenador de Imagem e Identidade"
     },
     {
         photo: luisImg,
@@ -43,9 +43,9 @@ const team = [
         role: "Designer"
     },
     {
-        photo: mardelImg,
-        name: "Mardel Juma",
-        role: "Community host"
+        photo: nelsaImg,
+        name: "Nelsa Vilanculos",
+        role: "Gestora de Redes Sociais"
     }
 ]
 
