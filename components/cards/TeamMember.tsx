@@ -11,11 +11,11 @@ export const TeamMember: React.FC<TeamMemberProps> = (props) => {
   return (
     <div className="w-full sm:max-w-[300px] ">
       <div className="relative group mb-5 ">
-        <div>
+        <div className="h-[326px]">
           <Image
             src={props.photo}
             alt={props.name}
-            className="w-full rounded-xl"
+            className="w-full rounded-xl h-full object-cover"
           />
         </div>
         <div className=" py-2 transition-opacity duration-700 rounded-b-xl">
