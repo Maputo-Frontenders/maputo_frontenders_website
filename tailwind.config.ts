@@ -43,6 +43,7 @@ const config = {
           white: "#E4E5E7",
           least: "#17253D",
           blue: "#191737",
+          lightBlue: "#3bbfca",
           dark: "#030918",
           purple: "#8244FF",
           orange: "#FF9F24",
