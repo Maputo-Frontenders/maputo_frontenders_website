@@ -25,10 +25,14 @@ function Hero() {
         </Link>
       </div>
       <div className="mx-auto py-2 w-full text-center">
-        <p className="text-4xl font-bold text-white uppercase">
-          A maior comunidade de frontend em
+        <p className="text-4xl font-bold text-white ">
+          A maior comunidade de{" "}
+          <span className="bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text">
+            frontend
+          </span>{" "}
+          em
         </p>
-        <p className="text-4xl font-bold text-white uppercase">Moçambique </p>
+        <p className="text-4xl font-bold text-white ">Moçambique </p>
       </div>
       <div className="flex mx-auto justify-center py-2 w-full">
         <Link
