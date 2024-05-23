@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-PT">
+      <head>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      </head>
       <body className={cn(`bg-mf-background antialiased`, mont.className)}>
         <div className="flex flex-col h-full">
           <Navbar className="pt-8" />
