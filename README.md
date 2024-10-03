@@ -9,7 +9,7 @@
   <img alt="License" src="./public/cover.png">
 </p>
 
-Bem-vindo ao projeto do website da comunidade Maputo Frontenders! Este documento descreve as diretrizes de desenvolvimento e regras para garantir consistência, eficiência e colaboração dentro do projeto.
+Bem-vindo ao projeto do website da comunidade Maputo Frontenders! Este documento descreve as diretrizes de desenvolvimento e regras para garantir consistência, eficiência e colaboração dentro do projeto!
 
 ## Regras de Desenvolvimento
 
