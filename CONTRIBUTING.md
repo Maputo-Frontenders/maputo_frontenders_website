@@ -2,6 +2,13 @@
 
 Obrigado por considerar contribuir com o **Maputo Frontenders Website**! Seguimos algumas diretrizes simples para garantir que todos os contribuidores possam colaborar de maneira eficiente e prazerosa.
 
+## Regras de Desenvolvimento
+
+1. **Manipulação de Dados do Componente**:
+
+   - Ao desenvolver um componente que requer dados, crie um arquivo de dados dentro da pasta do componente.
+   - Após a aprovação da mesclagem, se o arquivo de dados específico do componente for considerado adequado, ele será integrado ao arquivo de dados principal.
+
 ## Como Começar
 
 1. Clone o repositório:
