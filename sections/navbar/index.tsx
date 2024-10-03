@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { NavData, NavItem } from "./Itens";
+import { NavData, NavItem } from "./data";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";

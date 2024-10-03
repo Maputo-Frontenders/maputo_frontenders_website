@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+  <img alt="License" src="./public/cover.png">
 </p>
 
 Bem-vindo ao projeto do website da comunidade Maputo Frontenders! Este documento descreve as diretrizes de desenvolvimento e regras para garantir consistência, eficiência e colaboração dentro do projeto.
@@ -29,6 +29,8 @@ Bem-vindo ao projeto do website da comunidade Maputo Frontenders! Este documento
 
 4. **Acesso ao Design no Figma**:
    - Pedidos de acesso ao design no Figma podem ser feitos entrando em contato com o gerente do projeto ou membro designado da equipe.
+
+## [Regras de Contribuição](./CONTRIBUTING.md)
 
 ## Colaboração
 

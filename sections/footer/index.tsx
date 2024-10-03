@@ -1,5 +1,5 @@
 import React from "react";
-import { socialMediaLinks } from "./Itens";
+import { socialMediaLinks } from "./data";
 import Link from "next/link";
 
 export const Footer = () => {

@@ -2,9 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { cards } from "./itens";
-
-// TODO: border colorr dynamic
+import { cards } from "./data";
 
 export const InfiniteMovingCards = ({
   direction = "left",
