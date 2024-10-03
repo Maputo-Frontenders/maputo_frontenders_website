@@ -1,19 +1,13 @@
-import { Event } from "@/components/Events/event";
-import Hero from "@/components/Hero/Hero";
-import { InformationSection } from "@/components/Information";
-import { ContactUs } from "@/components/contactUs/ContactUs";
-import { Purpose } from "@/components/purpose";
-import { TeamMembers } from "@/components/teammembers/TeamMembers";
+import { ValuesSection } from "@/sections/purpose";
+import { HeroSection } from "@/sections/hero";
+import { PartenersSection } from "@/sections/partners";
 
 export default function Home() {
   return (
     <main className="h-full flex flex-col gap-12 justify-center py-5 items-center">
-      <Hero />
-      <InformationSection />
-      <Purpose />
-      <Event />
-      <TeamMembers />
-      {/* <ContactUs /> */}
+      <HeroSection />
+      <PartenersSection />
+      <ValuesSection />
     </main>
   );
 }

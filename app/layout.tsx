@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar/Navbar";
-import { Footer } from "@/components/footer/Footer";
+import { Navbar } from "@/sections/navbar";
 import { cn } from "@/lib/utils";
-import { FloatingNav } from "@/components/navbar/floating-navbar";
+import { FloatingNav } from "@/sections/navbar/floating-navbar";
+import { Footer } from "@/sections/footer";
 
-const mont = Montserrat({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Maputo Frontenders - Comunidade Frontend de Moçambique",
@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </head>
-      <body className={cn(`bg-mf-background antialiased`, mont.className)}>
+      <body className={cn(`bg-mf-background`, inter.className)}>
         <div className="flex flex-col h-full">
           <Navbar className="pt-8" />
           <FloatingNav />
