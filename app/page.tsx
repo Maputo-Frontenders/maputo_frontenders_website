@@ -1,7 +1,7 @@
 import { ValuesSection } from "@/sections/purpose";
 import { HeroSection } from "@/sections/hero";
 import { PartenersSection } from "@/sections/partners";
-import TestimonialSection from "@/sections/testimonials";
+import { TestimonialSection } from "@/sections/testimonials";
 
 export default function Home() {
   return (
