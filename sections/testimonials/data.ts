@@ -20,4 +20,11 @@ export const testimonials = [
     testimony:
       'A comunidade Maputo Frontenders foi fundamental para o meu crescimento, permitindo-me criar uma rede de contatos e aprender de forma mais eficiente. Além disso, colaborar com outros membros ajudou a desenvolver minhas habilidades técnicas e de resolução de problemas.',
   },
+  {
+    name: 'Hete Odete',
+    role: 'Frontend Developer',
+    image: '/testimonials/Hete Odete.png',
+    testimony:
+      'A Maputo Frontenders foi a primeira comunidade de desenvolvedores que me juntei, e por meio dos seus eventos tive a oportunidade de conhecer e ouvir vários profissionais da área de tecnologia em Moçambique, o que me inspirou e tem me inspirado como desenvolvedora de software.',
+  },
 ];
