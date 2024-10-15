@@ -47,6 +47,20 @@ export function TestimonialCarousel ({ testimonials }: TestimonialCarouselProps)
     resetAutoSlide();
   }, [currentTestimonial]);
 
+  // retorna  3 testemunhos visíveis a partir do actual com o actual no centro
+  const getVisibleTestimonials = () => {
+    const prevIndex = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    const nextIndex = (currentTestimonial + 1) % testimonials.length;
+
+    return [
+      testimonials[prevIndex],  // O anterior
+      testimonials[currentTestimonial],  // O actual (no centro)
+      testimonials[nextIndex]  // O próximo
+    ];
+  };
+
+  const visibleTestimonials = getVisibleTestimonials();
+
   const testimonial = testimonials[currentTestimonial];
 
   return (
@@ -55,26 +69,22 @@ export function TestimonialCarousel ({ testimonials }: TestimonialCarouselProps)
         {testimonial.testimony}
       </p>
 
-      <div className="flex justify-center items-center space-x-6 overflow-x-auto no-scrollbar">
-        {testimonials.map((_, index) => (
+      <div className="flex justify-center items-center space-x-6 overflow-hidden no-scrollbar">
+        {visibleTestimonials.map((testimonial, index) => (
           <div key={index} className="flex items-center">
             <button
-              onClick={() => setCurrentTestimonial(index)}
-              className={`rounded-full ${
-                index === currentTestimonial ? 'border-2 border-green-500' : ''
-              }`}
+              onClick={() => setCurrentTestimonial((currentTestimonial + index - 1 + testimonials.length) % testimonials.length)}
+              className={`rounded-full ${index === 1 ? 'border-2 border-green-500' : ''}`}
             >
               <Image
-                src={testimonials[index].image}
-                alt={testimonials[index].name}
-                width={index === currentTestimonial ? 64 : 32} 
-                height={index === currentTestimonial ? 64 : 32} 
-                className={`rounded-full object-cover transition-all duration-300 ${
-                  index === currentTestimonial ? 'grayscale-0' : 'grayscale'
-                }`}
+                src={testimonial.image}
+                alt={testimonial.name}
+                width={index === 1 ? 64 : 32} 
+                height={index === 1 ? 64 : 32} 
+                className={`rounded-full object-cover transition-all duration-300 ${index === 1 ? 'grayscale-0' : 'grayscale'}`}
               />
             </button>
-            {index < testimonials.length - 1 && (
+            {index < visibleTestimonials.length - 1 && (
               <Line className="ml-8" />
             )}
           </div>
