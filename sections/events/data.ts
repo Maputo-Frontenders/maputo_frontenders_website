@@ -10,7 +10,7 @@ export const events: Event[] = [
   {
     id: 1,
     title: "Linguagens de Programação em Português - Design Líquido",
-    imageUrl: "/testimonials/image 11.png",
+    imageUrl: "/events/image 11.png",
     type: "Presencial",
     status: "Upcoming",
   },
