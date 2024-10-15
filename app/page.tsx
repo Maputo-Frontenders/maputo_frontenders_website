@@ -1,6 +1,7 @@
 import { ValuesSection } from "@/sections/purpose";
 import { HeroSection } from "@/sections/hero";
 import { PartenersSection } from "@/sections/partners";
+import { EventsSection } from "@/sections/events";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <PartenersSection />
       <ValuesSection />
+      <EventsSection />
     </main>
   );
 }
