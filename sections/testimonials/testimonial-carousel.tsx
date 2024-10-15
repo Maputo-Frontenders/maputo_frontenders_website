@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Line from './line';
 
@@ -16,16 +16,36 @@ interface TestimonialCarouselProps {
 
 export function TestimonialCarousel ({ testimonials }: TestimonialCarouselProps) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); // Referência para armazenar o intervalo
 
   // Função para alternar automaticamente o testemunho a cada 5 segundos
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startAutoSlide = () => {
+    intervalRef.current = setInterval(() => {
       setCurrentTestimonial((prev) =>
         prev === testimonials.length - 1 ? 0 : prev + 1
       );
-    }, 5000); // Alterna a cada 5 segundos
-    return () => clearInterval(interval);
+    }, 5000);
+  };
+
+  const resetAutoSlide = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    startAutoSlide();
+  };
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, [testimonials]);
+
+  useEffect(() => {
+    resetAutoSlide();
+  }, [currentTestimonial]);
 
   const testimonial = testimonials[currentTestimonial];
 
@@ -66,4 +86,3 @@ export function TestimonialCarousel ({ testimonials }: TestimonialCarouselProps)
     </div>
   );
 };
-
