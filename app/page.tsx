@@ -1,6 +1,7 @@
 import { ValuesSection } from "@/sections/purpose";
 import { HeroSection } from "@/sections/hero";
 import { PartenersSection } from "@/sections/partners";
+import { EventsSection } from "@/sections/events";
 import { TestimonialSection } from "@/sections/testimonials";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <PartenersSection />
       <ValuesSection />
+      <EventsSection />
       <TestimonialSection />
     </main>
   );
