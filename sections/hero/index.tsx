@@ -3,6 +3,8 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 import BlurBackground from "@/public/blur-background.svg";
+import SquareBackground from "@/assets/svg/square-background.svg";
+import RadialOpacityBackground from "@/assets/svg/radial-opacity-background.svg";
 import Image from "next/image";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 
@@ -14,6 +16,17 @@ export function HeroSection() {
         alt="Backcground Blur"
         className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
+      <Image
+        src={SquareBackground}
+        alt="Backcground Blur"
+        className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 w-full "
+      />
+      <Image
+        src={RadialOpacityBackground}
+        alt="Backcground Blur"
+        className="absolute -z-50 top-full left-1/2 -translate-x-1/2 translate-y-1/2 w-full opacity-75"
+      />
+
       <div className="flex mx-auto justify-center py-1 w-full hover:underline">
         <Link
           href={"#"}
