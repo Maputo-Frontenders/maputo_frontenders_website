@@ -5,10 +5,6 @@ export interface NavItem {
 
 export const NavData: NavItem[] = [
   {
-    label: "Ínicio",
-    link: "/",
-  },
-  {
     label: "Sobre",
     link: "#impacto",
   },

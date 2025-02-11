@@ -5,7 +5,7 @@ import { NavData, NavItem } from "./data";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Logo from "@/public/Logo.svg";
+import Logo from "@/public/Logo.png";
 
 export function Navbar({ className }: { className?: string }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ export function Navbar({ className }: { className?: string }) {
               onClick={toggleMenu}
               data-collapse-toggle="navbar-cta"
               type="button"
-              className="inline-flex items-center px-2 py-3  justify-center text-sm text-white rounded-lg md:hidden hover:bg-mf-secondProposalHover focus:outline-none focus:ring-2 focus:ring-mf-secondProposal dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center px-2 py-3  justify-center text-sm text-white rounded-2xl md:hidden hover:bg-mf-secondProposalHover focus:outline-none focus:ring-2 focus:ring-mf-secondProposal dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-cta"
               aria-expanded="false"
             >
@@ -62,9 +62,9 @@ export function Navbar({ className }: { className?: string }) {
             </button>
             <Link href={"/"}>
               <Image
-                className="max-[400px]:hidden"
-                width={64}
-                height={64}
+                className="max-[400px]:hidden "
+                width={56}
+                height={56}
                 src={Logo}
                 alt="Maputo Frontenders"
               />
@@ -95,7 +95,7 @@ export function Navbar({ className }: { className?: string }) {
                 <Link
                   key={item.label}
                   href={item.link}
-                  className="block py-2 px-3 md:p-0 text-white font-medium uppercase hover:text-mf-secondaryVariation"
+                  className="block py-2 px-3 md:p-0 text-white font-medium uppercase hover:text-mf-secondaryVariation ml-28"
                 >
                   {item.label}
                 </Link>
