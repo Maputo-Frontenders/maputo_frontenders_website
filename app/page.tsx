@@ -1,4 +1,4 @@
-import { ValuesSection } from "@/sections/purpose";
+import { ImpactSection } from "@/sections/purpose";
 import { HeroSection } from "@/sections/hero";
 import { PartenersSection } from "@/sections/partners";
 import { EventsSection } from "@/sections/events";
@@ -9,7 +9,7 @@ export default function Home() {
     <main className="h-full flex flex-col gap-16 justify-center py-5 items-center">
       <HeroSection />
       <PartenersSection />
-      <ValuesSection />
+      <ImpactSection />
       <EventsSection />
       <TestimonialSection />
     </main>

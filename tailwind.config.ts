@@ -27,6 +27,11 @@ const config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-teal-purple": "linear-gradient(90deg, #16F8B6, #8244FF)",
+        "gradient-cyan-pink": "linear-gradient(90deg, #1FCFF1, #FF5FCC)",
+        "gradient-teal-cyan": "linear-gradient(90deg, #16F8B6, #1FCFF1)",
+        "gradient-orange-purple": "linear-gradient(90deg, #FF9F24, #8244FF)",
+        "gradient-cyan-purple": "linear-gradient(90deg, #1FCFF1, #8244FF)",
       },
       colors: {
         border: "hsl(var(--border))",
