@@ -32,6 +32,8 @@ const config = {
         "gradient-teal-cyan": "linear-gradient(90deg, #16F8B6, #1FCFF1)",
         "gradient-orange-purple": "linear-gradient(90deg, #FF9F24, #8244FF)",
         "gradient-cyan-purple": "linear-gradient(90deg, #1FCFF1, #8244FF)",
+        "gradient-white-dark": "linear-gradient(90deg, #2A2A2A, #9B9B9B)",
+        "gradient-dark-blue": "linear-gradient(90deg, #020612, #040D20)",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,6 +62,7 @@ const config = {
           turquoise: "#16F8B6",
           pink: "#FF5FCC",
           lavender: "#A679FF",
+          darkGray: "#2A2A2A",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

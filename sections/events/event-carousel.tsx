@@ -1,4 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
+// TODO:
+// - [ ] AutoPlay on small devices
+
+import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -10,52 +13,71 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils"; 
-import { events } from "./data"; 
+import { cn } from "@/lib/utils";
+import { events } from "./data";
+import { EventStatusEnum, EventTypesEnum } from "@/types";
 
 export function EventCarousel() {
   return (
-    <Carousel className="w-full lg:max-w-6xl md:max-w-3xl mt-14">
-      <CarouselContent className="-ml-1 flex flex-col md:flex-row">
+    <Carousel
+      className="w-full md:container"
+      opts={{
+        align: "start",
+      }}
+    >
+      <CarouselContent className=" mx-5 md:mx-10 gap-4">
         {events.map((event) => {
-          const isPresencial = event.type === "Presencial";
-
+          const isPresencial = event.type === "in-person";
           return (
-            <CarouselItem key={event.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card className="p-2 relative border border-gray-500 bg-card-foreground text-mf-white rounded-sm overflow-hidden md:w-[346px] h-[458px]">
-                  <div className="relative h-3/5 w-full mb-6">
+            <CarouselItem
+              key={event.id}
+              className="pl-1 md:basis-1/2 lg:basis-1/3 "
+            >
+              <div className="">
+                <Card className=" bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4">
+                  <div className="relative flex flex-col  gap-4  w-full">
                     <Image
                       src={event.imageUrl}
                       alt={event.title}
-                      layout="fill"
-                      objectFit="cover"
                       className="rounded-lg"
+                      width={1024}
+                      height={1024}
                     />
-                    {event.status && (
+                    {event.status && event.status != "past" && (
                       <Badge
                         variant="outline"
-                        className="absolute top-2 left-2 font-bold border-mf-orange text-mf-orange rounded-[8px] text-xs px-4 py-1"
+                        className="absolute bg-mf-dark top-2 left-2 font-bold border-mf-orange text-mf-orange rounded-lg text-xs px-4 py-1"
                       >
-                        {event.status}
+                        {EventStatusEnum[event.status]}
                       </Badge>
                     )}
-                    <Badge
-                      variant="outline"
-                      className={cn(
-                        "absolute -bottom-12 left-2 font-bold rounded-[8px] text-xs px-4 py-1",
-                        isPresencial ? "border-mf-purple text-mf-purple" : "border-mf-secondProposal text-mf-secondProposal"
-                      )}
-                    >
-                      {event.type}
-                    </Badge>
                   </div>
-                  <CardContent className="p-4 flex flex-col h-2/5 mt-12">
-                    <h4 className="text-base text-start font-semibold">{event.title}</h4>
+
+                  <Badge
+                    variant="outline"
+                    className={cn(
+                      "w-fit font-bold rounded-lg text-xs p-[1px] bg-gradient-white-dark border-transparent ring-transparent border-0",
+                      isPresencial
+                        ? " text-mf-purple"
+                        : " text-mf-secondProposal"
+                    )}
+                  >
+                    <div
+                      className="bg-mf-dark flex h-full w-full py-1
+                      px-4 rounded-md"
+                    >
+                      {EventTypesEnum[event.type]}
+                    </div>
+                  </Badge>
+
+                  <div className=" flex flex-col gap-4">
+                    <h4 className="text-base text-start font-semibold line-clamp-2">
+                      {event.title}
+                    </h4>
                     <Button
                       variant="outline"
                       className={cn(
-                        "mt-4 flex items-center text-sm uppercase font-bold justify-center px-9 py-2 rounded-[8px] transition-colors duration-200",
+                        " flex items-center text-sm uppercase font-bold justify-center  rounded-lg transition-colors duration-200",
                         isPresencial
                           ? "text-mf-purple hover:bg-mf-purple hover:text-mf-background border-mf-purple"
                           : "text-mf-secondProposal hover:bg-mf-secondProposal hover:text-mf-background"
@@ -64,15 +86,15 @@ export function EventCarousel() {
                       Ver Detalhes
                       <ChevronRight />
                     </Button>
-                  </CardContent>
+                  </div>
                 </Card>
               </div>
             </CarouselItem>
           );
         })}
       </CarouselContent>
-      <div className="md:block hidden">
-        <CarouselPrevious />
+      <div className="hidden md:block">
+        <CarouselPrevious className="disabled:cursor-not-allowed " />
         <CarouselNext />
       </div>
     </Carousel>
