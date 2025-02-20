@@ -2,18 +2,23 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { cards } from "./data";
 
 export const InfiniteMovingCards = ({
   direction = "left",
   speed = "normal",
   pauseOnHover = false,
   className,
+  data,
 }: {
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  data: {
+    title: string;
+    description: string;
+    className: string;
+  }[];
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
@@ -68,7 +73,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20   overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "text-white scroller relative z-20   overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -80,15 +85,15 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {cards.map((item) => (
+        {data.map((item) => (
           <div
             className="bg-mf-dark rounded-3xl p-8 space-y-4 w-80"
             key={item.title}
           >
-            <h3 className={cn("border-l-2 px-2 text-lg", `border-mf-orange`)}>
+            <h3 className={cn("border-l-2 px-2 text-lg", `${item.className}`)}>
               {item.title}
             </h3>
-            <p>{item.description}</p>
+            <p className="text-white/50">{item.description}</p>
           </div>
         ))}
       </ul>
