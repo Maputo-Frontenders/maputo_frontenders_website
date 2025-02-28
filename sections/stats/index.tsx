@@ -1,6 +1,10 @@
 import Image from "next/image";
-import { cards } from "./data";
 import { cn } from "@/lib/utils";
+import { cards } from "./data";
+
+// TODO:
+// - animate card on hover;
+// - center the last card on medium devices;
 
 export function ImpactSection() {
   return (

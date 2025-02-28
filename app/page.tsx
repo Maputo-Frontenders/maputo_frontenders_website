@@ -1,4 +1,4 @@
-import { ImpactSection } from "@/sections/purpose";
+import { ImpactSection } from "@/sections/stats";
 import { HeroSection } from "@/sections/hero";
 import { PartenersSection } from "@/sections/partners";
 import { EventsSection } from "@/sections/events";
