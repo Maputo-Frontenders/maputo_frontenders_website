@@ -10,7 +10,7 @@ import { InfiniteMovingCards } from "./infinite-moving-cards";
 
 export function HeroSection() {
   return (
-    <section className="w-full space-y-4 relative">
+    <section className="w-full space-y-4 relative pt-5">
       <Image
         src={BlurBackground}
         alt="Backcground Blur"
