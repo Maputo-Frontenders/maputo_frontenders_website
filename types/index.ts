@@ -20,3 +20,11 @@ export type EventProps = {
   type: eventTypes;
   status: eventStatusTypes;
 };
+
+export interface TeamMemberProps {
+  name: string;
+  role: string;
+  image: string;
+  roleColor: string;
+  bio?: string;
+}

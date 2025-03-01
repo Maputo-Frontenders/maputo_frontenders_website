@@ -5,6 +5,7 @@ import { EventsSection } from "@/sections/events";
 import { TestimonialSection } from "@/sections/testimonials";
 import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 import { cards } from "@/sections/purpose/data";
+import { TeamMembers } from "@/sections/team-members";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <EventsSection />
       <TestimonialSection />
       <InfiniteMovingCards data={cards} />
+      <TeamMembers />
     </main>
   );
 }

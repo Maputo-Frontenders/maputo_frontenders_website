@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function TestimonialSection() {
   return (
-    <section className=" w-full bg-mf-background text-white space-y-8">
+    <section className="w-full text-white space-y-8">
       <div className="text-center space-y-2">
         <h2 className="text-sm uppercase text-mf-secondProposal">
           "Ouvimos Dizer"
