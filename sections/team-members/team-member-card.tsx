@@ -13,7 +13,7 @@ export function TeamMemberCard({ member }: { member: TeamMemberProps }) {
           alt={member.name}
           width={1024}
           height={1024}
-          className="object-cover object-top w-full h-full"
+          className="object-cover object-top w-full h-full grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
       </div>
