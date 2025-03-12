@@ -50,7 +50,6 @@ export function HeroSection() {
       <div className="flex mx-auto justify-center py-2 w-full">
         <Link
           href={""}
-          target="_blank"
           className="flex items-center flex-row outline outline-1 outline-mf-turquoise hover:bg-gray-700 text-mf-turquoise font-bold py-2 px-4 rounded group"
         >
           SAIBA MAIS
