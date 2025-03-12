@@ -8,7 +8,7 @@ import { cards } from "./data";
 
 export function ImpactSection() {
   return (
-    <section className="w-full text-mf-white space-y-4 container">
+    <section className="w-full text-mf-white space-y-4 container" id="impacto">
       <h2 className="uppercase text-sm text-center text-mf-orange">Impacto</h2>
 
       <div className="space-y-10">

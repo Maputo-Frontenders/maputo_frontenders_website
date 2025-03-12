@@ -3,7 +3,7 @@ import { TeamMemberCard } from "./team-member-card";
 
 export function TeamMembers() {
   return (
-    <section className="container w-full text-white space-y-8">
+    <section className="container w-full text-white space-y-8" id="team">
       <div className="text-center space-y-2">
         <h2 className="text-sm uppercase text-mf-secondProposal">Nossa team</h2>
         <p className="text-2xl font-bold">

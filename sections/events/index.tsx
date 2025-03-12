@@ -5,7 +5,10 @@ import { ArrowUpRight } from "lucide-react";
 
 export function EventsSection() {
   return (
-    <section className="flex flex-col w-full items-center px-8 py-10 bg-mf-dark space-y-8">
+    <section
+      className="flex flex-col w-full items-center px-8 py-10 bg-mf-dark space-y-8"
+      id="eventos"
+    >
       <h2 className="text-sm text-mf-secondProposal uppercase">
         Eventos Recentes
       </h2>
@@ -21,7 +24,6 @@ export function EventsSection() {
       <EventCarousel />
 
       <Link
-        target="_blank"
         href={""}
         className="w-fit truncate text-clip  flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
       >
