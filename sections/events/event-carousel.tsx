@@ -25,24 +25,25 @@ export function EventCarousel() {
         align: "start",
       }}
     >
-      <CarouselContent className="mx-7 sm:mx-5 md:mx-10 gap-4">
+      <CarouselContent className="mx-7 sm:mx-5 md:mx-10 gap-4 ">
         {events.map((event) => {
           const isPresencial = event.type === "in-person";
           return (
             <CarouselItem
               key={event.id}
-              className=" pl-1 md:basis-1/2 lg:basis-1/3 "
+              className="pl-1 md:basis-1/2 lg:basis-1/3 h-full"
             >
-              <div className="h-full">
-                <Card className=" bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4">
-                  <div className="relative flex flex-col  gap-4  w-full">
-                    <Image
-                      src={event.imageUrl}
-                      alt={event.title}
-                      className="rounded-lg"
-                      width={1024}
-                      height={1024}
-                    />
+              <div className="h-full flex">
+                <Card className="bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4 flex-1 flex flex-col">
+                  <div className="relative flex flex-col gap-4 w-full">
+                    <div className="relative h-80 w-full">
+                      <Image
+                        src={event.imageUrl}
+                        alt={event.title}
+                        className="rounded-lg object-cover"
+                        fill
+                      />
+                    </div>
                     {event.status && event.status != "past" && (
                       <Badge
                         variant="outline"
@@ -70,14 +71,14 @@ export function EventCarousel() {
                     </div>
                   </Badge>
 
-                  <div className=" flex flex-col gap-4">
+                  <div className="flex flex-col gap-4 mt-auto">
                     <h4 className="text-base text-start font-semibold line-clamp-2">
                       {event.title}
                     </h4>
                     <Button
                       variant="outline"
                       className={cn(
-                        " flex items-center text-sm uppercase font-bold justify-center  rounded-lg transition-colors duration-200",
+                        "flex items-center text-sm uppercase font-bold justify-center rounded-lg transition-colors duration-200",
                         isPresencial
                           ? "text-mf-purple hover:bg-mf-purple hover:text-mf-background border-mf-purple"
                           : "text-mf-secondProposal hover:bg-mf-secondProposal hover:text-mf-background"
