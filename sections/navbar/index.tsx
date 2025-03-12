@@ -94,7 +94,7 @@ export function Navbar({ className }: { className?: string }) {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center ml-40  space-x-8">
               {NavData.map((item: NavItem) => (
                 <Link
                   key={item.label}
@@ -109,7 +109,6 @@ export function Navbar({ className }: { className?: string }) {
 
             {/* CTA Button */}
             <Link
-              target="_blank"
               href={""}
               className="hidden md:flex items-center justify-center font-semibold uppercase text-center rounded-lg px-4 py-2.5 md:px-5 md:py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group transition-all duration-300"
             >
