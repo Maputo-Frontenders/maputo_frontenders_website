@@ -7,7 +7,7 @@ import Link from "next/link";
 export function TestimonialSection() {
   return (
     <section className="w-full text-white space-y-8">
-      <div className="text-center space-y-2">
+      <div className=" container text-center space-y-2">
         <h2 className="text-sm uppercase text-mf-secondProposal">
           "Ouvimos Dizer"
         </h2>
@@ -23,7 +23,6 @@ export function TestimonialSection() {
       <TestimonialCarousel testimonials={testimonials} />
 
       <Link
-        target="_blank"
         href={""}
         className="w-fit mx-auto   flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
       >
