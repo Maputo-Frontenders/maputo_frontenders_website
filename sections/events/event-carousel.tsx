@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { Calendar, CalendarDays, ChevronRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { events } from "./data";
 import { EventStatusEnum, EventTypesEnum } from "@/types";
@@ -74,7 +74,23 @@ export function EventCarousel() {
                   <div className="flex flex-col gap-4 mt-auto">
                     <h4 className="text-base text-start font-semibold line-clamp-2">
                       {event.title}
+                      <p className="invisible">.</p>
                     </h4>
+                    <div className="flex gap-2 flex-col">
+                      <span className="flex items-center gap-2">
+                        <CalendarDays className="w-4 h-4" />
+                        <span className="text-sm tracking-wide ">
+                          {event.date}
+                        </span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4" />
+                        <span className="text-sm tracking-wide ">
+                          {event.location}
+                        </span>
+                      </span>
+                    </div>
+
                     <Button
                       variant="outline"
                       className={cn(

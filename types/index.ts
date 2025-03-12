@@ -19,6 +19,8 @@ export type EventProps = {
   imageUrl: string;
   type: eventTypes;
   status: eventStatusTypes;
+  location: string;
+  date: string;
 };
 
 export interface TeamMemberProps {

@@ -6,6 +6,8 @@ export const events: EventProps[] = [
     imageUrl: "/events/1.jpeg",
     type: "virtual",
     status: "past",
+    location: "Online",
+    date: "23/10/2024",
   },
   {
     id: 1,
@@ -13,6 +15,8 @@ export const events: EventProps[] = [
     imageUrl: "/events/2.jpeg",
     type: "virtual",
     status: "past",
+    location: "Online",
+    date: "03/10/2024",
   },
   {
     id: 3,
@@ -20,5 +24,7 @@ export const events: EventProps[] = [
     imageUrl: "/events/3.jpeg",
     type: "virtual",
     status: "past",
+    location: "Online",
+    date: "18/09/2024",
   },
 ];
