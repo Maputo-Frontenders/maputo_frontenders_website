@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={cn(`bg-mf-background`, inter.className)}>
         <div className="flex flex-col h-full">
           <Navbar className="pt-8" />
-          <FloatingNav />
+          {/* <FloatingNav /> */}
           <main className="h-full">{children}</main>
           <Footer />
         </div>
