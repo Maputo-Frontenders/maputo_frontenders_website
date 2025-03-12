@@ -25,15 +25,15 @@ export function EventCarousel() {
         align: "start",
       }}
     >
-      <CarouselContent className=" mx-5 md:mx-10 gap-4">
+      <CarouselContent className="mx-7 sm:mx-5 md:mx-10 gap-4">
         {events.map((event) => {
           const isPresencial = event.type === "in-person";
           return (
             <CarouselItem
               key={event.id}
-              className="pl-1 md:basis-1/2 lg:basis-1/3 "
+              className=" pl-1 md:basis-1/2 lg:basis-1/3 "
             >
-              <div className="">
+              <div className="h-full">
                 <Card className=" bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4">
                   <div className="relative flex flex-col  gap-4  w-full">
                     <Image
@@ -93,10 +93,10 @@ export function EventCarousel() {
           );
         })}
       </CarouselContent>
-      <div className="hidden md:block">
+      {/* <div className="hidden md:block">
         <CarouselPrevious className="disabled:cursor-not-allowed " />
         <CarouselNext />
-      </div>
+      </div> */}
     </Carousel>
   );
 }
