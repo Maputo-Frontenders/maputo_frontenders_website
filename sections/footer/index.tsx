@@ -3,6 +3,7 @@ import { socialMediaLinks } from "./data";
 import Link from "next/link";
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="bg-mf-least flex flex-col-reverse gap-4 justify-between px-20 py-4 items-center md:flex-row">
       <div className="text-white font-normal text-base">
@@ -14,7 +15,7 @@ export const Footer = () => {
           <Link
             key={socialMedia.description}
             href={socialMedia.href}
-            className=" bg-mf-secondary rounded-full p-2  gap-3 hover:bg-mf-secondaryVariation"
+            className=" bg-mf-dark rounded-full p-2  gap-3 "
           >
             <socialMedia.icon className="py-1 px-0 text-white" />
           </Link>
@@ -22,7 +23,7 @@ export const Footer = () => {
       </div>
 
       <div className="text-white font-medium text-sm">
-        &copy; 2024 Maputo Frontenders
+        &copy; {currentYear} Maputo Frontenders
       </div>
     </div>
   );
