@@ -8,8 +8,8 @@ export enum EventTypesEnum {
 
 type eventStatusTypes = "upcoming" | "current" | "past";
 export enum EventStatusEnum {
-  "upcoming" = "Upcoming",
-  "current" = "current",
+  "upcoming" = "Brevemente",
+  "current" = "Decorendo",
   "past" = "",
 }
 
