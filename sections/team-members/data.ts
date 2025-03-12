@@ -4,7 +4,7 @@ export const teamMembers: TeamMemberProps[] = [
   {
     name: "Hete Odete",
     role: "Presidente",
-    image: "/members/ancha-pedro.png",
+    image: "/members/hete-odete.jpeg",
     roleColor: "#ff9f24",
     bio: "-",
   },
@@ -32,7 +32,7 @@ export const teamMembers: TeamMemberProps[] = [
   {
     name: "Werson Pofo",
     role: "Gestor de Mídias Sociais",
-    image: "/members/ancha-pedro.png",
+    image: "/members/werson-pofo.jpeg",
     roleColor: "#16f8b6",
     bio: "-",
   },

@@ -6,13 +6,13 @@ import { ArrowUpRight } from "lucide-react";
 export function EventsSection() {
   return (
     <section
-      className="flex flex-col w-full items-center px-8 py-10 bg-mf-dark space-y-8"
+      className=" flex flex-col w-full items-center py-10 bg-mf-dark space-y-8"
       id="eventos"
     >
       <h2 className="text-sm text-mf-secondProposal uppercase">
         Eventos Recentes
       </h2>
-      <h3 className="text-2xl text-mf-white text-center font-bold">
+      <h3 className="container text-2xl text-mf-white text-center font-bold">
         Junte-se a nós e participe dos eventos que estão a moldar{" "}
         <br className="hidden md:block" />o{" "}
         <span className="font-bold bg-gradient-cyan-pink bg-clip-text text-transparent ">

@@ -6,7 +6,7 @@ import { TeamMemberProps } from "@/types";
 
 export function TeamMemberCard({ member }: { member: TeamMemberProps }) {
   return (
-    <div className="w-60 md:w-64 h-[300px] relative overflow-hidden rounded-lg border-0 shadow-sm">
+    <div className="w-80 md:w-64 h-[300px] relative overflow-hidden rounded-lg border-0 shadow-sm">
       <div className="relative h-full">
         <Image
           src={member.image}

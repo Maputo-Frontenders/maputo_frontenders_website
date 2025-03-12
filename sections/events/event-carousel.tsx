@@ -25,7 +25,7 @@ export function EventCarousel() {
         align: "start",
       }}
     >
-      <CarouselContent className="mx-7 sm:mx-5 md:mx-10 gap-4 ">
+      <CarouselContent className="mx-4 sm:mx-5 md:mx-10 gap-4 ">
         {events.map((event) => {
           const isPresencial = event.type === "in-person";
           return (
