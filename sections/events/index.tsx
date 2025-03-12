@@ -9,8 +9,9 @@ export function EventsSection() {
       <h2 className="text-sm text-mf-secondProposal uppercase">
         Eventos Recentes
       </h2>
-      <h3 className="text-2xl text-mf-white text-center font-semibold">
-        Junte-se a nós e participe dos eventos que estão a moldar <br />o{" "}
+      <h3 className="text-2xl text-mf-white text-center font-bold">
+        Junte-se a nós e participe dos eventos que estão a moldar{" "}
+        <br className="hidden md:block" />o{" "}
         <span className="font-bold bg-gradient-cyan-pink bg-clip-text text-transparent ">
           futuro do desenvolvimento frontend
         </span>{" "}

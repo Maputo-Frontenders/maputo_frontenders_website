@@ -86,7 +86,7 @@ export function TestimonialCarousel({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-semibold text-center italic my-auto"
+            className="text-xl font-medium text-center  my-auto"
           >
             {testimonial?.testimony}
           </motion.p>

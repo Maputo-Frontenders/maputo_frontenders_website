@@ -19,7 +19,7 @@ export function HeroSection() {
       <Image
         src={SquareBackground}
         alt="Backcground Blur"
-        className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 w-full "
+        className="hidden md:block  absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 w-full "
       />
       <Image
         src={RadialOpacityBackground}
@@ -37,7 +37,7 @@ export function HeroSection() {
         </Link>
       </div> */}
 
-      <div className="mx-auto py-2 w-full text-center">
+      <div className=" mx-auto py-2 w-full text-center">
         <p className="text-4xl font-bold text-white ">
           A maior comunidade <br />
           de{" "}

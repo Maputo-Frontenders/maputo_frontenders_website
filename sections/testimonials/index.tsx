@@ -11,7 +11,7 @@ export function TestimonialSection() {
         <h2 className="text-sm uppercase text-mf-secondProposal">
           "Ouvimos Dizer"
         </h2>
-        <p className="text-xl md:text-2xl font-medium">
+        <p className="text-2xl font-bold">
           Descubra as{" "}
           <span className="bg-gradient-teal-cyan bg-clip-text text-transparent">
             opiniões e experiências
