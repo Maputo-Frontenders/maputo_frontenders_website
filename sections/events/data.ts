@@ -10,7 +10,7 @@ export const events: EventProps[] = [
     date: "23/10/2024",
   },
   {
-    id: 1,
+    id: 2,
     title: "Hacktoberfest - Contribua com projetos Open Source",
     imageUrl: "/events/2.jpeg",
     type: "virtual",
