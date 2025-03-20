@@ -33,6 +33,7 @@ export const navLinks = (lang: Locale) => {
 };
 
 export const socialLinks = [
+  { name: "X", href: "https://twitter.com/mptfrontenders", icon: Twitter },
   {
     name: "LinkedIn",
     href: "https://linkedin.com/company/maputo-frontenders",
@@ -43,7 +44,6 @@ export const socialLinks = [
     href: "https://www.instagram.com/mptfrontenders/",
     icon: InstagramIcon,
   },
-  { name: "X", href: "https://twitter.com/mptfrontenders", icon: Twitter },
   {
     name: "YouTube",
     href: "http://www.youtube.com/@mptfrontenders",
