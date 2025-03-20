@@ -40,7 +40,7 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
   };
 
   return (
-    <nav className="flex gap-6">
+    <nav className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
       {navLinks(params.lang).map((link) => {
         const LinkContent = (
           <motion.span className="flex items-center">
@@ -49,7 +49,7 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
               <AnimatePresence>
                 {hoveredLink === link.name && (
                   <motion.span
-                    className="inline-flex items-center max-[400px]:hidden overflow-hidden"
+                    className="inline-flex items-center max-sm:hidden overflow-hidden"
                     initial={{ width: 0, opacity: 0 }}
                     animate={{ width: "auto", opacity: 1 }}
                     exit={{ width: 0, opacity: 0 }}
@@ -77,30 +77,30 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
         );
 
         return (
-          <div key={link.name}>
+          <div key={link.name} className="w-auto">
             {link.description ? (
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
                       href={link.href}
-                      className="hover:text-mf-secondary transition-colors text-lg group"
+                      className="hover:text-mf-secondary transition-colors text-base sm:text-lg group"
                       onMouseEnter={() => setHoveredLink(link.name)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
                       {LinkContent}
                     </Link>
                   </TooltipTrigger>
-                  <TooltipContent className="flex items-center gap-2 p-3 bg-mf-dark text-mf-white rounded-md border-none">
+                  <TooltipContent className="flex items-center gap-2 p-2 sm:p-3 bg-mf-dark text-mf-white rounded-md border-none text-sm sm:text-base">
                     <span>{link.description}</span>
                     <button
-                      className="h-6 w-6 bg-mf-dark text-mf-white rounded-md border-none"
+                      className="h-5 w-5 sm:h-6 sm:w-6 bg-mf-dark text-mf-white rounded-md border-none"
                       onClick={() => copyToClipboard(link.description)}
                     >
                       {copying ? (
-                        <Check className="h-4 w-4" />
+                        <Check className="h-3 w-3 sm:h-4 sm:w-4" />
                       ) : (
-                        <Copy className="h-4 w-4" />
+                        <Copy className="h-3 w-3 sm:h-4 sm:w-4" />
                       )}
                       <span className="sr-only">Copy</span>
                     </button>
@@ -110,7 +110,7 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
             ) : (
               <Link
                 href={link.href}
-                className="hover:text-mf-secondary transition-colors text-lg group"
+                className="hover:text-mf-secondary transition-colors text-base sm:text-lg group"
                 onMouseEnter={() => setHoveredLink(link.name)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
