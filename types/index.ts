@@ -15,12 +15,57 @@ export enum EventStatusEnum {
 
 export type EventProps = {
   id: number;
-  title: string;
-  imageUrl: string;
   type: eventTypes;
-  status: eventStatusTypes;
+  image: {
+    asset: {
+      _ref: any;
+      _type: any;
+    };
+  };
+  title: string;
+  tags: string[];
+  description: string;
   location: string;
-  date: string;
+  date: {
+    start: string;
+    end: string;
+  };
+  status: eventStatusTypes;
+  agendaImages?: {
+    asset: {
+      _ref: any;
+      _type: any;
+    };
+  }[];
+  galleryLink?: string;
+  rsvpLink?: string;
+  speakers: {
+    name: string;
+    role: string;
+    image: {
+      asset: {
+        _ref: any;
+        _type: any;
+      };
+    };
+    company: string;
+    social: {
+      twitter?: string;
+      linkedin?: string;
+      github?: string;
+      instagram?: string;
+    };
+  }[];
+  partners?: {
+    name: string;
+    image: {
+      asset: {
+        _ref: any;
+        _type: any;
+      };
+    };
+    link: string;
+  }[];
 };
 
 export interface TeamMemberProps {

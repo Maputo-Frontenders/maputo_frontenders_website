@@ -2,14 +2,18 @@ import * as React from "react";
 import { EventCarousel } from "./event-carousel";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { DictionaryProps } from "@/lib/getDictionary";
+import { DictionaryProps, Locale } from "@/lib/getDictionary";
 import { ParserToHtml } from "@/utils";
+import { getEvents } from "./data";
 
 type Props = {
   intl: DictionaryProps;
+  lang: Locale;
 };
 
-export function EventsSection({ intl }: Props) {
+export async function EventsSection({ intl, lang }: Props) {
+  const events = await getEvents(lang);
+
   return (
     <section
       className=" flex flex-col w-full items-center py-10 bg-mf-dark space-y-8"
@@ -25,7 +29,7 @@ export function EventsSection({ intl }: Props) {
         ])}
       </h3>
 
-      <EventCarousel />
+      <EventCarousel data={events} />
 
       <Link
         href={""}

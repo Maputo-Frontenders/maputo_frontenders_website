@@ -14,10 +14,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, CalendarDays, ChevronRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { events } from "./data";
-import { EventStatusEnum, EventTypesEnum } from "@/types";
+import { EventProps, EventStatusEnum, EventTypesEnum } from "@/types";
+import { urlFor } from "@/lib/sanity";
+import { formatDateToDDMMYYYY } from "@/utils";
 
-export function EventCarousel() {
+export function EventCarousel({ data }: { data: EventProps[] }) {
   return (
     <Carousel
       className="w-full md:container"
@@ -26,7 +27,7 @@ export function EventCarousel() {
       }}
     >
       <CarouselContent className="mx-4 sm:mx-5 md:mx-10 gap-4 ">
-        {events.map((event) => {
+        {data.map((event) => {
           const isPresencial = event.type === "in-person";
           return (
             <CarouselItem
@@ -38,7 +39,7 @@ export function EventCarousel() {
                   <div className="relative flex flex-col gap-4 w-full">
                     <div className="relative h-80 w-full">
                       <Image
-                        src={event.imageUrl}
+                        src={urlFor(event.image.asset._ref)?.url()}
                         alt={event.title}
                         className="rounded-lg object-cover"
                         fill
@@ -80,12 +81,12 @@ export function EventCarousel() {
                       <span className="flex items-center gap-2">
                         <CalendarDays className="w-4 h-4" />
                         <span className="text-sm tracking-wide ">
-                          {event.date}
+                          {formatDateToDDMMYYYY(event.date.start)}
                         </span>
                       </span>
                       <span className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
-                        <span className="text-sm tracking-wide ">
+                        <span className="text-sm tracking-wide line-clamp-1">
                           {event.location}
                         </span>
                       </span>

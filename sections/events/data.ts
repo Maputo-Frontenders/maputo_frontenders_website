@@ -1,30 +1,20 @@
+import { client } from "@/lib/sanity";
 import { EventProps } from "@/types";
-export const events: EventProps[] = [
-  {
-    id: 1,
-    title: "Aprenda a Criar Aplicações do Zero ao Mundo Real",
-    imageUrl: "/events/1.jpeg",
-    type: "virtual",
-    status: "past",
-    location: "Online",
-    date: "23/10/2024",
-  },
-  {
-    id: 2,
-    title: "Hacktoberfest - Contribua com projetos Open Source",
-    imageUrl: "/events/2.jpeg",
-    type: "virtual",
-    status: "past",
-    location: "Online",
-    date: "03/10/2024",
-  },
-  {
-    id: 3,
-    title: "Entendo Git e Versionamento de Código  ",
-    imageUrl: "/events/3.jpeg",
-    type: "virtual",
-    status: "past",
-    location: "Online",
-    date: "18/09/2024",
-  },
-];
+
+export async function getEvents(lang: string) {
+  const query = `*[_type == "events" && language == "${lang}"] | order(_createdAt desc) {title, slug, type, image, tags, description, location, date, status, agendaImages, galleryLink, rsvpLink, speakers, partners}`;
+  const data: EventProps[] = await client.fetch(query, { lang });
+  return data;
+}
+
+export async function getEventBySlug({
+  slug,
+  lang,
+}: {
+  slug: string;
+  lang: string;
+}) {
+  const query = `*[_type == "events" && language == "${lang}" && slug.current == '${slug}'] {title, slug, type, image, tags, description, location, date, status, agendaImages, galleryLink, rsvpLink, speakers, partners}[0]`;
+  const data: EventProps = await client.fetch(query, { lang });
+  return data;
+}

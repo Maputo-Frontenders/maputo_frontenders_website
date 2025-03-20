@@ -21,7 +21,7 @@ export default async function Home({ params }: Props) {
       <HeroSection intl={intl} />
       <PartenersSection intl={intl} />
       <ImpactSection intl={intl} />
-      <EventsSection intl={intl} />
+      <EventsSection intl={intl} lang={params.lang} />
       <TestimonialSection intl={intl} />
       <InfiniteMovingCards data={cards} />
       <TeamMembers intl={intl} />
