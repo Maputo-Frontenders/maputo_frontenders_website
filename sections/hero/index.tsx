@@ -8,8 +8,6 @@ import RadialOpacityBackground from "@/assets/svg/radial-opacity-background.svg"
 import Image from "next/image";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 import { DictionaryProps } from "@/lib/getDictionary";
-import ReactHtmlParser from 'react-html-parser';
-import DOMPurify from "isomorphic-dompurify";
 import { ParserToHtml } from "@/utils";
 
 type Props = {

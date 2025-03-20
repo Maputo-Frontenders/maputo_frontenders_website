@@ -1,8 +1,8 @@
 import DOMPurify from "isomorphic-dompurify";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 
 export function ParserToHtml(text: string, allowedAttributes: string[] = []) {
-  return ReactHtmlParser(
+  return parse(
     DOMPurify.sanitize(text, {
       ALLOWED_ATTR: allowedAttributes,
     })
