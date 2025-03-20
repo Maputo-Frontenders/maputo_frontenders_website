@@ -1,30 +1,52 @@
-import {
-  InstagramIcon,
-  LinkedinIcon,
-  Twitter,
-  YoutubeIcon,
-} from "lucide-react";
-const socialMediaLinks = [
+import { InstagramIcon, Twitter, YoutubeIcon } from "lucide-react";
+import { Locale } from "@/lib/getDictionary";
+import { LinkedinIcon } from "lucide-react";
+
+export const navLinks = (lang: Locale) => {
+  return lang === "pt"
+    ? [
+        { name: "Sobre", href: "/pt/about", isExternal: false },
+        { name: "Eventos", href: "/pt/events", isExternal: false },
+        {
+          name: "Contato",
+          href: "/pt/contact",
+          isExternal: false,
+          description: "contacto@maputofrontenders.com",
+        },
+        { name: "Loja", href: "/", isExternal: true },
+        { name: "Blog", href: "/", isExternal: true },
+        { name: "Jobs", href: "/", isExternal: true },
+      ]
+    : [
+        { name: "About", href: "/en/about", isExternal: false },
+        { name: "Events", href: "/en/events", isExternal: false },
+        {
+          name: "Contact",
+          href: "/en/contact",
+          isExternal: false,
+          description: "contacto@maputofrontenders.com",
+        },
+        { name: "Shop", href: "/", isExternal: true },
+        { name: "Blog", href: "/", isExternal: true },
+        { name: "Jobs", href: "/", isExternal: true },
+      ];
+};
+
+export const socialLinks = [
   {
-    description: "LinkedIn",
-    icon: LinkedinIcon,
+    name: "LinkedIn",
     href: "https://linkedin.com/company/maputo-frontenders",
+    icon: LinkedinIcon,
   },
   {
-    description: "Instagram",
-    icon: InstagramIcon,
+    name: "Instagram",
     href: "https://www.instagram.com/mptfrontenders/",
+    icon: InstagramIcon,
   },
+  { name: "X", href: "https://twitter.com/mptfrontenders", icon: Twitter },
   {
-    description: "X",
-    icon: Twitter,
-    href: "https://twitter.com/mptfrontenders",
-  },
-  {
-    description: "YouTube",
-    icon: YoutubeIcon,
+    name: "YouTube",
     href: "http://www.youtube.com/@mptfrontenders",
+    icon: YoutubeIcon,
   },
 ];
-
-export { socialMediaLinks };

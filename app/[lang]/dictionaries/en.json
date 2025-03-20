@@ -9,7 +9,7 @@
   },
   "hero": {
     "title": "The largest community <br /> of <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> in Mozambique",
-    "cta": "Join Us"
+    "cta": "KNOW MORE"
   },
   "partners": {
     "title": "Our Partners",
@@ -45,5 +45,8 @@
     "title": "Call Topics",
     "subtitle": "Topics we discuss in our community calls",
     "viewAll": "View All Topics"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved."
   }
 }

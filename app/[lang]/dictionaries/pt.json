@@ -9,7 +9,7 @@
   },
   "hero": {
     "title": "A maior comunidade <br /> de <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> em Moçambique",
-    "cta": "Junte-se a Nós"
+    "cta": "SAIBA MAIS"
   },
   "partners": {
     "title": "Nossos Parceiros",
@@ -45,5 +45,8 @@
     "title": "Tem um tópico que gostava de partilhar com a comunidade?",
     "subtitle": "Temas que discutimos nas nossas chamadas comunitárias",
     "viewAll": "Ver Todos os Temas"
+  },
+  "footer": {
+    "allRightsReserved": "Todos os direitos reservados."
   }
 }

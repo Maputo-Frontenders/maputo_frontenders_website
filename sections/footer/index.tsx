@@ -1,25 +1,28 @@
 import React from "react";
-import { socialMediaLinks } from "./data";
 import Link from "next/link";
+import { socialLinks   } from "./data";
 import { Locale } from "@/lib/getDictionary";
+import { getDictionary } from "@/lib/getDictionary";
+import Navigation from "./links";
 
 type Props = {
   params: { lang: Locale };
   className?: string;
 };
 
-export const Footer = ({ params }: Props) => {
+export async function Footer({ params }: Props) {
+  const intl = await getDictionary(params.lang);
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-mf-least flex flex-col-reverse gap-4 justify-between px-20 py-4 items-center md:flex-row">
-      <div className="text-white font-normal text-base">
-        Feito com 💜 pela MF
+    <div className="bg-mf-least text-mf-white py-16 px-4 md:px-8 lg:px-20">
+      <div className="flex flex-wrap justify-center gap-8 mb-12">
+        <Navigation params={params} />
       </div>
 
-      <div className="flex gap-2 md:gap-4">
-        {socialMediaLinks.map((socialMedia) => (
+      <div className="flex justify-center gap-8 mb-12">
+        {socialLinks.map((socialMedia) => (
           <Link
-            key={socialMedia.description}
+            key={socialMedia.name}
             href={socialMedia.href}
             className=" bg-mf-dark rounded-full p-2  gap-3 "
           >
@@ -28,9 +31,7 @@ export const Footer = ({ params }: Props) => {
         ))}
       </div>
 
-      <div className="text-white font-medium text-sm">
-        &copy; {currentYear} Maputo Frontenders
-      </div>
+      <div className="text-center ">© {currentYear} Maputo Frontenders. {intl.footer.allRightsReserved}</div>
     </div>
   );
 };
