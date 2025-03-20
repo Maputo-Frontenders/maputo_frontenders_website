@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { socialLinks   } from "./data";
+import { socialLinks } from "./data";
 import { Locale } from "@/lib/getDictionary";
 import { getDictionary } from "@/lib/getDictionary";
 import Navigation from "./links";
@@ -19,7 +19,7 @@ export async function Footer({ params }: Props) {
         <Navigation params={params} />
       </div>
 
-      <div className="flex justify-center gap-8 mb-12">
+      <div className="flex justify-center gap-6 md:gap-8 mb-12 flex-wrap ">
         {socialLinks.map((socialMedia) => (
           <Link
             key={socialMedia.name}
@@ -31,7 +31,9 @@ export async function Footer({ params }: Props) {
         ))}
       </div>
 
-      <div className="text-center ">© {currentYear} Maputo Frontenders. {intl.footer.allRightsReserved}</div>
+      <div className="text-center ">
+        © {currentYear} Maputo Frontenders. {intl.footer.allRightsReserved}
+      </div>
     </div>
   );
-};
+}
