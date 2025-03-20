@@ -49,7 +49,7 @@ export function FloatingNav({ className }: { className?: string }) {
           className
         )}
       >
-        <Navbar />
+        {/* <Navbar /> */}
       </motion.div>
     </AnimatePresence>
   );
