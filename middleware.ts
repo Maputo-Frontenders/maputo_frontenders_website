@@ -31,7 +31,12 @@ export function middleware(request: NextRequest) {
   );
 
   if (!pathnameHasLocale) {
-    if (pathname.startsWith("/assets")) return;
+    if (
+      pathname.startsWith("/assets") ||
+      pathname.match(/\.(jpeg|jpg|png|svg|gif|webp)$/)
+    ) {
+      return;
+    }
 
     const locale = getLocale(request);
 
