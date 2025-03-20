@@ -1,0 +1,49 @@
+{
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro"
+  },
+  "hero": {
+    "title": "A maior comunidade <br /> de <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> em Moçambique",
+    "cta": "Junte-se a Nós"
+  },
+  "partners": {
+    "title": "Nossos Parceiros",
+    "subtitle": "Organizações que apoiam nossa comunidade"
+  },
+  "stats": {
+    "title": "Nosso Impacto",
+ "subtitle": "Contribuímos para o <span class='bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text'>crescimento do ecossistema</span> tecnológico local",
+    "description": "Oferecendo uma rede de contatos que permite a cada desenvolvedor aprender e compartilhar conhecimento através de encontros, code challenges, hackathons, fortalecendo a colaboração e o aprendizado contínuo na comunidade.",
+    "members": "Membros Ativos",
+    "events": "Eventos Organizados",
+    "projects": "Projetos Concluídos",
+    "mentors": "Mentores Ativos"
+  },
+  "events": {
+    "title": "Eventos Recentes",
+    "subtitle": "Junte-se a nós e participe dos eventos que estão a moldar <br class='hidden md:block' />o <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>futuro do desenvolvimento frontend</span> em Moçambique",
+    "noEvents": "Nenhum evento próximo no momento",
+    "register": "Registre-se Agora",
+    "viewAll": "Ver todos eventos"
+  },
+  "testimonials": {
+    "title": "Ouvimos Dizer",
+    "subtitle": "Descubra as <span class='bg-gradient-teal-cyan bg-clip-text text-transparent'>opiniões e experiências</span> que estão a ser compartilhadas sobre a comunidade",
+    "cta": "Junte-se a Nós"
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "subtitle": "  <span class='bg-gradient-orange-purple bg-clip-text text-transparent'>Conheça a equipe</span> por detrás da Maputo Frontenders ",
+    "role": "Função"
+  },
+  "callTopics": {
+    "title": "Tem um tópico que gostava de partilhar com a comunidade?",
+    "subtitle": "Temas que discutimos nas nossas chamadas comunitárias",
+    "viewAll": "Ver Todos os Temas"
+  }
+}

@@ -7,8 +7,16 @@ import SquareBackground from "@/assets/svg/square-background.svg";
 import RadialOpacityBackground from "@/assets/svg/radial-opacity-background.svg";
 import Image from "next/image";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
+import { DictionaryProps } from "@/lib/getDictionary";
+import ReactHtmlParser from 'react-html-parser';
+import DOMPurify from "isomorphic-dompurify";
+import { ParserToHtml } from "@/utils";
 
-export function HeroSection() {
+type Props = {
+  intl: DictionaryProps;
+};
+
+export function HeroSection({ intl }: Props) {
   return (
     <section className="w-full space-y-4 relative pt-5">
       <Image
@@ -39,12 +47,10 @@ export function HeroSection() {
 
       <div className=" mx-auto py-2 w-full text-center">
         <p className="text-4xl font-bold text-white ">
-          A maior comunidade <br />
-          de{" "}
-          <span className="bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text">
-            frontend
-          </span>{" "}
-          em Moçambique
+          {ParserToHtml(intl.hero.title, [
+            "class",
+            "bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text",
+          ])}
         </p>
       </div>
       <div className="flex mx-auto justify-center py-2 w-full">
@@ -52,7 +58,7 @@ export function HeroSection() {
           href={""}
           className="flex items-center flex-row outline outline-1 outline-mf-turquoise hover:bg-gray-700 text-mf-turquoise font-bold py-2 px-4 rounded group"
         >
-          SAIBA MAIS
+          {intl.hero.cta}
           <ArrowUpRight className="text-mf-turquoise ml-2 h-5 w-5 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
         </Link>
       </div>

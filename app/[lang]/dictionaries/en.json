@@ -1,0 +1,49 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "hero": {
+    "title": "The largest community <br /> of <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> in Mozambique",
+    "cta": "Join Us"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Organizations that support our community"
+  },
+  "stats": {
+    "title": "Our Impact",
+    "subtitle": "We Contribute to the<span class='bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text'>growth of the local</span> tech ecosystem",
+    "description": "Providing a network that enables each developer to learn and share knowledge through meetups, code challenges, and hackathons, strengthening collaboration and continuous learning in the community.",
+    "members": "Active Members",
+    "events": "Events Organized",
+    "projects": "Projects Completed",
+    "mentors": "Active Mentors"
+  },
+  "events": {
+    "title": "Recent Events",
+    "subtitle": "Join us and participate in events that are shaping the <br class='hidden md:block' />future of <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>frontend development</span> in Mozambique",
+    "noEvents": "No upcoming events at the moment",
+    "register": "Register Now",
+    "viewAll": "View All Events"
+  },
+  "testimonials": {
+    "title": "What We Hear",
+    "subtitle": "Discover the <span class='bg-gradient-teal-cyan bg-clip-text text-transparent'>opinions and experiences</span> being shared about the community",
+    "cta": "Join Us"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": " <span class='bg-gradient-orange-purple bg-clip-text text-transparent'> Meet the people behind </span> Maputo Frontenders ",
+    "role": "Role"
+  },
+  "callTopics": {
+    "title": "Call Topics",
+    "subtitle": "Topics we discuss in our community calls",
+    "viewAll": "View All Topics"
+  }
+}

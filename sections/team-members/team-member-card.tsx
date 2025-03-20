@@ -3,8 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { TeamMemberProps } from "@/types";
+import { DictionaryProps } from "@/lib/getDictionary";
 
-export function TeamMemberCard({ member }: { member: TeamMemberProps }) {
+type Props = {
+  member: TeamMemberProps;
+  intl: DictionaryProps;
+};
+
+export function TeamMemberCard({ member, intl }: Props) {
   return (
     <div className="w-80 md:w-64 h-[300px] relative overflow-hidden rounded-lg border-0 shadow-sm">
       <div className="relative h-full">
@@ -24,7 +30,7 @@ export function TeamMemberCard({ member }: { member: TeamMemberProps }) {
           className="text-sm font-light tracking-tight"
           style={{ color: member.roleColor }}
         >
-          {member.role}
+         {member.role}
         </p>
       </div>
     </div>

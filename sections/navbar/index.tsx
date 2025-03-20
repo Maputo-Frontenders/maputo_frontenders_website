@@ -8,8 +8,14 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Logo from "@/public/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
+import { Locale } from "@/lib/getDictionary";
 
-export function Navbar({ className }: { className?: string }) {
+type Props = {
+  params: { lang: Locale };
+  className?: string;
+};
+
+export function Navbar({ className, params }: Props) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -95,7 +101,7 @@ export function Navbar({ className }: { className?: string }) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center ml-40  space-x-8">
-              {NavData.map((item: NavItem) => (
+              {NavData(params.lang).map((item: NavItem) => (
                 <Link
                   key={item.label}
                   href={item.link}
@@ -128,7 +134,7 @@ export function Navbar({ className }: { className?: string }) {
                 className="md:hidden overflow-hidden"
               >
                 <div className="flex flex-col space-y-4 p-4 border-t border-white/10">
-                  {NavData.map((item: NavItem) => (
+                  {NavData(params.lang).map((item: NavItem) => (
                     <Link
                       key={item.label}
                       href={item.link}

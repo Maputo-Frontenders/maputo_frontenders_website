@@ -3,8 +3,13 @@ import IconArrowRight from "@/assets/svg/arrow-right.svg";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { DictionaryProps } from "@/lib/getDictionary";
 
-export function CallTopicsSection() {
+type Props = {
+  intl: DictionaryProps;
+};
+
+export function CallTopicsSection({ intl }: Props) {
   return (
     <section className="container w-full text-white pb-16">
       <div className={cn("rounded-lg p-[2px] bg-gradient-teal-purple")}>
@@ -14,7 +19,7 @@ export function CallTopicsSection() {
               <Image src={IconArrowRight} alt="icon-arrow-right" />
 
               <h4 className="font-medium text-2xl max-w-sm md:max-w-lg">
-                Tem um tópico que gostava de partilhar com a comunidade?
+                {intl.callTopics.title}
               </h4>
             </div>
 
@@ -23,7 +28,7 @@ export function CallTopicsSection() {
               href={""}
               className="w-fit mx-right   flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
             >
-              Junte-se a nós
+              {intl.hero.cta}
               <ArrowUpRight className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
             </Link>
           </div>

@@ -1,8 +1,14 @@
 import React from "react";
 import { socialMediaLinks } from "./data";
 import Link from "next/link";
+import { Locale } from "@/lib/getDictionary";
 
-export const Footer = () => {
+type Props = {
+  params: { lang: Locale };
+  className?: string;
+};
+
+export const Footer = ({ params }: Props) => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="bg-mf-least flex flex-col-reverse gap-4 justify-between px-20 py-4 items-center md:flex-row">

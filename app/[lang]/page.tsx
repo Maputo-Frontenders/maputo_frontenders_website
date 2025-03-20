@@ -7,18 +7,25 @@ import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 import { cards } from "@/sections/purpose/data";
 import { TeamMembers } from "@/sections/team-members";
 import { CallTopicsSection } from "@/sections/call-topics";
+import { getDictionary, Locale } from "@/lib/getDictionary";
 
-export default function Home() {
+type Props = {
+  params: { lang: Locale };
+};
+
+export default async function Home({ params }: Props) {
+  const intl = await getDictionary(params.lang);
+
   return (
     <main className="h-full flex flex-col gap-16 justify-center  items-center overflow-x-hidden">
-      <HeroSection />
-      <PartenersSection />
-      <ImpactSection />
-      <EventsSection />
-      <TestimonialSection />
+      <HeroSection intl={intl} />
+      <PartenersSection intl={intl} />
+      <ImpactSection intl={intl} />
+      <EventsSection intl={intl} />
+      <TestimonialSection intl={intl} />
       <InfiniteMovingCards data={cards} />
-      <TeamMembers />
-      <CallTopicsSection />
+      <TeamMembers intl={intl} />
+      <CallTopicsSection intl={intl} />
     </main>
   );
 }

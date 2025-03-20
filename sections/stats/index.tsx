@@ -1,30 +1,34 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { cards } from "./data";
+import { DictionaryProps } from "@/lib/getDictionary";
+import { ParserToHtml } from "@/utils";
 
 // TODO:
 // - animate card on hover;
 // - center the last card on medium devices;
 
-export function ImpactSection() {
+type Props = {
+  intl: DictionaryProps;
+};
+
+export function ImpactSection({ intl }: Props) {
   return (
     <section className="w-full text-mf-white space-y-4 container" id="impacto">
-      <h2 className="uppercase text-sm text-center text-mf-orange">Impacto</h2>
+      <h2 className="uppercase text-sm text-center text-mf-orange">
+        {intl.stats.title}
+      </h2>
 
       <div className="space-y-10">
         <div className="flex flex-col items-center gap-2">
           <h2 className="text-2xl font-bold text-center">
-            Contribuímos para o{" "}
-            <span className="bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text">
-              crescimento do ecossistema
-            </span>{" "}
-            tecnológico local
+            {ParserToHtml(intl.stats.subtitle, [
+              "class",
+              "bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text",
+            ])}
           </h2>
           <p className="max-w-[650px] text-center text-sm">
-            Oferecendo uma rede de contatos que permite a cada desenvolvedor
-            aprender e compartilhar conhecimento através de encontros, code
-            challenges, hackathons, fortalecendo a colaboração e o aprendizado
-            contínuo na comunidade.
+            {intl.stats.description}
           </p>
         </div>
 
