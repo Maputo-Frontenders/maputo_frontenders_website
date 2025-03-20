@@ -8,3 +8,8 @@ export function ParserToHtml(text: string, allowedAttributes: string[] = []) {
     })
   );
 }
+
+export const getTranslationsLocal = () => [
+  { language: "pt", path: "/pt" },
+  { language: "en", path: "/en" },
+];
