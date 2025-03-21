@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { Footer } from "@/sections/footer";
 import { Locale } from "@/lib/getDictionary";
 
+export const revalidate = 60; // 1 min
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
