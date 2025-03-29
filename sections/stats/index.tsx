@@ -33,7 +33,7 @@ export function ImpactSection({ intl }: Props) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
-          {cards.map((card) => (
+          {cards({ intl }).map((card) => (
             <ImpactCard
               icon={card.icon}
               title={card.title}
