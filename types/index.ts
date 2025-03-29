@@ -1,5 +1,5 @@
 // TYPES/INTERFACES
-
+import { LucideIcon } from "lucide-react";
 type eventTypes = "in-person" | "virtual";
 export enum EventTypesEnum {
   "in-person" = "Presencial",
@@ -68,10 +68,16 @@ export type EventProps = {
   }[];
 };
 
+export interface TeamMemberSocialProps {
+  link: string;
+  icon: LucideIcon;
+}
+
 export interface TeamMemberProps {
   name: string;
   role: string;
   image: string;
   roleColor: string;
   bio?: string;
+  social?: TeamMemberSocialProps[];
 }

@@ -25,3 +25,25 @@ export const cards = [
       "Nosso grupo no WhatsApp, com mais de 1000 membros, promove interação e engajamento além dos eventos formais. Buscamos sempre trazer temas inclusivos e interessantes, que despertem a curiosidade e o aprendizado no mundo da tecnologia.",
   },
 ];
+
+export const cardsMini = [
+  {
+    title: "+30 Eventos",
+    gradientColor: "bg-gradient-orange-purple",
+    icon: HouseIcon,
+    description: "Foram encontros, virtuais ou presenciais.",
+  },
+  {
+    title: "+15 Spaces",
+    gradientColor: "bg-gradient-teal-cyan",
+    icon: MagicIcon,
+    description: "Onde as vozes são ouvidas e as experiências são valorizadas.",
+  },
+  {
+    title: "+1000 Membros",
+    gradientColor: "bg-gradient-cyan-purple",
+    icon: MembersIcon,
+    description:
+      "Não nos limitamos apenas aos eventos,  contamos grupo no WhatsApp.",
+  },
+];
