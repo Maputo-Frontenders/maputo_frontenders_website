@@ -1,19 +1,23 @@
 import Image from "next/image";
+
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import Img1 from "@/public/hero/img1.png";
+import { TeamMembers } from "@/sections/team-members";
+import { GoalSection } from "@/sections/sobre/goal";
+import { CallTopicsSection } from "@/sections/call-topics";
+
+import PhotoHete from "@/public/members/hete-odete.jpeg";
 import Img4 from "@/public/hero/img4.png";
 import Img5 from "@/public/hero/img5.png";
 import Img6 from "@/public/hero/img6.png";
+import Img7 from "@/public/hero/img3.png";
+
 import BlurBackground from "@/assets/svg/violet-light-background.svg";
 import SquareBackground from "@/assets/svg/square-background.svg";
 import RadialOpacityBackground from "@/assets/svg/radial-opacity-background.svg";
+
 import { cn } from "@/lib/utils";
 import { cardsMini } from "@/sections/stats/data";
-import Img7 from "@/public/hero/img3.png";
-import { TeamMembers } from "@/sections/team-members";
 import { getDictionary, Locale } from "@/lib/getDictionary";
-import { GoalSection } from "@/sections/sobre/goal";
-import { CallTopicsSection } from "@/sections/call-topics";
 import { ParserToHtml } from "@/utils";
 
 type Props = {
@@ -25,7 +29,9 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <main className="text-mf-white space-y-10">
+      {/* Hero section with background images */}
       <div className="relative">
+        {/* Background decorative elements */}
         <Image
           src={BlurBackground}
           alt="Backcground Blur"
@@ -41,8 +47,10 @@ export default async function AboutPage({ params }: Props) {
           alt="Backcground Blur"
           className="absolute -z-50 top-full left-1/2 -translate-x-1/2 translate-y-1/2 w-full opacity-75"
         />
+
         <div className=" overflow-x-hidden w-full  px-4 text-mf-white">
           <div className=" flex flex-col lg:flex-row gap-8">
+            {/* Left column - History text */}
             <div className="container max-w-3xl lg:pl-10 xl:pl-10 2xl:pl-36 3xl:max-w-4xl 3xl:pl-56  mt-8 flex flex-col gap-8">
               <Breadcrumbs
                 items={[
@@ -64,20 +72,22 @@ export default async function AboutPage({ params }: Props) {
 
                 <div className=" leading-relaxed  text-mf-white/90 space-y-8 ">
                   <p>{ParserToHtml(intl.about.history.founders)}</p>
-                  <p>{ParserToHtml(intl.about.history.origin)}</p>
+                  <p className="hidden lg:block">
+                    {ParserToHtml(intl.about.history.origin)}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Right */}
-            <div className="relative ml-auto mt-24">
-              <div className="[mask-image:linear-gradient(to_right,transparent,white_0%,white_60%,transparent)]  flex gap-4 h-[500px]">
+            {/* Right column - Images gallery */}
+            <div className="relative mx-auto lg:ml-auto lg:mt-24">
+              <div className="[mask-image:linear-gradient(to_right,transparent,white_0%,white_60%,transparent)]  flex gap-4 h-[500px] -mx-4 lg:mx-0">
                 <Image
                   src={Img4}
                   alt=""
                   className=" w-[380px] h-[500px] rounded-lg object-cover"
                 />
-                <div className="hidden xl:flex flex-col gap-4  ">
+                <div className=" xl:flex flex-col gap-4  ">
                   <Image
                     src={Img5}
                     alt=""
@@ -90,32 +100,43 @@ export default async function AboutPage({ params }: Props) {
                   />
                 </div>
               </div>
+              {/* Mobile-only text */}
+              <div className="container max-w-3xl lg:pl-10 xl:pl-10 2xl:pl-36 3xl:max-w-4xl 3xl:pl-56  mt-8 flex flex-col gap-8 lg:hidden">
+                <p className="">{ParserToHtml(intl.about.history.origin)}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container px-12 flex flex-row justify-between w-full gap-8">
-        {/* right  */}
+
+      {/* Mission, Vision and Values section */}
+      <div className="container px-12 flex flex-col lg:flex-row justify-between w-full gap-8">
+        {/* Left column - Mission content */}
         <section>
           <RoundedCard
-            image={Img1}
-            title={"Ancha Pedro"}
-            description={intl.about.cofounder}
+            image={PhotoHete}
+            title={"Hete Odete"}
+            description={intl.about.president}
             classNames="bg-gradient-cyan-purple"
           />
           <div className="mt-8 max-w-xl leading-relaxed  text-mf-white/90 space-y-4">
+            {/* Mission statement */}
             <div className="space-y-2">
               <h3 className="text-2xl font-bold">{intl.about.mission.title}</h3>
               <p className=" text-mf-white/90">
                 {intl.about.mission.description}
               </p>
             </div>
+
+            {/* Vision statement */}
             <div className="space-y-2">
               <h3 className="text-2xl font-bold">{intl.about.vision.title}</h3>
               <p className=" text-mf-white/90">
                 {intl.about.vision.description}
               </p>
             </div>
+
+            {/* Core values */}
             <div className="space-y-2">
               <h3 className="text-2xl font-bold">{intl.about.values.title}</h3>
               <ul className="space-y-4 ml-2 text-mf-white/90">
@@ -153,7 +174,8 @@ export default async function AboutPage({ params }: Props) {
             </div>
           </div>
         </section>
-        {/* left  */}
+
+        {/* Right column - Stats cards */}
         <section className="sticky h-fit top-4 flex flex-col gap-4 ">
           {cardsMini({ intl }).map((card) => (
             <RoundedCard
@@ -168,9 +190,12 @@ export default async function AboutPage({ params }: Props) {
           ))}
         </section>
       </div>
+
+      {/* Full-width image section */}
       <div className="w-full h-[500px] ">
         <Image src={Img7} alt="" className=" w-full h-full object-cover " />
       </div>
+
       <TeamMembers intl={intl} isSubtitle={true} isActiveAnimation={true} />
       <GoalSection intl={intl} />
       <CallTopicsSection intl={intl} />
