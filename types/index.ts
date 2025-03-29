@@ -73,11 +73,18 @@ export interface TeamMemberSocialProps {
   icon: LucideIcon;
 }
 
+export interface SanitySocialData {
+  github?: string;
+  twitter?: string;
+  linkedin?: string;
+  instagram?: string;
+}
+
 export interface TeamMemberProps {
   name: string;
   role: string;
   image: string;
   roleColor: string;
   bio?: string;
-  social?: TeamMemberSocialProps[];
+  social?: TeamMemberSocialProps[] | SanitySocialData;
 }

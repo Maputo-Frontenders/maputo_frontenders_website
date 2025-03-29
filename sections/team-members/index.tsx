@@ -1,17 +1,23 @@
-import { DictionaryProps } from "@/lib/getDictionary";
+import { DictionaryProps, Locale } from "@/lib/getDictionary";
 import { ParserToHtml } from "@/utils";
 import { TeamMemberCards } from "./team-member-card";
+import { getTeamMembers } from "./data";
+
 type Props = {
   intl: DictionaryProps;
   isSubtitle?: boolean;
   isActiveAnimation?: boolean;
+  lang: Locale;
 };
 
-export function TeamMembers({
+export async function TeamMembers({
   intl,
   isSubtitle = false,
   isActiveAnimation = false,
+  lang,
 }: Props) {
+  const teamMembers = await getTeamMembers(lang);
+
   return (
     <section className="md:container w-full text-white space-y-8" id="team">
       <div className="container text-center space-y-2">
@@ -27,7 +33,10 @@ export function TeamMembers({
         {isSubtitle && <p className="max-w-lg mx-auto">{intl.team.joinUs}</p>}
       </div>
 
-      <TeamMemberCards intl={intl} isActiveAnimation={isActiveAnimation} />
+      <TeamMemberCards
+        isActiveAnimation={isActiveAnimation}
+        teamMembers={teamMembers}
+      />
     </section>
   );
 }

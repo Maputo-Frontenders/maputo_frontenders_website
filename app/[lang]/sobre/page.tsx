@@ -196,7 +196,12 @@ export default async function AboutPage({ params }: Props) {
         <Image src={Img7} alt="" className=" w-full h-full object-cover " />
       </div>
 
-      <TeamMembers intl={intl} isSubtitle={true} isActiveAnimation={true} />
+      <TeamMembers
+        intl={intl}
+        isSubtitle={true}
+        isActiveAnimation={true}
+        lang={params.lang}
+      />
       <GoalSection intl={intl} />
       <CallTopicsSection intl={intl} />
     </main>

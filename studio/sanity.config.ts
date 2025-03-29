@@ -16,7 +16,7 @@ export default defineConfig({
     visionTool(),
     documentInternationalization({
       supportedLanguages: i18n.languages,
-      schemaTypes: ['events'],
+      schemaTypes: ['events', 'members'],
     }),
   ],
 

@@ -4,25 +4,44 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { TeamMemberProps } from "@/types";
-import type { DictionaryProps } from "@/lib/getDictionary";
 import { cn } from "@/lib/utils";
-import { teamMembers } from "./data";
+import { processSocialMediaLinks } from "@/utils";
+
+export function TeamMemberCards({
+  isActiveAnimation = false,
+  teamMembers,
+}: {
+  isActiveAnimation?: boolean;
+  teamMembers: TeamMemberProps[];
+}) {
+  const members = teamMembers.map(processSocialMediaLinks);
+
+  return (
+    <div className="flex flex-wrap justify-center gap-6 md:mx-10">
+      {members.map((member) => (
+        <TeamMemberCard
+          key={member.name}
+          member={member}
+          isActiveAnimation={isActiveAnimation}
+        />
+      ))}
+    </div>
+  );
+}
+
 type Props = {
   member: TeamMemberProps;
-  intl: DictionaryProps;
   isActiveAnimation?: boolean;
 };
 
-export function TeamMemberCard({
-  member,
-  intl,
-  isActiveAnimation = false,
-}: Props) {
+function TeamMemberCard({ member, isActiveAnimation }: Props) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const toggleFlip = () => {
     setIsFlipped(!isFlipped);
   };
+
+  const socialLinks = Array.isArray(member.social) ? member.social : [];
 
   return (
     <div className="perspective w-80 md:w-64 h-[300px]">
@@ -105,17 +124,16 @@ export function TeamMemberCard({
                 </p>
               </div>
 
-              <p className="text-sm">
-                Hi there! I like not doing anything at all. So just text me
-              </p>
+              <p className="text-sm">{member.bio}</p>
             </div>
 
             <div className="mt-2  flex space-x-2 justify-self-end">
-              {member.social?.map((social) => (
+              {socialLinks.map((social) => (
                 <a
                   key={social.link}
                   href={social.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-mf-secondary bg-mf-dark rounded-full p-2 transition-colors duration-300 
                   w-8 h-8 flex items-center justify-center"
                 >
@@ -155,27 +173,6 @@ export function TeamMemberCard({
           </div>
         </div>
       )}
-    </div>
-  );
-}
-
-export function TeamMemberCards({
-  intl,
-  isActiveAnimation = false,
-}: {
-  intl: DictionaryProps;
-  isActiveAnimation?: boolean;
-}) {
-  return (
-    <div className="flex flex-wrap justify-center gap-6 md:mx-10">
-      {teamMembers.map((member) => (
-        <TeamMemberCard
-          key={member.name}
-          member={member}
-          intl={intl}
-          isActiveAnimation={isActiveAnimation}
-        />
-      ))}
     </div>
   );
 }
