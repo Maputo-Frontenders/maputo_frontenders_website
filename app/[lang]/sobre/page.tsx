@@ -8,12 +8,13 @@ import BlurBackground from "@/assets/svg/violet-light-background.svg";
 import SquareBackground from "@/assets/svg/square-background.svg";
 import RadialOpacityBackground from "@/assets/svg/radial-opacity-background.svg";
 import { cn } from "@/lib/utils";
-import { cards, cardsMini } from "@/sections/stats/data";
+import { cardsMini } from "@/sections/stats/data";
 import Img7 from "@/public/hero/img3.png";
 import { TeamMembers } from "@/sections/team-members";
 import { getDictionary, Locale } from "@/lib/getDictionary";
 import { GoalSection } from "@/sections/sobre/goal";
 import { CallTopicsSection } from "@/sections/call-topics";
+import { ParserToHtml } from "@/utils";
 
 type Props = {
   params: { lang: Locale };
@@ -45,46 +46,25 @@ export default async function AboutPage({ params }: Props) {
             <div className="container max-w-3xl lg:pl-10 xl:pl-10 2xl:pl-36 3xl:max-w-4xl 3xl:pl-56  mt-8 flex flex-col gap-8">
               <Breadcrumbs
                 items={[
-                  { title: "Home", href: "/" },
-                  { title: "Sobre", href: "/about" },
+                  { title: intl.about.breadcrumbs.home, href: "/" },
+                  { title: intl.about.breadcrumbs.about, href: "/about" },
                 ]}
               />
 
               <div className=" flex flex-col gap-8">
                 <div className="text-5xl font-bold leading-snug">
                   <h1>
-                    A Nossa{" "}
+                    {intl.about.history.title}{" "}
                     <span className=" bg-gradient-cyan-orange text-transparent bg-clip-text">
-                      História
+                      {intl.about.history.subtitle}
                     </span>{" "}
                     <br />
                   </h1>
-                  <h1>Inicia quando...</h1>
                 </div>
 
                 <div className=" leading-relaxed  text-mf-white/90 space-y-8 ">
-                  <p>
-                    Quatro jovens: <em>Olímpio Adolfo</em>,
-                    <em> Wek'elwa Mala</em>, <em>Raimundo Moide</em> e
-                    <em> Onila Cossa</em>, em um contexto onde não havia muitas
-                    iniciativas focadas em nichos específicos do desenvolvimento
-                    de software no país. Na época, o desenvolvimento frontend
-                    era visto como algo básico, enquanto a maioria das
-                    comunidades tecnológicas se concentrava em linguagens mais
-                    avançadas como Java e Android, promovendo tópicos complexos
-                    que dificultavam a entrada de novos desenvolvedores.
-                  </p>
-                  <p>
-                    Foi nesse cenário que surgiu o Maputo Frontenders, com o
-                    propósito de criar uma plataforma acessível para iniciantes,
-                    especialmente aqueles que começavam sua jornada com as
-                    tecnologias web fundamentais, como HTML, CSS e JavaScript.
-                    Além de popularizar as tecnologias web, a comunidade evoluiu
-                    ao longo do tempo, passando a abranger mais do que apenas o
-                    frontend, tornando-se um espaço para desenvolvedores de
-                    software em geral, reunindo mais de mil membros de diversas
-                    áreas, incluindo frontend, backend e outras especializações.
-                  </p>
+                  <p>{ParserToHtml(intl.about.history.founders)}</p>
+                  <p>{ParserToHtml(intl.about.history.origin)}</p>
                 </div>
               </div>
             </div>
@@ -120,70 +100,54 @@ export default async function AboutPage({ params }: Props) {
           <RoundedCard
             image={Img1}
             title={"Ancha Pedro"}
-            description={"Co-fundador"}
+            description={intl.about.cofounder}
             classNames="bg-gradient-cyan-purple"
           />
           <div className="mt-8 max-w-xl leading-relaxed  text-mf-white/90 space-y-4">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Missão</h3>
+              <h3 className="text-2xl font-bold">{intl.about.mission.title}</h3>
               <p className=" text-mf-white/90">
-                Criar um ambiente inclusivo e estimulante onde a comunidade
-                possa aprender, ensinar e colaborar uns com os outros.  Buscamos
-                compartilhar conhecimento, inspirar a excelência e promover o
-                crescimento pessoal e profissional de nossos membros por meio de
-                eventos, workshops, desafios e outras iniciativas educacionais.
+                {intl.about.mission.description}
               </p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Visão</h3>
+              <h3 className="text-2xl font-bold">{intl.about.vision.title}</h3>
               <p className=" text-mf-white/90">
-                Ser a principal comunidade de desenvolvedores frontend em
-                Moçambique, reconhecida pelo seu compromisso em promover o
-                aprendizado, a inovação e a colaboração entre profissionais de
-                tecnologia web, impulsionando o avanço da indústria de
-                tecnologia no país.
+                {intl.about.vision.description}
               </p>
-            </div>{" "}
+            </div>
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Valores</h3>
+              <h3 className="text-2xl font-bold">{intl.about.values.title}</h3>
               <ul className="space-y-4 ml-2 text-mf-white/90">
                 <li>
                   <span className="text-mf-secondary font-bold">
-                    1. Colaboração:
+                    {intl.about.values.collaboration.title}
                   </span>{" "}
-                  Valorizamos a colaboração e a troca de conhecimento entre os
-                  membros da comunidade, reconhecendo que juntos podemos
-                  alcançar mais do que individualmente.
+                  {intl.about.values.collaboration.description}
                 </li>
                 <li>
                   <span className="text-mf-lightBlue font-bold">
-                    2. Inclusão:
+                    {intl.about.values.inclusion.title}
                   </span>{" "}
-                  Acreditamos em criar um ambiente inclusivo e acolhedor, onde
-                  todas as pessoas sejam bem-vindas e respeitadas,
-                  independentemente de sua origem, identidade ou experiência.
+                  {intl.about.values.inclusion.description}
                 </li>
                 <li>
                   <span className="text-mf-orange font-bold">
-                    3. Excelência:
+                    {intl.about.values.excellence.title}
                   </span>{" "}
-                  Buscamos a excelência em tudo o que fazemos, incentivando o
-                  aprendizado contínuo, a melhoria constante e a adoção das
-                  melhores práticas de desenvolvimento frontend.
+                  {intl.about.values.excellence.description}
                 </li>
                 <li>
-                  <span className="text-mf-pink font-bold">4. Inovação:</span>{" "}
-                  Estamos comprometidos em promover a inovação e a criatividade,
-                  incentivando a experimentação e a busca por soluções novas e
-                  eficazes para os desafios tecnológicos.
+                  <span className="text-mf-pink font-bold">
+                    {intl.about.values.innovation.title}
+                  </span>{" "}
+                  {intl.about.values.innovation.description}
                 </li>
                 <li>
                   <span className="text-mf-purple font-bold">
-                    5. Integridade:
+                    {intl.about.values.integrity.title}
                   </span>{" "}
-                  Agimos com integridade, transparência e ética em todas as
-                  nossas interações e iniciativas, mantendo a confiança e o
-                  respeito dentro da comunidade.
+                  {intl.about.values.integrity.description}
                 </li>
               </ul>
             </div>
@@ -191,7 +155,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
         {/* left  */}
         <section className="sticky h-fit top-4 flex flex-col gap-4 ">
-          {cardsMini.map((card) => (
+          {cardsMini({ intl }).map((card) => (
             <RoundedCard
               image={card.icon}
               title={card.title}

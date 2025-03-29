@@ -22,7 +22,35 @@
     "members": "Active Members",
     "events": "Events Organized",
     "projects": "Projects Completed",
-    "mentors": "Active Mentors"
+    "mentors": "Active Mentors",
+    "cards": {
+      "events": {
+        "title": "+30 Events",
+        "description": "Both virtual and in-person meetups."
+      },
+      "spaces": {
+        "title": "+15 Spaces",
+        "description": "Where voices are heard and experiences are valued."
+      },
+      "members": {
+        "title": "+1000 Members",
+        "description": "We're not limited to events, we have a WhatsApp group."
+      }
+    },
+    "cardsLarge": {
+      "events": {
+        "title": "+30 Events",
+        "description": "We have held more than 30 events, both online and in-person, with the goal of teaching and empowering community members and programming and technology enthusiasts."
+      },
+      "spaces": {
+        "title": "+15 Spaces",
+        "description": "For effective communication, we use Spaces on X (Twitter), creating opportunities to build a more inclusive and collaborative community, where all voices are heard and shared experiences are valued."
+      },
+      "members": {
+        "title": "+1000 Members",
+        "description": "Our WhatsApp group, with more than 1000 members, promotes interaction and engagement beyond formal events. We always seek to bring inclusive and interesting topics that spark curiosity and learning in the world of technology."
+      }
+    }
   },
   "events": {
     "title": "Recent Events",
@@ -39,6 +67,7 @@
   "team": {
     "title": "Our Team",
     "subtitle": " <span class='bg-gradient-orange-purple bg-clip-text text-transparent'> Meet the people behind </span> Maputo Frontenders ",
+    "joinUs": "Join us and become part of a passionate community that is shaping the future of frontend development in Mozambique! 💻✨",
     "role": "Role"
   },
   "callTopics": {
@@ -48,5 +77,54 @@
   },
   "footer": {
     "allRightsReserved": "All rights reserved."
+  },
+  "about": {
+    "breadcrumbs": {
+      "home": "Home",
+      "about": "About"
+    },
+    "history": {
+      "title": "Our History",
+      "subtitle": "Begins when...",
+      "founders": "Four young people: <em>Olímpio Adolfo</em>, <em>Wek'elwa Mala</em>, <em>Raimundo Moide</em> and <em>Onila Cossa</em>, in a context where there were not many initiatives focused on specific niches of software development in the country. At the time, frontend development was seen as something basic, while most tech communities focused on more advanced languages like Java and Android, promoting complex topics that made it difficult for new developers to enter.",
+      "origin": "It was in this scenario that Maputo Frontenders emerged, with the purpose of creating an accessible platform for beginners, especially those who were starting their journey with fundamental web technologies, such as HTML, CSS and JavaScript. In addition to popularizing web technologies, the community evolved over time, moving beyond just frontend, becoming a space for software developers in general, bringing together more than a thousand members from different areas, including frontend, backend and other specializations."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "Create an inclusive and stimulating environment where the community can learn, teach and collaborate with each other. We seek to share knowledge, inspire excellence and promote the personal and professional growth of our members through events, workshops, challenges and other educational initiatives."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be the leading frontend developers community in Mozambique, recognized for its commitment to promoting learning, innovation and collaboration among web technology professionals, driving the advancement of the technology industry in the country."
+    },
+    "values": {
+      "title": "Values",
+      "collaboration": {
+        "title": "1. Collaboration:",
+        "description": "We value collaboration and knowledge exchange among community members, recognizing that together we can achieve more than individually."
+      },
+      "inclusion": {
+        "title": "2. Inclusion:",
+        "description": "We believe in creating an inclusive and welcoming environment, where all people are welcome and respected, regardless of their origin, identity or experience."
+      },
+      "excellence": {
+        "title": "3. Excellence:",
+        "description": "We seek excellence in everything we do, encouraging continuous learning, constant improvement and the adoption of best practices in frontend development."
+      },
+      "innovation": {
+        "title": "4. Innovation:",
+        "description": "We are committed to promoting innovation and creativity, encouraging experimentation and the search for new and effective solutions to technological challenges."
+      },
+      "integrity": {
+        "title": "5. Integrity:",
+        "description": "We act with integrity, transparency and ethics in all our interactions and initiatives, maintaining trust and respect within the community."
+      }
+    },
+    "cofounder": "Co-founder",
+    "goal": {
+      "title": "OUR GOAL AS A COMMUNITY",
+      "heading": "<span class='bg-gradient-orange-pink bg-clip-text text-transparent'>Contribute to the growth</span> and strengthening of   <br /> the software development ecosystem <br /> in Mozambique",
+      "description": "We aim to shape the generation of professionals, promoting a collaborative and dynamic environment where knowledge flows freely, boosting technological growth in the country"
+    }
   }
 }

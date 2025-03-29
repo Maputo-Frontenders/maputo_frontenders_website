@@ -13,20 +13,15 @@ export function GoalSection({ intl }: Props) {
     >
       <div className="container text-center space-y-2">
         <h2 className="text-sm uppercase text-mf-cyan">
-          NOSSO OBJECTIVO COMO COMUNIDADE
+          {intl.about.goal.title}
         </h2>
-        <h3 className="text-2xl font-bold max-w-2xl mx-auto">
-          <span className="bg-gradient-orange-pink bg-clip-text text-transparent">
-            Contribuir para o crescimento
-          </span>{" "}
-          e fortalecimento do ecossistema de desenvolvimento <br /> de software
-          em Moçambique
+        <h3 className="text-2xl font-bold max-w-3xl mx-auto">
+          {ParserToHtml(intl.about.goal.heading, [
+            "class",
+            "bg-gradient-orange-pink bg-clip-text text-transparent",
+          ])}
         </h3>
-        <p className="max-w-2xl mx-auto">
-          Desejamos moldar a geração de profissionais, promovendo um ambiente
-          colaborativo e dinâmico onde o conhecimento circula livremente,
-          impulsionando o crescimento tecnológico no país
-        </p>
+        <p className="max-w-3xl mx-auto">{intl.about.goal.description}</p>
       </div>
     </section>
   );

@@ -24,12 +24,7 @@ export function TeamMembers({
             "bg-gradient-orange-purple bg-clip-text text-transparent",
           ])}
         </p>
-        {isSubtitle && (
-          <p className="max-w-lg mx-auto">
-            Junte-se a nós e faça parte de uma comunidade apaixonada que está
-            moldando o futuro do desenvolvimento frontend em Moçambique! 💻✨
-          </p>
-        )}
+        {isSubtitle && <p className="max-w-lg mx-auto">{intl.team.joinUs}</p>}
       </div>
 
       <TeamMemberCards intl={intl} isActiveAnimation={isActiveAnimation} />
