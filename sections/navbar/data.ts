@@ -10,11 +10,11 @@ export const NavData: (lang: Locale) => NavItem[] = (lang: Locale) => {
     ? [
         {
           label: "Sobre",
-          link: "#impacto",
+          link: "/sobre",
         },
         {
           label: "Eventos",
-          link: "#eventos",
+          link: "/eventos",
         },
         {
           label: "Team",
@@ -24,7 +24,7 @@ export const NavData: (lang: Locale) => NavItem[] = (lang: Locale) => {
     : [
         {
           label: "About",
-          link: "#impacto",
+          link: "/sobre",
         },
         {
           label: "Events",

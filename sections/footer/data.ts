@@ -5,7 +5,7 @@ import { LinkedinIcon } from "lucide-react";
 export const navLinks = (lang: Locale) => {
   return lang === "pt"
     ? [
-        { name: "Sobre", href: "/pt/about", isExternal: false },
+        { name: "Sobre", href: "/pt/sobre", isExternal: false },
         { name: "Eventos", href: "/pt/events", isExternal: false },
         {
           name: "Contato",
@@ -18,7 +18,7 @@ export const navLinks = (lang: Locale) => {
         { name: "Jobs", href: "/", isExternal: true },
       ]
     : [
-        { name: "About", href: "/en/about", isExternal: false },
+        { name: "About", href: "/en/sobre", isExternal: false },
         { name: "Events", href: "/en/events", isExternal: false },
         {
           name: "Contact",
