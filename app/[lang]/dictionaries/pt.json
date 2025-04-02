@@ -1,7 +1,8 @@
 {
   "navigation": {
     "home": "Início",
-    "about": "Sobre"
+    "about": "Sobre",
+    "contact": "Contacto"
   },
   "common": {
     "loading": "Carregando...",
@@ -79,14 +80,10 @@
     "allRightsReserved": "Todos os direitos reservados."
   },
   "about": {
-    "breadcrumbs": {
-      "home": "Home",
-      "about": "Sobre"
-    },
     "history": {
       "title": "A Nossa História",
       "subtitle": "Inicia quando...",
-      "founders": "Quatro jovens: <em>Olímpio Adolfo</em>, <em>Wek'elwa Mala</em>, <em>Raimundo Moide</em> e <em>Onila Cossa</em>, em um contexto onde não havia muitas iniciativas focadas em nichos específicos do desenvolvimento de software no país. Na época, o desenvolvimento frontend era visto como algo básico, enquanto a maioria das comunidades tecnológicas se concentrava em linguagens mais avançadas como Java e Android, promovendo tópicos complexos que dificultavam a entrada de novos desenvolvedores.",
+      "founders": "Quatro jovens: <em>Olímpio Adolfo</em>, <em>Wek'elwa Mala</em>, <em>Raimundo Moide</em> e <em>Otilia Cossa</em>, em um contexto onde não havia muitas iniciativas focadas em nichos específicos do desenvolvimento de software no país. Na época, o desenvolvimento frontend era visto como algo básico, enquanto a maioria das comunidades tecnológicas se concentrava em linguagens mais avançadas como Java e Android, promovendo tópicos complexos que dificultavam a entrada de novos desenvolvedores.",
       "origin": "Foi nesse cenário que surgiu o Maputo Frontenders, com o propósito de criar uma plataforma acessível para iniciantes, especialmente aqueles que começavam sua jornada com as tecnologias web fundamentais, como HTML, CSS e JavaScript. Além de popularizar as tecnologias web, a comunidade evoluiu ao longo do tempo, passando a abranger mais do que apenas o frontend, tornando-se um espaço para desenvolvedores de software em geral, reunindo mais de mil membros de diversas áreas, incluindo frontend, backend e outras especializações."
     },
     "mission": {
@@ -126,6 +123,33 @@
       "title": "NOSSO OBJECTIVO COMO COMUNIDADE",
       "heading": "<span class='bg-gradient-orange-pink bg-clip-text text-transparent'>Contribuir para o crescimento</span> e fortalecimento  <br /> do ecossistema de desenvolvimento <br /> de software em Moçambique",
       "description": "Desejamos moldar a geração de profissionais, promovendo um ambiente colaborativo e dinâmico onde o conhecimento circula livremente, impulsionando o crescimento tecnológico no país"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nome Apelido",
+      "email": "Teu e-mail",
+      "message": "Sua mensagem",
+      "messagePlaceholder": "Envie-nos uma mensagem...",
+      "submit": "Enviar",
+      "validation": {
+        "nameRequired": "Nome é obrigatório",
+        "nameMin": "Nome deve ter pelo menos 2 caracteres.",
+        "emailRequired": "E-mail é obrigatório",
+        "emailInvalid": "Endereço de e-mail inválido.",
+        "messageRequired": "Mensagem é obrigatória",
+        "messageMin": "Mensagem deve ter pelo menos 2 caracteres."
+      }
+    },
+    "faq": {
+      "title": "Perguntas",
+      "titleHighlight": "frequentes",
+      "description": "Esclarecer dúvidas, compartilhar ideias ou receber suporte personalizado no seu percurso de desenvolvimento frontend é a nossa paixão."
+    },
+    "hero": {
+      "title": "Fale",
+      "titleHighlight": "connosco",
+      "description": "Junte-se a nós e faça parte de uma comunidade apaixonada que está moldando o futuro do desenvolvimento frontend em Moçambique! 💻✨"
     }
   }
 }
