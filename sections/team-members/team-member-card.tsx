@@ -47,7 +47,7 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
     <div className="perspective w-80 md:w-64 h-[300px]">
       {isActiveAnimation ? (
         <motion.div
-          className="relative w-full h-full transition-all duration-500"
+          className="relative w-full h-full transition-all duration-100"
           initial={false}
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           whileHover={{ rotateY: 180 }}
