@@ -54,8 +54,8 @@ export default async function AboutPage({ params }: Props) {
             <div className="container max-w-3xl lg:pl-10 xl:pl-10 2xl:pl-36 3xl:max-w-4xl 3xl:pl-56  mt-8 flex flex-col gap-8">
               <Breadcrumbs
                 items={[
-                  { title: intl.about.breadcrumbs.home, href: "/" },
-                  { title: intl.about.breadcrumbs.about, href: "/about" },
+                  { title: intl.navigation.home, href: "/" },
+                  { title: intl.navigation.about, href: "/about" },
                 ]}
               />
 
