@@ -17,8 +17,8 @@ export const NavData: (lang: Locale) => NavItem[] = (lang: Locale) => {
           link: "/eventos",
         },
         {
-          label: "Team",
-          link: "#team",
+          label: "Contacto",
+          link: "/contacto",
         },
       ]
     : [
@@ -31,8 +31,8 @@ export const NavData: (lang: Locale) => NavItem[] = (lang: Locale) => {
           link: "#eventos",
         },
         {
-          label: "Team",
-          link: "#team",
+          label: "Contact",
+          link: "/contacto",
         },
       ];
 };
