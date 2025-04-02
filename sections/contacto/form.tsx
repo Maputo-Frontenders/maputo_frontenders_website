@@ -53,9 +53,9 @@ export function ContactForm({ intl }: { intl: DictionaryProps }) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full  flex flex-col gap-4 border border-mf-darkBlue bg-mf-background rounded-lg p-8 max-w-5xl mx-auto"
+        className="w-full  flex flex-col gap-2 md:gap-4 border border-mf-darkBlue bg-mf-background rounded-lg p-8 max-w-5xl mx-auto"
       >
-        <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <FormField
             control={form.control}
             name="name"
