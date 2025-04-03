@@ -14,7 +14,7 @@ export const events = {
     {
       name: 'slug',
       type: 'slug',
-      title: 'Identificador do evento',
+      title: 'Slug',
       options: {
         source: 'title',
       },
@@ -186,4 +186,11 @@ export const events = {
       readOnly: true,
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'language',
+      media: 'image',
+    },
+  },
 }
