@@ -15,12 +15,14 @@ import { EventProps } from "@/types";
 import { cn } from "@/lib/utils";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { DictionaryProps } from "@/lib/getDictionary";
 
 interface ClientPaginatedEventsProps {
   events: EventProps[];
   initialPage: number;
   totalPages: number;
   itemsPerPage: number;
+  intl: DictionaryProps;
 }
 
 export function ClientPaginatedEvents({
@@ -28,6 +30,7 @@ export function ClientPaginatedEvents({
   initialPage,
   totalPages,
   itemsPerPage,
+  intl,
 }: ClientPaginatedEventsProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -69,11 +72,12 @@ export function ClientPaginatedEvents({
 
   return (
     <div className="flex flex-col items-center">
-      <Events events={paginatedEvents} />
+      <Events events={paginatedEvents} intl={intl} />
       <ClientPaginationControls
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
+        intl={intl}
       />
     </div>
   );
@@ -81,13 +85,16 @@ export function ClientPaginatedEvents({
 
 interface EventsProps {
   events: EventProps[];
+  intl: DictionaryProps;
 }
 
-function Events({ events }: EventsProps) {
+function Events({ events, intl }: EventsProps) {
   return (
     <div className="container mt-10 px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 min-h-[800px]">
       {events.length > 0 ? (
-        events.map((event) => <CardEvent key={event.id} event={event} />)
+        events.map((event) => (
+          <CardEvent key={event.id} event={event} intl={intl} />
+        ))
       ) : (
         <div className="col-span-3 flex justify-center items-center h-64">
           <p className="text-xl text-mf-white/70">
@@ -105,6 +112,7 @@ interface ClientPaginationControlsProps {
   onPageChange: (page: number) => void;
   className?: string;
   contentClassName?: string;
+  intl: DictionaryProps;
 }
 
 // Client pagination controls with click handlers instead of links
@@ -114,6 +122,7 @@ function ClientPaginationControls({
   onPageChange,
   className,
   contentClassName,
+  intl,
 }: ClientPaginationControlsProps) {
   if (totalPages <= 1) return null;
 
@@ -139,6 +148,7 @@ function ClientPaginationControls({
         {currentPage > 1 && (
           <PaginationItem>
             <PaginationPrevious
+              intl={intl}
               className="hover:bg-mf-least/50 text-mf-white hover:text-mf-white cursor-pointer"
               onClick={() => handlePageChange(currentPage - 1)}
             />
@@ -175,6 +185,7 @@ function ClientPaginationControls({
         {currentPage < totalPages && (
           <PaginationItem>
             <PaginationNext
+              intl={intl}
               className="hover:bg-mf-least/50 text-mf-white hover:text-mf-white cursor-pointer"
               onClick={() => handlePageChange(currentPage + 1)}
             />
