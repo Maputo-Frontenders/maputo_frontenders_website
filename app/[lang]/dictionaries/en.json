@@ -2,11 +2,14 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "events": "Events"
   },
   "common": {
     "loading": "Loading...",
-    "error": "Error"
+    "error": "Error",
+    "previous": "Previous",
+    "next": "Next"
   },
   "hero": {
     "title": "The largest community <br /> of <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> in Mozambique",
@@ -58,7 +61,12 @@
     "subtitle": "Join us and participate in events that are shaping the <br class='hidden md:block' />future of <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>frontend development</span> in Mozambique",
     "noEvents": "No upcoming events at the moment",
     "register": "Register Now",
-    "viewAll": "View All Events"
+    "viewAll": "View All Events",
+    "noEventsAvailable": "No events available",
+    "page": {
+      "title": "The largest community of <span class='bg-gradient-cyan-purple bg-clip-text text-transparent'> frontend developers </span> in Mozambique",
+      "subtitle": "We create opportunities to build a more inclusive and collaborative community, where all voices are heard and shared experiences are valued."
+    }
   },
   "testimonials": {
     "title": "What We Hear",

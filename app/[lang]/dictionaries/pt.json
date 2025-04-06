@@ -2,11 +2,14 @@
   "navigation": {
     "home": "Início",
     "about": "Sobre",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "events": "Eventos"
   },
   "common": {
     "loading": "Carregando...",
-    "error": "Erro"
+    "error": "Erro",
+    "previous": "Anterior",
+    "next": "Seguinte"
   },
   "hero": {
     "title": "A maior comunidade <br /> de <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> em Moçambique",
@@ -58,7 +61,12 @@
     "subtitle": "Junte-se a nós e participe dos eventos que estão a moldar <br class='hidden md:block' />o <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>futuro do desenvolvimento frontend</span> em Moçambique",
     "noEvents": "Nenhum evento próximo no momento",
     "register": "Registre-se Agora",
-    "viewAll": "Ver todos eventos"
+    "viewAll": "Ver todos eventos",
+    "noEventsAvailable": "Nenhum evento disponível",
+    "page": {
+      "title": "A maior comunidade de <span class='bg-gradient-cyan-purple bg-clip-text text-transparent'> desenvolvedores frontend </span> em Moçambique",
+      "subtitle": "Criamos oportunidades para construir uma comunidade mais inclusiva e colaborativa, onde todas as vozes são ouvidas e as experiências compartilhadas são valorizadas."
+    }
   },
   "testimonials": {
     "title": "Ouvimos Dizer",
