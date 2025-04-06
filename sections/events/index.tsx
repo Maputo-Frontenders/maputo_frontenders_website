@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { DictionaryProps, Locale } from "@/lib/getDictionary";
 import { ParserToHtml } from "@/utils";
 import { getEvents } from "./data";
+import { ROUTES } from "@/utils/routes";
 
 type Props = {
   intl: DictionaryProps;
@@ -32,7 +33,7 @@ export async function EventsSection({ intl, lang }: Props) {
       <EventCarousel data={events} intl={intl} />
 
       <Link
-        href={""}
+        href={ROUTES.LIST_EVENTS}
         className="w-fit truncate text-clip  flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
       >
         {intl.events.viewAll}
