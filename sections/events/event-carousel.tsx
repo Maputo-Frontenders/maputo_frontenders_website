@@ -8,8 +8,14 @@ import {
 } from "@/components/ui/carousel";
 import { EventProps } from "@/types";
 import { CardEvent } from "./card-event";
+import { DictionaryProps } from "@/lib/getDictionary";
 
-export function EventCarousel({ data }: { data: EventProps[] }) {
+interface EventCarouselProps {
+  data: EventProps[];
+  intl: DictionaryProps;
+}
+
+export function EventCarousel({ data, intl }: EventCarouselProps) {
   return (
     <Carousel
       className="w-full md:container"
@@ -24,7 +30,7 @@ export function EventCarousel({ data }: { data: EventProps[] }) {
               key={event.id}
               className="pl-1 md:basis-1/2 lg:basis-1/3 h-full"
             >
-              <CardEvent event={event} />
+              <CardEvent event={event} intl={intl} />
             </CarouselItem>
           );
         })}

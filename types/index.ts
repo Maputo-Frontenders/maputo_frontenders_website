@@ -14,6 +14,9 @@ export enum EventStatusEnum {
 }
 
 export type EventProps = {
+  slug: {
+    current: string;
+  };
   id: number;
   type: eventTypes;
   image: {

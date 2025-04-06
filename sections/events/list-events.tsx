@@ -56,7 +56,9 @@ function Events({ events, intl }: EventsProps) {
   return (
     <div className="container mt-10 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 ">
       {events.length > 0 ? (
-        events.map((event) => <CardEvent key={event.id} event={event} />)
+        events.map((event) => (
+          <CardEvent key={event.id} event={event} intl={intl} />
+        ))
       ) : (
         <div className="col-span-3 flex justify-center items-center h-64">
           <p className="text-xl text-mf-white/70">

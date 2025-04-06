@@ -9,7 +9,8 @@
     "loading": "Carregando...",
     "error": "Erro",
     "previous": "Anterior",
-    "next": "Seguinte"
+    "next": "Seguinte",
+    "seeDetails": "Ver Detalhes"
   },
   "hero": {
     "title": "A maior comunidade <br /> de <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> em Moçambique",

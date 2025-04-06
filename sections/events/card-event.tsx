@@ -1,21 +1,28 @@
 import { Card } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, CalendarDays, ChevronRight, MapPin } from "lucide-react";
+import {
+  Calendar,
+  CalendarDays,
+  ChevronRight,
+  LinkIcon,
+  MapPin,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EventProps, EventStatusEnum, EventTypesEnum } from "@/types";
 import { urlFor } from "@/lib/sanity";
 import { formatDateToDDMMYYYY } from "@/utils";
+import Link from "next/link";
+import { ROUTES } from "@/utils/routes";
+import { DictionaryProps } from "@/lib/getDictionary";
 
-export function CardEvent({ event }: { event: EventProps }) {
+interface CardEventProps {
+  event: EventProps;
+  intl: DictionaryProps;
+}
+
+export function CardEvent({ event, intl }: CardEventProps) {
   const isPresencial = event.type === "in-person";
   return (
     <div className="h-fit flex">
@@ -67,25 +74,31 @@ export function CardEvent({ event }: { event: EventProps }) {
               </span>
             </span>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
+              {isPresencial ? (
+                <MapPin className="w-4 h-4" />
+              ) : (
+                <LinkIcon className="w-4 h-4" />
+              )}
               <span className="text-sm tracking-wide line-clamp-1">
                 {event.location}
               </span>
             </span>
           </div>
 
-          <Button
-            variant="outline"
-            className={cn(
-              "flex items-center text-sm uppercase font-bold justify-center rounded-lg transition-colors duration-200",
-              isPresencial
-                ? "text-mf-purple hover:bg-mf-purple hover:text-mf-background border-mf-purple"
-                : "text-mf-secondProposal hover:bg-mf-secondProposal hover:text-mf-background"
-            )}
-          >
-            Ver Detalhes
-            <ChevronRight />
-          </Button>
+          <Link href={ROUTES.EVENT_DETAILS(event.slug.current)}>
+            <Button
+              variant="outline"
+              className={cn(
+                "w-full flex items-center text-sm uppercase font-bold justify-center rounded-lg transition-colors duration-200",
+                isPresencial
+                  ? "text-mf-purple hover:bg-mf-purple hover:text-mf-background border-mf-purple"
+                  : "text-mf-secondProposal hover:bg-mf-secondProposal hover:text-mf-background"
+              )}
+            >
+              {intl.common.seeDetails}
+              <ChevronRight />
+            </Button>
+          </Link>
         </div>
       </Card>
     </div>

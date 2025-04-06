@@ -29,7 +29,7 @@ export async function EventsSection({ intl, lang }: Props) {
         ])}
       </h3>
 
-      <EventCarousel data={events} />
+      <EventCarousel data={events} intl={intl} />
 
       <Link
         href={""}
