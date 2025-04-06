@@ -34,7 +34,9 @@ export function FaqSection({ intl, lang }: Props) {
             value={item.question}
             className="px-8"
           >
-            <AccordionTrigger>{item.question}</AccordionTrigger>
+            <AccordionTrigger className="text-left">
+              {item.question}
+            </AccordionTrigger>
             <AccordionContent>{item.answer}</AccordionContent>
           </AccordionItem>
         ))}
