@@ -9,13 +9,16 @@ import Image from "next/image";
 import Logo from "@/public/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Locale } from "@/lib/getDictionary";
-
+import { usePathname } from "next/navigation";
 type Props = {
   params: { lang: Locale };
   className?: string;
 };
 
 export function Navbar({ className, params }: Props) {
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname.includes(path);
+
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -78,7 +81,7 @@ export function Navbar({ className, params }: Props) {
                   className="w-auto h-10 md:h-12"
                   width={56}
                   height={56}
-                  src={Logo || "/placeholder.svg"}
+                  src={Logo}
                   alt="Maputo Frontenders"
                   priority
                 />
@@ -105,7 +108,12 @@ export function Navbar({ className, params }: Props) {
                 <Link
                   key={item.label}
                   href={item.link}
-                  className="text-white font-medium uppercase text-sm hover:text-mf-secondProposal transition-colors relative group"
+                  className={cn(
+                    "text-white font-medium uppercase text-sm hover:text-mf-secondProposal transition-colors relative group",
+                    isActive(item.link)
+                      ? "text-mf-secondProposal"
+                      : "text-mf-white"
+                  )}
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mf-secondProposal transition-all duration-300 group-hover:w-full"></span>
