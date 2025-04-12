@@ -41,7 +41,7 @@ export default async function EventPage({ params }: Props) {
           />
           <div className="space-y-10 ">
             <div className="space-y-10 flex flex-col-reverse md:flex-row  justify-between">
-              <div className="mx-left mt-8 max-w-3xl space-y-4">
+              <div className="mx-left mt-8 max-w-md lg:max-w-xl xl:max-w-3xl space-y-4">
                 <h2 className="text-4xl font-bold leading-normal max-w-3xl">
                   {event.title}
                 </h2>
