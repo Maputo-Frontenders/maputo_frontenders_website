@@ -25,18 +25,21 @@ export function HeroSection({ intl }: Props) {
         alt="Decorative blur background"
         className="absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
         role="presentation"
+        loading="lazy"
       />
       <Image
         src={SquareBackground}
         alt="Decorative square pattern background"
         className="hidden md:block  absolute -z-50 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 w-full"
         role="presentation"
+        loading="lazy"
       />
       <Image
         src={RadialOpacityBackground}
         alt="Decorative radial gradient background"
         className="absolute -z-50 top-full left-1/2 -translate-x-1/2 translate-y-1/2 w-full opacity-75"
         role="presentation"
+        loading="lazy"
       />
 
       {/* <div className="flex mx-auto justify-center py-1 w-full hover:underline">

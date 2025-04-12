@@ -94,20 +94,20 @@ export const InfiniteMovingCards = ({
               src={Img1}
               alt="Family event picture"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
-              priority
+              loading="lazy"
             />
             <Image
               src={Img2}
               alt="Girls coders having fun at the event"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
-              priority
+              loading="lazy"
             />
           </div>
           <Image
             src={Img3}
             alt="People coding together - Code In The Dark"
             className=" w-[600px] h-[416px] rounded-lg object-cover"
-            priority
+            loading="lazy"
           />
           <Image
             src={Img4}
@@ -126,20 +126,20 @@ export const InfiniteMovingCards = ({
               src={Img6}
               alt="Boy coding on Code In The Dark"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
-              priority
+              loading="lazy"
             />
           </div>
           <Image
             src={Img7}
             alt="Family event picture"
             className=" w-[600px] h-[416px] rounded-lg object-cover"
-            priority
+            loading="lazy"
           />
           <Image
             src={Img8}
             alt="People coding together - Code In The Dark"
             className=" w-[300px] h-[416px] rounded-lg object-cover"
-            priority
+            loading="lazy"
           />
         </div>
       </ul>
