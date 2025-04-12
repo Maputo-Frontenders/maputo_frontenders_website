@@ -1,33 +1,76 @@
+"use client";
+
 import Image from "next/image";
 import type { SpeakerProps } from "@/types";
 import { cn } from "@/lib/utils";
 import { processSocialMediaLinks, getSanityImageUrl } from "@/utils";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export function SpeakerCards({ speakers }: { speakers: SpeakerProps[] }) {
   const speakersWithSocial = speakers.map(processSocialMediaLinks);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 md:px-0">
-      {speakersWithSocial.map((speaker) => (
-        <SpeakerCard key={speaker.name} speaker={speaker} />
+    <motion.div
+      ref={containerRef}
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 md:px-0"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      {speakersWithSocial.map((speaker, index) => (
+        <SpeakerCard key={speaker.name} speaker={speaker} index={index} />
       ))}
-    </div>
+    </motion.div>
   );
 }
 
 type Props = {
   speaker: SpeakerProps;
+  index?: number;
 };
 
-function SpeakerCard({ speaker }: Props) {
+function SpeakerCard({ speaker, index = 0 }: Props) {
   const socialLinks = Array.isArray(speaker.social) ? speaker.social : [];
 
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1.0],
+        delay: index * 0.1,
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className={cn(
         "perspective group",
         speaker.image ? "h-[340px] w-full" : "h-fit w-full"
       )}
+      variants={cardVariants}
     >
       {speaker.image ? (
         <div
@@ -121,6 +164,6 @@ function SpeakerCard({ speaker }: Props) {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
