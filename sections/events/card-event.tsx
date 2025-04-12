@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
@@ -17,16 +19,41 @@ import Link from "next/link";
 import { ROUTES } from "@/utils/routes";
 import { DictionaryProps } from "@/lib/getDictionary";
 import { formatDateToMonthDayYear, formatDateToHour } from "@/utils/formats";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface CardEventProps {
   event: EventProps;
   intl: DictionaryProps;
+  index?: number;
 }
 
-export function CardEvent({ event, intl }: CardEventProps) {
+export function CardEvent({ event, intl, index }: CardEventProps) {
   const isPresencial = event.type === "in-person";
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: index ? index * 0.1 : 0,
+      },
+    },
+  };
+
   return (
-    <div className="h-fit flex">
+    <motion.div
+      className="h-fit flex"
+      key={event.title}
+      ref={cardRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={cardVariants}
+    >
       <Card
         className="bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4 flex-1 flex flex-col"
         role="article"
@@ -116,14 +143,34 @@ export function CardEvent({ event, intl }: CardEventProps) {
           </Link>
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 }
 
 export function CardEventSmall({ event, intl }: CardEventProps) {
   const isPresencial = event.type === "in-person";
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="h-fit flex ">
+    <motion.div
+      className="h-fit flex"
+      ref={cardRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={cardVariants}
+    >
       <div
         className={cn("w-full rounded-xl  p-[1px] bg-gradient-white-dark-2")}
       >
@@ -178,6 +225,6 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

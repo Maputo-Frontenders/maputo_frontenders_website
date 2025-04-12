@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import type { TeamMemberProps } from "@/types";
 import { cn } from "@/lib/utils";
 import { processSocialMediaLinks } from "@/utils";
@@ -15,31 +15,50 @@ export function TeamMemberCards({
   teamMembers: TeamMemberProps[];
 }) {
   const members = teamMembers.map(processSocialMediaLinks);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
   return (
-    <div
+    <motion.div
+      ref={containerRef}
       className="flex flex-wrap justify-center gap-6 md:mx-10"
       role="list"
       aria-roledescription="team members"
       aria-label="Team members"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
     >
-      {members.map((member) => (
+      {members.map((member, index) => (
         <TeamMemberCard
           key={member.name}
           member={member}
           isActiveAnimation={isActiveAnimation}
+          index={index}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
 
 type Props = {
   member: TeamMemberProps;
   isActiveAnimation?: boolean;
+  index?: number;
 };
 
-function TeamMemberCard({ member, isActiveAnimation }: Props) {
+function TeamMemberCard({ member, isActiveAnimation, index = 0 }: Props) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const toggleFlip = () => {
@@ -48,12 +67,31 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
 
   const socialLinks = Array.isArray(member.social) ? member.social : [];
 
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.1, 0.25, 1.0],
+        delay: index * 0.1,
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className="perspective w-80 md:w-64 h-[300px]"
       role="listitem"
       aria-roledescription="team member"
       aria-label={member.name}
+      variants={cardVariants}
     >
       {isActiveAnimation ? (
         <motion.div
@@ -202,6 +240,6 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

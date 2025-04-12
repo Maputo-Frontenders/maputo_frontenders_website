@@ -32,7 +32,7 @@ export function EventCarousel({ data, intl }: EventCarouselProps) {
               className="pl-1 md:basis-1/2 lg:basis-1/3 h-full"
               aria-label={`${event.title} - ${index + 1} of ${data.length}`}
             >
-              <CardEvent event={event} intl={intl} />
+              <CardEvent event={event} intl={intl} index={index} />
             </CarouselItem>
           );
         })}
