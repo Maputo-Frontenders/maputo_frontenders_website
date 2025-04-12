@@ -64,9 +64,18 @@
     "register": "Register Now",
     "viewAll": "View All Events",
     "noEventsAvailable": "No events available",
+    "participate": "Participate",
+    "speakers": "SPEAKERS",
+    "partners": "Partners and Sponsors",
+    "otherEvents": "Other Events",
     "page": {
       "title": "The largest community of <span class='bg-gradient-cyan-purple bg-clip-text text-transparent'> frontend developers </span> in Mozambique",
       "subtitle": "We create opportunities to build a more inclusive and collaborative community, where all voices are heard and shared experiences are valued."
+    },
+    "filters": {
+      "all": "All",
+      "inPerson": "In-person",
+      "virtual": "Virtual"
     }
   },
   "testimonials": {

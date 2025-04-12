@@ -64,9 +64,18 @@
     "register": "Registre-se Agora",
     "viewAll": "Ver todos eventos",
     "noEventsAvailable": "Nenhum evento disponível",
+    "participate": "Participar",
+    "speakers": "SPEAKERS",
+    "partners": "Parceirias e patrocínios",
+    "otherEvents": "Outros Eventos",
     "page": {
       "title": "A maior comunidade de <span class='bg-gradient-cyan-purple bg-clip-text text-transparent'> desenvolvedores frontend </span> em Moçambique",
       "subtitle": "Criamos oportunidades para construir uma comunidade mais inclusiva e colaborativa, onde todas as vozes são ouvidas e as experiências compartilhadas são valorizadas."
+    },
+    "filters": {
+      "all": "Todos",
+      "inPerson": "Presencial",
+      "virtual": "Virtual"
     }
   },
   "testimonials": {
