@@ -1,4 +1,4 @@
-import { CardEvent } from "./card-event";
+import { CardEvent, CardEventSmall } from "./card-event";
 import { getEvents } from "./data";
 import { DictionaryProps, Locale } from "@/lib/getDictionary";
 import { calculatePagination, generatePagination } from "@/utils";
@@ -59,6 +59,33 @@ function Events({ events, intl }: EventsProps) {
         events.map((event) => (
           <CardEvent key={event.id} event={event} intl={intl} />
         ))
+      ) : (
+        <div className="col-span-3 flex justify-center items-center h-64">
+          <p className="text-xl text-mf-white/70">
+            {intl.events.noEventsAvailable}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export async function ListEventsOther({
+  intl,
+  lang,
+}: {
+  intl: DictionaryProps;
+  lang: Locale;
+}) {
+  const events = await getEvents(lang);
+  return (
+    <div className="w-full flex flex-col md:flex-row flex-wrap gap-4">
+      {events.slice(0, 3).length > 0 ? (
+        events
+          .slice(0, 3)
+          .map((event) => (
+            <CardEventSmall key={event.id} event={event} intl={intl} />
+          ))
       ) : (
         <div className="col-span-3 flex justify-center items-center h-64">
           <p className="text-xl text-mf-white/70">

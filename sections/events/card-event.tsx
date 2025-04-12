@@ -16,6 +16,7 @@ import { formatDateToDDMMYYYY } from "@/utils";
 import Link from "next/link";
 import { ROUTES } from "@/utils/routes";
 import { DictionaryProps } from "@/lib/getDictionary";
+import { formatDateToMonthDayYear, formatDateToHour } from "@/utils/formats";
 
 interface CardEventProps {
   event: EventProps;
@@ -101,6 +102,57 @@ export function CardEvent({ event, intl }: CardEventProps) {
           </Link>
         </div>
       </Card>
+    </div>
+  );
+}
+
+export function CardEventSmall({ event, intl }: CardEventProps) {
+  const isPresencial = event.type === "in-person";
+  return (
+    <div className="h-fit flex ">
+      <div
+        className={cn("w-full rounded-xl  p-[1px] bg-gradient-white-dark-2")}
+      >
+        <div className=" md:w-[350px] rounded-xl p-4 flex flex-col gap-4 h-full bg-mf-background ">
+          <Badge
+            variant="outline"
+            className={cn(
+              "w-fit font-bold rounded-lg text-xs p-[1px] bg-gradient-white-dark border-transparent ring-transparent border-0",
+              isPresencial ? " text-mf-purple" : " text-mf-secondProposal"
+            )}
+          >
+            <div
+              className="bg-mf-background  flex h-full w-full py-1
+      px-4 rounded-lg"
+            >
+              {EventTypesEnum[event.type]}
+            </div>
+          </Badge>
+
+          <div className="flex flex-col gap-4 mt-auto">
+            <h4 className="text-lg text-start font-medium line-clamp-2">
+              {event.title}
+              <p className="invisible">.</p>
+            </h4>
+
+            <hr />
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <span className="text-sm tracking-wide ">
+                  {formatDateToMonthDayYear(event.date.start)} |{" "}
+                  {formatDateToHour(event.date.start)}
+                </span>
+              </div>
+
+              <Link href={ROUTES.EVENT_DETAILS(event.slug.current)}>
+                <Button withArrow className="uppercase rounded-3xl">
+                  Ver
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

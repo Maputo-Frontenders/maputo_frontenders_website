@@ -34,9 +34,11 @@ const config = {
         "gradient-orange-pink": "linear-gradient(90deg, #FF9F24, #FF5FCC)",
         "gradient-cyan-purple": "linear-gradient(90deg, #1FCFF1, #8244FF)",
         "gradient-white-dark": "linear-gradient(90deg, #2A2A2A, #9B9B9B)",
+        "gradient-white-dark-2": "linear-gradient(90deg,#9B9B9B, #2A2A2A)",
         "gradient-dark-blue": "linear-gradient(90deg, #020612, #040D20)",
         "gradient-cyan-orange": "linear-gradient(90deg, #1FCFF1, #FF9F24)",
         "gradient-dark-least": "linear-gradient(45deg, #020612, #17253D)",
+        "gradient-dark-least-180": "linear-gradient(180deg, #020612, #17253D)",
         "gradient-turquoise-lavender":
           "linear-gradient(90deg, #16F8B6, #A679FF)",
       },

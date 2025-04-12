@@ -5,6 +5,7 @@ import type {
   TeamMemberProps,
   TeamMemberSocialProps,
   SanitySocialData,
+  SpeakerProps,
 } from "@/types";
 
 export function ParserToHtml(text: string, allowedAttributes: string[] = []) {
@@ -28,9 +29,9 @@ export function formatDateToDDMMYYYY(date: string) {
   return `${day}/${month}/${year}`;
 }
 
-export function processSocialMediaLinks(
-  member: TeamMemberProps
-): TeamMemberProps {
+export function processSocialMediaLinks<
+  T extends TeamMemberProps | SpeakerProps
+>(member: T): T {
   if (!member.social) {
     return {
       ...member,
@@ -107,7 +108,8 @@ export function getSanityImageUrl(imageRef: any): string {
     .replace("image-", "")
     .replace("-jpg", ".jpg")
     .replace("-png", ".png")
-    .replace("-jpeg", ".jpeg")}`;
+    .replace("-jpeg", ".jpeg")
+    .replace("-webp", ".webp")}`;
 }
 
 export function generatePagination(currentPage: number, totalPages: number) {

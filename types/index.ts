@@ -42,23 +42,7 @@ export type EventProps = {
   }[];
   galleryLink?: string;
   rsvpLink?: string;
-  speakers: {
-    name: string;
-    role: string;
-    image: {
-      asset: {
-        _ref: any;
-        _type: any;
-      };
-    };
-    company: string;
-    social: {
-      twitter?: string;
-      linkedin?: string;
-      github?: string;
-      instagram?: string;
-    };
-  }[];
+  speakers: SpeakerProps[];
   partners?: {
     name: string;
     image: {
@@ -69,6 +53,24 @@ export type EventProps = {
     };
     link: string;
   }[];
+};
+
+export type SpeakerProps = {
+  name: string;
+  role: string;
+  image: {
+    asset: {
+      _ref: any;
+      _type: any;
+    };
+  };
+  company: string;
+  social: {
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+    instagram?: string;
+  };
 };
 
 export interface TeamMemberSocialProps {
