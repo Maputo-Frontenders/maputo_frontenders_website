@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { GoalSection } from "@/sections/sobre/goal";
 import { CallTopicsSection } from "@/sections/call-topics";
 
-import PhotoHete from "@/public/members/hete-odete.jpeg";
+import PhotoHete from "@/assets/members/hete-odete.jpeg";
 import Img4 from "@/assets/hero/img4.png";
 import Img5 from "@/assets/hero/img5.png";
 import Img6 from "@/assets/hero/img6.png";
