@@ -23,6 +23,13 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: event.title,
     description: event.description,
+    openGraph: {
+      images: [
+        {
+          url: urlFor(event.image.asset._ref)?.url(),
+        },
+      ],
+    },
   };
 }
 
