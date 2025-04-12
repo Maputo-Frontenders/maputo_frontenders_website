@@ -107,6 +107,17 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+            ) : link.isExternal ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-mf-secondary transition-colors text-base sm:text-lg group"
+                onMouseEnter={() => setHoveredLink(link.name)}
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                {LinkContent}
+              </a>
             ) : (
               <Link
                 href={link.href}

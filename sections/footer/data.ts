@@ -1,34 +1,43 @@
 import { InstagramIcon, Twitter, YoutubeIcon } from "lucide-react";
 import { Locale } from "@/lib/getDictionary";
 import { LinkedinIcon } from "lucide-react";
+import { ROUTES } from "@/utils/routes";
 
 export const navLinks = (lang: Locale) => {
   return lang === "pt"
     ? [
-        { name: "Sobre", href: "/pt/sobre", isExternal: false },
-        { name: "Eventos", href: "/pt/events", isExternal: false },
+        { name: "Sobre", href: ROUTES.ABOUT, isExternal: false },
+        { name: "Eventos", href: ROUTES.LIST_EVENTS, isExternal: false },
         {
           name: "Contato",
-          href: "/pt/contact",
+          href: ROUTES.CONTACT,
           isExternal: false,
           description: "contacto@maputofrontenders.com",
         },
-        { name: "Loja", href: "/", isExternal: true },
-        { name: "Blog", href: "/", isExternal: true },
-        { name: "Jobs", href: "/", isExternal: true },
+        // { name: "Loja", href: "/", isExternal: true },
+        // { name: "Blog", href: "/", isExternal: true },
+        {
+          name: "Jobs",
+          href: "https://maputofrontenders.propel.community/jobs",
+          isExternal: true,
+        },
       ]
     : [
-        { name: "About", href: "/en/sobre", isExternal: false },
-        { name: "Events", href: "/en/events", isExternal: false },
+        { name: "About", href: ROUTES.ABOUT, isExternal: false },
+        { name: "Events", href: ROUTES.LIST_EVENTS, isExternal: false },
         {
           name: "Contact",
-          href: "/en/contact",
+          href: ROUTES.CONTACT,
           isExternal: false,
           description: "contacto@maputofrontenders.com",
         },
-        { name: "Shop", href: "/", isExternal: true },
-        { name: "Blog", href: "/", isExternal: true },
-        { name: "Jobs", href: "/", isExternal: true },
+        // { name: "Shop", href: "/", isExternal: true },
+        // { name: "Blog", href: "/", isExternal: true },
+        {
+          name: "Jobs",
+          href: "https://maputofrontenders.propel.community/jobs",
+          isExternal: true,
+        },
       ];
 };
 
