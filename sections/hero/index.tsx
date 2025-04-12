@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 import BlurBackground from "@/public/blur-background.svg";
