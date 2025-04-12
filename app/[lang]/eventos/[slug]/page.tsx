@@ -12,7 +12,7 @@ import { ColorizedTags } from "@/components/colorized-tags";
 import { SpeakerCards } from "@/components/speaker-card";
 import { ListEventsOther } from "@/sections/events/list-events";
 import { CallTopicsSection } from "@/sections/call-topics";
-
+import { notFound } from "next/navigation";
 type Props = {
   params: { lang: Locale; slug: string };
 };
@@ -23,6 +23,10 @@ export default async function EventPage({ params }: Props) {
     slug: params.slug,
     lang: params.lang,
   });
+
+  if (!event) {
+    notFound();
+  }
 
   return (
     <main className="text-mf-white space-y-20 ">
