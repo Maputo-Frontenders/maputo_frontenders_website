@@ -4,9 +4,24 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
-import { RoundedCardAnimated } from "./rounded-card";
+import { DictionaryProps } from "@/lib/getDictionary";
+import { StaticImageData } from "next/image";
+import { RoundedCard } from "./rounded-card";
 
-export function MissionVisionSection({ intl, photoHete, cardsMini }) {
+export function MissionVisionSection({
+  intl,
+  photoHete,
+  cardsMini,
+}: {
+  intl: DictionaryProps;
+  photoHete: StaticImageData;
+  cardsMini: {
+    title: string;
+    description: string;
+    icon: StaticImageData;
+    gradientColor: string;
+  }[];
+}) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
@@ -44,7 +59,7 @@ export function MissionVisionSection({ intl, photoHete, cardsMini }) {
         aria-roledescription="about page mission content"
         role="region"
       >
-        <RoundedCardAnimated
+        <RoundedCard
           image={photoHete}
           title={"Hete Odete"}
           description={intl.about.president}
@@ -123,14 +138,14 @@ export function MissionVisionSection({ intl, photoHete, cardsMini }) {
         animate={isInView ? "visible" : "hidden"}
         aria-roledescription="about page stats cards"
       >
-        {cardsMini({ intl }).map((card, index) => (
+        {cardsMini.map((card, index) => (
           <motion.div
             key={card.title}
             variants={item}
             custom={index}
             transition={{ delay: index * 0.1 }}
           >
-            <RoundedCardAnimated
+            <RoundedCard
               image={card.icon}
               title={card.title}
               description={card.description}
