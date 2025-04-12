@@ -49,7 +49,9 @@ export function Breadcrumbs({
 
               {isLast ? (
                 <span className=" text-mf-white" aria-current="page">
-                  {item.title}
+                  {item.title.length > 30
+                    ? `${item.title.slice(0, 30)}...`
+                    : item.title}
                 </span>
               ) : (
                 <Link
