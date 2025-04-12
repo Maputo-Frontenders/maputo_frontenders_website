@@ -13,7 +13,7 @@ type Props = {
 };
 
 export async function EventsSection({ intl, lang }: Props) {
-  const events = await getEvents(lang);
+  const events = await getEvents(lang, 3);
 
   return (
     <section
