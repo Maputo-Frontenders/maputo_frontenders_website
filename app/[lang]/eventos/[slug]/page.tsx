@@ -24,9 +24,14 @@ export async function generateMetadata({ params }: Props) {
     title: event.title,
     description: event.description,
     openGraph: {
+      title: event.title,
+      description: event.description,
       images: [
         {
           url: urlFor(event.image.asset._ref)?.url(),
+          width: 1200,
+          height: 630,
+          alt: event.title,
         },
       ],
     },
