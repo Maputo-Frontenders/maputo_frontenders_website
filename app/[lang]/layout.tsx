@@ -11,7 +11,10 @@ export const revalidate = 60; // 1 min
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Maputo Frontenders - Comunidade Frontend de Moçambique",
+  title: {
+    default: "Maputo Frontenders - Comunidade Frontend de Moçambique",
+    template: "%s | Maputo Frontenders",
+  },
   description: "A maior comunidade frontend de Moçambique",
 };
 

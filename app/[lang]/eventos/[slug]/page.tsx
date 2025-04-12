@@ -13,6 +13,19 @@ import { SpeakerCards } from "@/components/speaker-card";
 import { ListEventsOther } from "@/sections/events/list-events";
 import { CallTopicsSection } from "@/sections/call-topics";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }: Props) {
+  const event = await getEventBySlug({
+    slug: params.slug,
+    lang: params.lang,
+  });
+
+  return {
+    title: event.title,
+    description: event.description,
+  };
+}
+
 type Props = {
   params: { lang: Locale; slug: string };
 };
@@ -101,6 +114,8 @@ export default async function EventPage({ params }: Props) {
                   width={376}
                   height={376}
                   className="w-full h-full object-cover border-4 border-mf-white/10 rounded-[26px]"
+                  priority
+                  loading="eager"
                 />
               </div>
             </div>

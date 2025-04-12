@@ -11,6 +11,15 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ListEvents } from "@/sections/events/list-events";
 import { ParserToHtml } from "@/utils";
 
+export async function generateMetadata({ params }: Props) {
+  const intl = await getDictionary(params.lang);
+
+  return {
+    title: intl.events.pageTitle,
+    description: intl.events.pageDescription,
+  };
+}
+
 type Props = {
   params: { lang: Locale };
   searchParams: { page?: string };

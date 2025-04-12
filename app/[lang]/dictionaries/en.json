@@ -58,6 +58,8 @@
     }
   },
   "events": {
+    "pageTitle": "Events",
+    "pageDescription": "Join us and participate in events that are shaping the future of frontend development in Mozambique",
     "title": "Recent Events",
     "subtitle": "Join us and participate in events that are shaping the <br class='hidden md:block' />future of <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>frontend development</span> in Mozambique",
     "noEvents": "No upcoming events at the moment",
@@ -98,6 +100,8 @@
     "allRightsReserved": "All rights reserved."
   },
   "about": {
+    "pageTitle": "About Us",
+    "pageDescription": "Learn more about our organization, mission, vision, and team.",
     "history": {
       "title": "Our History",
       "subtitle": "Begins when...",
@@ -144,6 +148,8 @@
     }
   },
   "contact": {
+    "pageTitle": "Contact Us",
+    "pageDescription": "Contact us and get in touch with our team.",
     "form": {
       "name": "Full Name",
       "email": "Your Email",

@@ -11,6 +11,15 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ContactForm } from "@/sections/contacto/form";
 import { FaqSection } from "@/sections/contacto/faq";
 
+export async function generateMetadata({ params }: Props) {
+  const intl = await getDictionary(params.lang);
+
+  return {
+    title: intl.contact.pageTitle,
+    description: intl.contact.pageDescription,
+  };
+}
+
 type Props = {
   params: { lang: Locale };
 };

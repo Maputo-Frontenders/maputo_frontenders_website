@@ -31,6 +31,15 @@ type Props = {
   params: { lang: Locale };
 };
 
+export async function generateMetadata({ params }: Props) {
+  const intl = await getDictionary(params.lang);
+
+  return {
+    title: intl.about.pageTitle,
+    description: intl.about.pageDescription,
+  };
+}
+
 export default async function AboutPage({ params }: Props) {
   const intl = await getDictionary(params.lang);
 

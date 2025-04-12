@@ -58,6 +58,8 @@
     }
   },
   "events": {
+    "pageTitle": "Eventos",
+    "pageDescription": "Junte-se a nós e participe dos eventos que estão a moldar o futuro do desenvolvimento frontend em Moçambique",
     "title": "Eventos Recentes",
     "subtitle": "Junte-se a nós e participe dos eventos que estão a moldar <br class='hidden md:block' />o <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>futuro do desenvolvimento frontend</span> em Moçambique",
     "noEvents": "Nenhum evento próximo no momento",
@@ -98,6 +100,8 @@
     "allRightsReserved": "Todos os direitos reservados."
   },
   "about": {
+    "pageTitle": "Sobre Nós",
+    "pageDescription": "Saiba mais sobre a nossa organização, missão, visão e equipe.",
     "history": {
       "title": "A Nossa História",
       "subtitle": "Inicia quando...",
@@ -144,6 +148,8 @@
     }
   },
   "contact": {
+    "pageTitle": "Contacto",
+    "pageDescription": "Contacte-nos e entre em contato com a nossa equipa.",
     "form": {
       "name": "Nome Apelido",
       "email": "Teu e-mail",
