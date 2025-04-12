@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <head>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body className={cn(`bg-mf-background`, inter.className)}>
         <div className="flex flex-col h-full">
