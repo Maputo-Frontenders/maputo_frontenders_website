@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Line from "./line";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Testimonial {
   name: string;
   role: string;
-  image: string;
+  image: StaticImageData;
   testimony: string;
 }
 
@@ -132,7 +132,7 @@ export function TestimonialCarousel({
               tabIndex={index === 1 ? 0 : -1}
             >
               <Image
-                src={testimonial?.image || "/placeholder.svg"}
+                src={testimonial?.image}
                 alt={`${testimonial?.name}, ${testimonial?.role}`}
                 width={index === 1 ? 64 : 32}
                 height={index === 1 ? 64 : 32}
