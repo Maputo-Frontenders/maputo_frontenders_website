@@ -1,13 +1,21 @@
+import dynamic from "next/dynamic";
+
 import { ImpactSection } from "@/sections/stats";
 import { HeroSection } from "@/sections/hero";
 import { PartenersSection } from "@/sections/partners";
-import { EventsSection } from "@/sections/events";
 import { TestimonialSection } from "@/sections/testimonials";
 import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 import { cards } from "@/sections/purpose/data";
-import { TeamMembers } from "@/sections/team-members";
 import { CallTopicsSection } from "@/sections/call-topics";
 import { getDictionary, Locale } from "@/lib/getDictionary";
+
+const TeamMembers = dynamic(() =>
+  import("@/sections/team-members").then((mod) => mod.TeamMembers)
+);
+
+const EventsSection = dynamic(() =>
+  import("@/sections/events").then((mod) => mod.EventsSection)
+);
 
 type Props = {
   params: { lang: Locale };
