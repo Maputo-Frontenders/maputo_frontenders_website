@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
       description: event.description,
       images: [
         {
-          url: urlFor(event.image.asset._ref)?.url(),
+          url: getSanityImageUrl(event.image),
           width: 1200,
           height: 630,
           alt: event.title,
