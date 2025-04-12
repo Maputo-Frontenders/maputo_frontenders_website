@@ -36,7 +36,10 @@ export async function ListEvents({ params, searchParams }: ListEventsProps) {
   const paginatedEvents = events.slice(startIndex, endIndex);
 
   return (
-    <div className="flex flex-col items-center">
+    <div
+      className="flex flex-col items-center"
+      aria-roledescription="events page content"
+    >
       <Events events={paginatedEvents} intl={params.intl} />
       <PaginationControls
         currentPage={currentPage}
@@ -54,10 +57,13 @@ interface EventsProps {
 
 function Events({ events, intl }: EventsProps) {
   return (
-    <div className="container mt-10 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 ">
+    <div
+      className="container mt-10 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 "
+      aria-roledescription="events page content"
+    >
       {events.length > 0 ? (
         events.map((event) => (
-          <CardEvent key={event.id} event={event} intl={intl} />
+          <CardEvent key={event.slug.current} event={event} intl={intl} />
         ))
       ) : (
         <div className="col-span-3 flex justify-center items-center h-64">
@@ -79,12 +85,19 @@ export async function ListEventsOther({
 }) {
   const events = await getEvents(lang);
   return (
-    <div className="w-full flex flex-col md:flex-row flex-wrap gap-4">
+    <div
+      className="w-full flex flex-col md:flex-row flex-wrap gap-4"
+      aria-roledescription="events page other events"
+    >
       {events.slice(0, 3).length > 0 ? (
         events
           .slice(0, 3)
           .map((event) => (
-            <CardEventSmall key={event.id} event={event} intl={intl} />
+            <CardEventSmall
+              key={event.slug.current}
+              event={event}
+              intl={intl}
+            />
           ))
       ) : (
         <div className="col-span-3 flex justify-center items-center h-64">
@@ -119,7 +132,10 @@ function PaginationControls({
   const paginationItems = generatePagination(currentPage, totalPages);
 
   return (
-    <Pagination className={cn("mt-8 mb-12", className)}>
+    <Pagination
+      className={cn("mt-8 mb-12", className)}
+      aria-roledescription="events page pagination"
+    >
       <PaginationContent
         className={cn(
           "bg-mf-dark/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-mf-white/10",

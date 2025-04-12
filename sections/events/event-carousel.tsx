@@ -22,13 +22,15 @@ export function EventCarousel({ data, intl }: EventCarouselProps) {
       opts={{
         align: "start",
       }}
+      aria-label={intl.events.title }
     >
-      <CarouselContent className="mx-4 sm:mx-5 md:mx-10 gap-4 ">
-        {data.map((event) => {
+      <CarouselContent className="mx-4 sm:mx-5 md:mx-10 gap-4">
+        {data.map((event, index) => {
           return (
             <CarouselItem
-              key={event.id}
+              key={event.slug.current}
               className="pl-1 md:basis-1/2 lg:basis-1/3 h-full"
+              aria-label={`${event.title} - ${index + 1} of ${data.length}`}
             >
               <CardEvent event={event} intl={intl} />
             </CarouselItem>

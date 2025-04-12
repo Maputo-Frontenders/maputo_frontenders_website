@@ -27,7 +27,10 @@ export function CardEvent({ event, intl }: CardEventProps) {
   const isPresencial = event.type === "in-person";
   return (
     <div className="h-fit flex">
-      <Card className="bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4 flex-1 flex flex-col">
+      <Card
+        className="bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4 flex-1 flex flex-col"
+        role="article"
+      >
         <div className="relative flex flex-col gap-4 w-full">
           <div className="relative h-80 w-full">
             <Image
@@ -68,17 +71,25 @@ export function CardEvent({ event, intl }: CardEventProps) {
             <p className="invisible">.</p>
           </h4>
           <div className="flex gap-2 flex-col">
-            <span className="flex items-center gap-2">
-              <CalendarDays className="w-4 h-4" />
+            <span
+              className="flex items-center gap-2"
+              aria-label={`Event date: ${formatDateToDDMMYYYY(
+                event.date.start
+              )}`}
+            >
+              <CalendarDays className="w-4 h-4" aria-hidden="true" />
               <span className="text-sm tracking-wide ">
                 {formatDateToDDMMYYYY(event.date.start)}
               </span>
             </span>
-            <span className="flex items-center gap-2">
+            <span
+              className="flex items-center gap-2"
+              aria-label={`Event location: ${event.location}`}
+            >
               {isPresencial ? (
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-4 h-4" aria-hidden="true" />
               ) : (
-                <LinkIcon className="w-4 h-4" />
+                <LinkIcon className="w-4 h-4" aria-hidden="true" />
               )}
               <span className="text-sm tracking-wide line-clamp-1">
                 {event.location}
@@ -86,7 +97,10 @@ export function CardEvent({ event, intl }: CardEventProps) {
             </span>
           </div>
 
-          <Link href={ROUTES.EVENT_DETAILS(event.slug.current)}>
+          <Link
+            href={ROUTES.EVENT_DETAILS(event.slug.current)}
+            aria-label={`${intl.common.seeDetails} ${event.title}`}
+          >
             <Button
               variant="outline"
               className={cn(
@@ -97,7 +111,7 @@ export function CardEvent({ event, intl }: CardEventProps) {
               )}
             >
               {intl.common.seeDetails}
-              <ChevronRight />
+              <ChevronRight aria-hidden="true" />
             </Button>
           </Link>
         </div>
@@ -113,7 +127,10 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
       <div
         className={cn("w-full rounded-xl  p-[1px] bg-gradient-white-dark-2")}
       >
-        <div className=" md:w-[350px] rounded-xl p-4 flex flex-col gap-4 h-full bg-mf-background ">
+        <div
+          className=" md:w-[350px] rounded-xl p-4 flex flex-col gap-4 h-full bg-mf-background "
+          role="article"
+        >
           <Badge
             variant="outline"
             className={cn(
@@ -138,13 +155,21 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
             <hr />
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <span className="text-sm tracking-wide ">
+                <span
+                  className="text-sm tracking-wide "
+                  aria-label={`Event date and time: ${formatDateToMonthDayYear(
+                    event.date.start
+                  )} at ${formatDateToHour(event.date.start)}`}
+                >
                   {formatDateToMonthDayYear(event.date.start)} |{" "}
                   {formatDateToHour(event.date.start)}
                 </span>
               </div>
 
-              <Link href={ROUTES.EVENT_DETAILS(event.slug.current)}>
+              <Link
+                href={ROUTES.EVENT_DETAILS(event.slug.current)}
+                aria-label={`View details of ${event.title}`}
+              >
                 <Button withArrow className="uppercase rounded-3xl">
                   Ver
                 </Button>

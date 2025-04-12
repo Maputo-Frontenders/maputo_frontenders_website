@@ -29,8 +29,15 @@ export default async function EventPage({ params }: Props) {
   }
 
   return (
-    <main className="text-mf-white space-y-20 ">
-      <div className="relative overflow-hidden">
+    <main
+      className="text-mf-white space-y-20 "
+      aria-labelledby="event-page-heading"
+      role="region"
+    >
+      <div
+        className="relative overflow-hidden"
+        aria-roledescription="event page background"
+      >
         <div className=" text-mf-white container  md:px-12">
           <Breadcrumbs
             items={[
@@ -38,19 +45,29 @@ export default async function EventPage({ params }: Props) {
               { title: intl.navigation.events, href: "/eventos" },
               { title: event.title, href: "" },
             ]}
+            aria-roledescription="breadcrumbs"
           />
-          <div className="space-y-10 ">
+          <div
+            className="space-y-10 "
+            aria-roledescription="event page content"
+          >
             <div className="space-y-10 flex flex-col-reverse md:flex-row  justify-between">
               <div className="mx-left mt-8 max-w-md lg:max-w-xl xl:max-w-3xl space-y-4">
                 <h2 className="text-4xl font-bold leading-normal max-w-3xl">
                   {event.title}
                 </h2>
                 {event.tags && (
-                  <div className="flex gap-2">
+                  <div
+                    className="flex gap-2"
+                    aria-roledescription="event page tags"
+                  >
                     <ColorizedTags tags={event.tags} />
                   </div>
                 )}
-                <div className="flex flex-col gap-4">
+                <div
+                  className="flex flex-col gap-4"
+                  aria-roledescription="event page description"
+                >
                   <p>{event.description}</p>
                   <p className="text-sm">
                     {formatDateToMonthDayYear(event.date.start)} |{" "}
@@ -74,7 +91,10 @@ export default async function EventPage({ params }: Props) {
                   )}
                 </div>
               </div>
-              <div className="mx-right mt-8">
+              <div
+                className="mx-right mt-8"
+                aria-roledescription="event page image"
+              >
                 <Image
                   src={urlFor(event.image.asset._ref)?.url()}
                   alt={event.title}
@@ -85,14 +105,20 @@ export default async function EventPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div
+              className="space-y-4"
+              aria-roledescription="event page speakers"
+            >
               <h3 className="text-sm uppercase text-mf-purple">
                 {intl.events.speakers}
               </h3>
               <SpeakerCards speakers={event.speakers} />
             </div>
 
-            <div className="space-y-4 ">
+            <div
+              className="space-y-4 "
+              aria-roledescription="event page partners"
+            >
               <h3 className="text-sm uppercase text-mf-cyan">
                 {intl.events.partners}
               </h3>
@@ -111,7 +137,10 @@ export default async function EventPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="space-y-4 ">
+            <div
+              className="space-y-4 "
+              aria-roledescription="event page other events"
+            >
               <h3 className="text-sm uppercase text-mf-orange">
                 {intl.events.otherEvents}
               </h3>

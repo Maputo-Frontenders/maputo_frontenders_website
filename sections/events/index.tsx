@@ -17,10 +17,14 @@ export async function EventsSection({ intl, lang }: Props) {
 
   return (
     <section
-      className=" flex flex-col w-full items-center py-10 bg-mf-dark space-y-8"
+      className="flex flex-col w-full items-center py-10 bg-mf-dark space-y-8"
       id="eventos"
+      aria-labelledby="events-heading"
     >
-      <h2 className="text-sm text-mf-secondProposal uppercase">
+      <h2
+        id="events-heading"
+        className="text-sm text-mf-secondProposal uppercase"
+      >
         {intl.events.title}
       </h2>
       <h3 className="container text-2xl text-mf-white text-center font-bold">
@@ -34,10 +38,14 @@ export async function EventsSection({ intl, lang }: Props) {
 
       <Link
         href={ROUTES.LIST_EVENTS}
-        className="w-fit truncate text-clip  flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
+        className="w-fit truncate text-clip flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
+        aria-label={intl.events.viewAll}
       >
         {intl.events.viewAll}
-        <ArrowUpRight className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
+        <ArrowUpRight
+          className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300"
+          aria-hidden="true"
+        />
       </Link>
     </section>
   );

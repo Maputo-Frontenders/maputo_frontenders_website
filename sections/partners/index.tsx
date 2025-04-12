@@ -8,11 +8,21 @@ type Props = {
 
 export function PartenersSection({ intl }: Props) {
   return (
-    <section className="container w-full space-y-4">
-      <h4 className="uppercase text-sm text-center text-mf-purple">
+    <section
+      className="container w-full space-y-4"
+      aria-labelledby="partners-heading"
+      role="region"
+    >
+      <h4
+        id="partners-heading"
+        className="uppercase text-sm text-center text-mf-purple"
+      >
         {intl.partners.title}
       </h4>
-      <div className="w-full flex flex-wrap justify-center items-center gap-x-10 gap-y-2">
+      <div
+        className="w-full flex flex-wrap justify-center items-center gap-x-10 gap-y-2"
+        aria-label={intl.partners.title}
+      >
         {sponsors_logos.map((image, index) => {
           return (
             <Image

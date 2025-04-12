@@ -11,10 +11,20 @@ type Props = {
 
 export function CallTopicsSection({ intl }: Props) {
   return (
-    <section className="container w-full text-white pb-16 md:px-12">
+    <section
+      className="container w-full text-white pb-16 md:px-12"
+      aria-labelledby="call-topics-heading"
+      role="region"
+    >
       <div className={cn("rounded-lg p-[2px] bg-gradient-teal-purple")}>
-        <div className="flex w-full h-full bg-mf-dark rounded-md ">
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8 px-8 md:px-24 py-14">
+        <div
+          className="flex w-full h-full bg-mf-dark rounded-md "
+          aria-roledescription="call topics"
+        >
+          <div
+            className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8 px-8 md:px-24 py-14"
+            aria-roledescription="call topics content"
+          >
             <div className="flex flex-col md:flex-row  gap-8 md:gap-10 items-start md:items-center">
               <Image src={IconArrowRight} alt="icon-arrow-right" />
 

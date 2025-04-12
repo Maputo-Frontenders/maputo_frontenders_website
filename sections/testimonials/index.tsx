@@ -11,9 +11,16 @@ type Props = {
 
 export function TestimonialSection({ intl }: Props) {
   return (
-    <section className="w-full text-white space-y-8">
-      <div className=" container text-center space-y-2">
-        <h2 className="text-sm uppercase text-mf-secondProposal">
+    <section
+      className="w-full text-white space-y-8"
+      aria-labelledby="testimonials-heading"
+      role="region"
+    >
+      <div className="container text-center space-y-2">
+        <h2
+          id="testimonials-heading"
+          className="text-sm uppercase text-mf-secondProposal"
+        >
           {intl.testimonials.title}
         </h2>
         <p className="text-2xl font-bold">
@@ -27,11 +34,15 @@ export function TestimonialSection({ intl }: Props) {
       <TestimonialCarousel testimonials={testimonials} />
 
       <Link
-        href={""}
-        className="w-fit mx-auto   flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
+        href={"#"}
+        className="w-fit mx-auto flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
+        aria-label={intl.hero.cta}
       >
         {intl.hero.cta}
-        <ArrowUpRight className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
+        <ArrowUpRight
+          className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300"
+          aria-hidden="true"
+        />
       </Link>
     </section>
   );

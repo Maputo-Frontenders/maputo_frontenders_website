@@ -17,7 +17,12 @@ export function TeamMemberCards({
   const members = teamMembers.map(processSocialMediaLinks);
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 md:mx-10">
+    <div
+      className="flex flex-wrap justify-center gap-6 md:mx-10"
+      role="list"
+      aria-roledescription="team members"
+      aria-label="Team members"
+    >
       {members.map((member) => (
         <TeamMemberCard
           key={member.name}
@@ -44,7 +49,12 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
   const socialLinks = Array.isArray(member.social) ? member.social : [];
 
   return (
-    <div className="perspective w-80 md:w-64 h-[300px]">
+    <div
+      className="perspective w-80 md:w-64 h-[300px]"
+      role="listitem"
+      aria-roledescription="team member"
+      aria-label={member.name}
+    >
       {isActiveAnimation ? (
         <motion.div
           className="relative w-full h-full transition-all duration-100"
@@ -59,7 +69,10 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
             className="absolute w-full h-full backface-hidden rounded-lg border-0 shadow-sm overflow-hidden cursor-pointer"
             style={{ backfaceVisibility: "hidden" }}
           >
-            <div className="relative h-full">
+            <div
+              className="relative h-full"
+              aria-roledescription="team member image"
+            >
               <Image
                 src={member.image}
                 alt={member.name}
@@ -70,7 +83,10 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
             </div>
 
-            <div className="absolute bottom-0 left-0 p-4 w-full">
+            <div
+              className="absolute bottom-0 left-0 p-4 w-full"
+              aria-roledescription="team member name and role"
+            >
               <h3 className="font-semibold text-xl text-white">
                 {member.name}
               </h3>
@@ -111,11 +127,17 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
                 width={200}
                 height={200}
                 className="object-cover w-full h-full grayscale"
+                aria-roledescription="team member image"
               />
             </div>
             <div className="space-y-2">
               <div>
-                <h2 className="text-lg font-bold  ">{member.name}</h2>
+                <h2
+                  className="text-lg font-bold  "
+                  aria-roledescription="team member name"
+                >
+                  {member.name}
+                </h2>
                 <p
                   className=" font-medium text-sm"
                   style={{ color: member.roleColor }}
@@ -127,7 +149,10 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
               <p className="text-sm">{member.bio}</p>
             </div>
 
-            <div className="mt-2  flex space-x-2 justify-self-end">
+            <div
+              className="mt-2  flex space-x-2 justify-self-end"
+              aria-roledescription="team member social links"
+            >
               {socialLinks.map((social) => (
                 <a
                   key={social.link}
@@ -158,11 +183,15 @@ function TeamMemberCard({ member, isActiveAnimation }: Props) {
               width={1024}
               height={1024}
               className="object-cover object-top w-full h-full grayscale"
+              aria-roledescription="team member image"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
           </div>
 
-          <div className="absolute bottom-0 left-0 p-4 w-full">
+          <div
+            className="absolute bottom-0 left-0 p-4 w-full"
+            aria-roledescription="team member name and role"
+          >
             <h3 className="font-semibold text-xl text-white">{member.name}</h3>
             <p
               className="text-sm font-light tracking-tight"

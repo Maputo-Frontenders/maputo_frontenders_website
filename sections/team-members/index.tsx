@@ -19,9 +19,17 @@ export async function TeamMembers({
   const teamMembers = await getTeamMembers(lang);
 
   return (
-    <section className="md:container w-full text-white space-y-8" id="team">
+    <section
+      className="md:container w-full text-white space-y-8"
+      id="team"
+      aria-labelledby="team-heading"
+      role="region"
+    >
       <div className="container text-center space-y-2">
-        <h2 className="text-sm uppercase text-mf-secondProposal">
+        <h2
+          id="team-heading"
+          className="text-sm uppercase text-mf-secondProposal"
+        >
           {intl.team.title}
         </h2>
         <p className="text-2xl font-bold">
