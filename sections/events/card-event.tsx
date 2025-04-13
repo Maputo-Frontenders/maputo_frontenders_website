@@ -217,7 +217,11 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
                 href={ROUTES.EVENT_DETAILS(event.slug.current)}
                 aria-label={`View details of ${event.title}`}
               >
-                <Button withArrow className="uppercase rounded-3xl">
+                <Button
+                  withArrow
+                  className="uppercase rounded-3xl"
+                  variant={"outline"}
+                >
                   Ver
                 </Button>
               </Link>

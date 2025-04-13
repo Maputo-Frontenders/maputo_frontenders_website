@@ -6,6 +6,7 @@ import { DictionaryProps, Locale } from "@/lib/getDictionary";
 import { ParserToHtml } from "@/utils";
 import { getEvents } from "./data";
 import { ROUTES } from "@/utils/routes";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   intl: DictionaryProps;
@@ -36,16 +37,14 @@ export async function EventsSection({ intl, lang }: Props) {
 
       <EventCarousel data={events} intl={intl} />
 
-      <Link
-        href={ROUTES.LIST_EVENTS}
-        className="w-fit truncate text-clip flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
-        aria-label={intl.events.viewAll}
-      >
-        {intl.events.viewAll}
-        <ArrowUpRight
-          className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300"
-          aria-hidden="true"
-        />
+      <Link href={ROUTES.LIST_EVENTS} aria-label={intl.events.viewAll}>
+        <Button
+          className="rounded-lg font-semibold text-sm uppercase"
+          withArrow
+          aria-label={intl.events.viewAll}
+        >
+          {intl.events.viewAll}
+        </Button>
       </Link>
     </section>
   );

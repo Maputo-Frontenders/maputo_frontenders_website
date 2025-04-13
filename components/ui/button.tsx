@@ -65,7 +65,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {children}
         {withArrow && (
-          <ArrowUpRight className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
+          <ArrowUpRight
+            className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300"
+            aria-hidden="true"
+          />
         )}
       </Comp>
     );
