@@ -14,7 +14,6 @@ export function CallTopicsSection({ intl }: Props) {
     <section
       className="container w-full text-white pb-16 md:px-12"
       aria-labelledby="call-topics-heading"
-      role="region"
     >
       <div className={cn("rounded-lg p-[2px] bg-gradient-teal-purple")}>
         <div

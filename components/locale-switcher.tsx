@@ -33,7 +33,11 @@ export function LocaleSwitcher() {
   };
 
   return (
-    <div className="shadow-card flex p-px items-center justify-center rounded-lg ">
+    <div
+      className="shadow-card flex p-px items-center justify-center rounded-lg"
+      role="region"
+      aria-label="Language Switcher"
+    >
       {availableTranslations.map((version) => (
         <Link
           key={version.language}
@@ -46,10 +50,18 @@ export function LocaleSwitcher() {
               : "text-foreground "
           )}
           onClick={() => setLocaleCookie(version.language)}
+          aria-label={`Switch to ${
+            i18n.languages.find((lang) => lang.id === version.language)
+              ?.title || version.language
+          } language`}
         >
-          <button className="p-3 flex items-center gap-2 bg-transparent text-mf-white">
-            <Globe className="h-4 w-4" />
-            {version.language.toUpperCase()}
+          <button
+            className="p-3 flex items-center gap-2 bg-transparent text-mf-white rounded-sm"
+            aria-hidden="true"
+            tabIndex={-1}
+          >
+            <Globe className="h-4 w-4" aria-hidden="true" />
+            <span>{version.language.toUpperCase()}</span>
           </button>
         </Link>
       ))}

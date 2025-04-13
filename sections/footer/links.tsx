@@ -40,7 +40,10 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
   };
 
   return (
-    <nav className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
+    <nav
+      className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6"
+      aria-label="Footer Navigation"
+    >
       {navLinks(params.lang).map((link) => {
         const LinkContent = (
           <motion.span className="flex items-center">
@@ -66,12 +69,16 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
                         stiffness: 200,
                       }}
                       className="ml-2"
+                      aria-hidden="true"
                     >
                       <ArrowUpRight className="transform transition-all duration-300 hover:-translate-y-1 hover:translate-x-1" />
                     </motion.span>
                   </motion.span>
                 )}
               </AnimatePresence>
+            )}
+            {link.isExternal && (
+              <span className="sr-only"> (Opens in new tab)</span>
             )}
           </motion.span>
         );
@@ -84,23 +91,35 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
                   <TooltipTrigger asChild>
                     <Link
                       href={link.href}
-                      className="hover:text-mf-secondary transition-colors text-base sm:text-lg group"
+                      className="hover:text-mf-secondary transition-colors text-base sm:text-lg group  rounded-sm"
                       onMouseEnter={() => setHoveredLink(link.name)}
                       onMouseLeave={() => setHoveredLink(null)}
+                      aria-describedby={`tooltip-${link.name}`}
                     >
                       {LinkContent}
                     </Link>
                   </TooltipTrigger>
-                  <TooltipContent className="flex items-center gap-2 p-2 sm:p-3 bg-mf-dark text-mf-white rounded-md border-none text-sm sm:text-base">
+                  <TooltipContent
+                    id={`tooltip-${link.name}`}
+                    className="flex items-center gap-2 p-2 sm:p-3 bg-mf-dark text-mf-white rounded-md border-none text-sm sm:text-base"
+                    role="tooltip"
+                  >
                     <span>{link.description}</span>
                     <button
-                      className="h-5 w-5 sm:h-6 sm:w-6 bg-mf-dark text-mf-white rounded-md border-none"
+                      className="h-5 w-5 sm:h-6 sm:w-6 bg-mf-dark text-mf-white rounded-md border-none focus:outline-none focus:ring-2 focus:ring-mf-secondary"
                       onClick={() => copyToClipboard(link.description)}
+                      aria-label={`Copy ${link.description}`}
                     >
                       {copying ? (
-                        <Check className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <Check
+                          className="h-3 w-3 sm:h-4 sm:w-4"
+                          aria-hidden="true"
+                        />
                       ) : (
-                        <Copy className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <Copy
+                          className="h-3 w-3 sm:h-4 sm:w-4"
+                          aria-hidden="true"
+                        />
                       )}
                       <span className="sr-only">Copy</span>
                     </button>
@@ -112,7 +131,7 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-mf-secondary transition-colors text-base sm:text-lg group"
+                className="hover:text-mf-secondary transition-colors text-base sm:text-lg group  rounded-sm"
                 onMouseEnter={() => setHoveredLink(link.name)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
@@ -121,7 +140,7 @@ export default function Navigation({ params }: { params: { lang: Locale } }) {
             ) : (
               <Link
                 href={link.href}
-                className="hover:text-mf-secondary transition-colors text-base sm:text-lg group"
+                className="hover:text-mf-secondary transition-colors text-base sm:text-lg group  rounded-sm"
                 onMouseEnter={() => setHoveredLink(link.name)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
