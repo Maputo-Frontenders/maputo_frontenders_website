@@ -164,11 +164,13 @@ export const events = {
               name: 'name',
               type: 'string',
               title: 'Nome',
+              validation: (Rule: any) => Rule.required(),
             },
             {
               name: 'image',
               type: 'image',
               title: 'Logotipo',
+              validation: (Rule: any) => Rule.required(),
             },
             {
               name: 'link',
