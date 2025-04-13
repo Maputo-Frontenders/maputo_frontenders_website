@@ -68,11 +68,11 @@ function SpeakerCard({ speaker, index = 0 }: Props) {
     <motion.div
       className={cn(
         "perspective group",
-        speaker.image ? "h-[340px] w-full" : "h-fit w-full"
+        false ? "h-[340px] w-full" : "h-fit w-full"
       )}
       variants={cardVariants}
     >
-      {speaker.image ? (
+      {false ? (
         <div
           className={cn(
             "relative w-full h-full overflow-hidden rounded-xl",
