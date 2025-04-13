@@ -28,11 +28,13 @@ export function FaqSection({ intl, lang }: Props) {
       </div>
 
       <Accordion type="single" collapsible className="max-w-5xl mx-auto">
-        {faqData(lang).map((item) => (
+        {faqData(lang).map((item, index) => (
           <AccordionItem
             key={item.question}
             value={item.question}
-            className="px-8"
+            className={`px-8 ${
+              index === faqData(lang).length - 1 ? "border-b-0" : "border-b"
+            }`}
           >
             <AccordionTrigger className="text-left">
               {item.question}
