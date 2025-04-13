@@ -75,7 +75,7 @@ export default async function AboutPage({ params }: Props) {
         lang={params.lang}
       />
 
-      <GoalSection intl={intl} />
+      {/* <GoalSection intl={intl} /> */}
       <CallTopicsSection intl={intl} />
     </main>
   );
