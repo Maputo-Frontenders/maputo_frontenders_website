@@ -1,22 +1,16 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/sections/navbar";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/sections/footer";
 import { Locale } from "@/lib/getDictionary";
+import { metadata as siteMetadata, jsonLd } from "@/utils/configs";
 
-export const revalidate = 60; // 1 min
+export { siteMetadata as metadata };
+
+export const revalidation = 60; // 1 min
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: {
-    default: "Maputo Frontenders - Comunidade Frontend de Moçambique",
-    template: "%s | Maputo Frontenders",
-  },
-  description: "A maior comunidade frontend de Moçambique",
-};
 
 export default function RootLayout({
   children,
@@ -29,6 +23,15 @@ export default function RootLayout({
     <html lang={params.lang}>
       <head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/Logo.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#040D21" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
       </head>
       <body className={cn(`bg-mf-background`, inter.className)}>
         <div className="flex flex-col h-full">
