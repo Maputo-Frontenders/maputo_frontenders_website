@@ -3,14 +3,14 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import Img1 from "@/assets/hero/img1.png";
-import Img2 from "@/assets/hero/img2.png";
-import Img3 from "@/assets/hero/img3.png";
-import Img4 from "@/assets/hero/img4.png";
+import Img1 from "@/assets/hero/img1.jpeg";
+import Img2 from "@/assets/hero/img2.jpeg";
+import Img3 from "@/assets/hero/img3.jpeg";
+import Img4 from "@/assets/hero/img4.jpeg";
 import Img5 from "@/assets/hero/img5.png";
-import Img6 from "@/assets/hero/img6.png";
-import Img7 from "@/assets/hero/img7.png";
-import Img8 from "@/assets/hero/img8.png";
+import Img6 from "@/assets/hero/img6.jpeg";
+import Img7 from "@/assets/hero/img7.jpeg";
+import Img8 from "@/assets/hero/img8.jpeg";
 
 export const InfiniteMovingCards = ({
   direction = "left",
@@ -24,7 +24,7 @@ export const InfiniteMovingCards = ({
   className?: string;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const scrollerRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     addAnimation();
@@ -80,7 +80,7 @@ export const InfiniteMovingCards = ({
         className
       )}
     >
-      <ul
+      <div
         ref={scrollerRef}
         className={cn(
           " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
@@ -94,25 +94,33 @@ export const InfiniteMovingCards = ({
               src={Img1}
               alt="Family event picture"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
-              loading="lazy"
+              width={300}
+              height={200}
+              priority
             />
             <Image
               src={Img2}
               alt="Girls coders having fun at the event"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
-              loading="lazy"
+              width={300}
+              height={200}
+              priority
             />
           </div>
           <Image
             src={Img3}
             alt="People coding together - Code In The Dark"
             className=" w-[600px] h-[416px] rounded-lg object-cover"
-            loading="lazy"
+            width={600}
+            height={416}
+            priority
           />
           <Image
             src={Img4}
             alt="Girl with mask coding - Code In The Dark"
             className=" w-[300px] h-[416px] rounded-lg object-cover"
+            width={300}
+            height={416}
             priority
           />
           <div className="flex flex-col gap-4">
@@ -120,29 +128,37 @@ export const InfiniteMovingCards = ({
               src={Img5}
               alt="Family event picture"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
+              width={300}
+              height={200}
               priority
             />
             <Image
               src={Img6}
               alt="Boy coding on Code In The Dark"
               className=" w-[300px] h-[200px] rounded-lg object-cover"
-              loading="lazy"
+              width={300}
+              height={200}
+              priority
             />
           </div>
           <Image
             src={Img7}
             alt="Family event picture"
             className=" w-[600px] h-[416px] rounded-lg object-cover"
-            loading="lazy"
+            width={600}
+            height={416}
+            priority
           />
           <Image
             src={Img8}
             alt="People coding together - Code In The Dark"
             className=" w-[300px] h-[416px] rounded-lg object-cover"
-            loading="lazy"
+            width={300}
+            height={416}
+            priority
           />
         </div>
-      </ul>
+      </div>
     </div>
   );
 };

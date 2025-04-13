@@ -2,10 +2,10 @@ import { getDictionary, Locale } from "@/lib/getDictionary";
 import dynamic from "next/dynamic";
 
 import PhotoHete from "@/assets/members/hete-odete.jpeg";
-import Img4 from "@/assets/hero/img4.png";
+import Img4 from "@/assets/hero/img4.jpeg";
 import Img5 from "@/assets/hero/img5.png";
-import Img6 from "@/assets/hero/img6.png";
-import Img7 from "@/assets/hero/img3.png";
+import Img6 from "@/assets/hero/img6.jpeg";
+import Img3 from "@/assets/hero/img3.png";
 import BlurBackground from "@/assets/svg/violet-light-background.svg";
 import SquareBackground from "@/assets/svg/square-background.svg";
 import RadialOpacityBackground from "@/assets/svg/radial-opacity-background.svg";
@@ -66,7 +66,7 @@ export default async function AboutPage({ params }: Props) {
         miniCards={cardsMini({ intl })}
       />
 
-      <FullWidthImage image={Img7} alt="About page team image" />
+      <FullWidthImage image={Img3} alt="About page team image" />
 
       <TeamMembers
         intl={intl}
