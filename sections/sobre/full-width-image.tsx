@@ -18,7 +18,7 @@ export function FullWidthImage({
   return (
     <motion.div
       ref={imageRef}
-      className="w-full h-[500px] overflow-hidden"
+      className="w-full md:h-[500px] overflow-hidden"
       initial={{ opacity: 0, scale: 0.98 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.8 }}
