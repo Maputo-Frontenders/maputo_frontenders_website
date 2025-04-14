@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Footer } from "@/sections/footer";
 import { Locale } from "@/lib/getDictionary";
 import { metadata as siteMetadata, jsonLd } from "@/utils/configs";
+import { Toaster } from "@/components/ui/sonner";
 
 export { siteMetadata as metadata };
 
@@ -39,6 +40,7 @@ export default function RootLayout({
           {/* <FloatingNav /> */}
           <main className="h-full">{children}</main>
           <Footer params={{ lang: params.lang }} />
+          <Toaster />
         </div>
       </body>
     </html>
