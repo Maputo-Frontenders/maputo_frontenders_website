@@ -156,6 +156,9 @@
       "message": "Sua mensagem",
       "messagePlaceholder": "Envie-nos uma mensagem...",
       "submit": "Enviar",
+      "success": "Mensagem enviada com sucesso",
+      "error": "Erro ao enviar mensagem",
+      "cooldown": "Por favor, aguarde {{minutes}} minutos antes de enviar outra mensagem.",
       "validation": {
         "nameRequired": "Nome é obrigatório",
         "nameMin": "Nome deve ter pelo menos 2 caracteres.",

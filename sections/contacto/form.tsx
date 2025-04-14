@@ -16,8 +16,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { DictionaryProps } from "@/lib/getDictionary";
+import { useState } from "react";
+import { toast } from "sonner";
+import { useFormCooldown } from "@/hooks/useFormCooldown";
 
 export function ContactForm({ intl }: { intl: DictionaryProps }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const { isInCooldown, startCooldown, formattedTime, minutesRemaining } =
+    useFormCooldown();
+
   const formSchema = z.object({
     name: z
       .string({ required_error: intl.contact.form.validation.nameRequired })
@@ -46,14 +53,50 @@ export function ContactForm({ intl }: { intl: DictionaryProps }) {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    if (isInCooldown) {
+      toast(
+        intl.contact.form.cooldown.replace(
+          "{{minutes}}",
+          formattedTime?.toString() ?? minutesRemaining.toString()
+        )
+      );
+      return;
+    }
+
+    setIsLoading(true);
+
+    fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          toast(intl.contact.form.error);
+          throw new Error("Network response was not ok");
+        }
+        startCooldown();
+        toast(intl.contact.form.success);
+        form.reset();
+        return response.json();
+      })
+      .catch((error) => {
+        toast(intl.contact.form.error);
+        console.error("Fetch error:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full  flex flex-col gap-2 md:gap-4 border border-mf-darkBlue bg-mf-background rounded-lg p-8 max-w-5xl mx-auto"
+        className="w-full  flex flex-col gap-4 border border-mf-darkBlue bg-mf-background rounded-lg p-8 max-w-5xl mx-auto"
       >
         <div className="flex flex-col md:flex-row gap-2">
           <FormField
@@ -102,10 +145,34 @@ export function ContactForm({ intl }: { intl: DictionaryProps }) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-fit uppercase" withArrow>
-          {intl.contact.form.submit}
-        </Button>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+          <Button
+            type="submit"
+            className="w-fit uppercase"
+            withArrow
+            disabled={isLoading || isInCooldown}
+            isLoading={isLoading}
+          >
+            {intl.contact.form.submit}
+          </Button>
+
+          {isInCooldown && (
+            <div className="text-sm text-mf-white/50">
+              {intl.contact.form.cooldown.replace(
+                "{{minutes}}",
+                formattedTime?.toString() ?? minutesRemaining.toString()
+              )}
+            </div>
+          )}
+        </div>
       </form>
+      <Button
+        onClick={() => {
+          toast("teste sooner");
+        }}
+      >
+        teste sooner
+      </Button>
     </Form>
   );
 }
