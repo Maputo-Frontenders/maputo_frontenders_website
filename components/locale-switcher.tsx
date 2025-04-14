@@ -3,10 +3,10 @@
 import { i18n } from "@/i18n.config";
 import { cn } from "@/lib/utils";
 import { getTranslationsLocal } from "@/utils";
-import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useMemo } from "react";
 import { Globe } from "lucide-react";
+import { setLocaleCookie } from "@/actions/set-locale";
 
 type Translation = {
   path: string;
@@ -16,6 +16,7 @@ type Translation = {
 export function LocaleSwitcher() {
   const translations = getTranslationsLocal();
   const params = useParams();
+  const router = useRouter();
 
   const availableTranslations = useMemo<Translation[]>(
     () =>
@@ -28,8 +29,11 @@ export function LocaleSwitcher() {
     [translations]
   );
 
-  const setLocaleCookie = (locale: string) => {
-    document.cookie = `NEXT_LOCALE=${locale}; path=/;`;
+  const handleLocaleChange = async (locale: string, path: string) => {
+    await setLocaleCookie(locale);
+
+    router.push(path);
+    router.refresh();
   };
 
   return (
@@ -39,31 +43,28 @@ export function LocaleSwitcher() {
       aria-label="Language Switcher"
     >
       {availableTranslations.map((version) => (
-        <Link
+        <button
           key={version.language}
-          href={version.path}
-          locale={version.language}
           className={cn(
             `flex h-8 w-8 items-center justify-center rounded-md uppercase`,
             params?.lang == version.language
               ? " text-foreground hidden"
               : "text-foreground "
           )}
-          onClick={() => setLocaleCookie(version.language)}
+          onClick={() => handleLocaleChange(version.language, version.path)}
           aria-label={`Switch to ${
             i18n.languages.find((lang) => lang.id === version.language)
               ?.title || version.language
           } language`}
         >
-          <button
+          <div
             className="p-3 flex items-center gap-2 bg-transparent text-mf-white rounded-sm"
             aria-hidden="true"
-            tabIndex={-1}
           >
             <Globe className="h-4 w-4" aria-hidden="true" />
             <span>{version.language.toUpperCase()}</span>
-          </button>
-        </Link>
+          </div>
+        </button>
       ))}
     </div>
   );
