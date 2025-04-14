@@ -10,6 +10,8 @@ import Logo from "@/public/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Locale } from "@/lib/getDictionary";
 import { usePathname } from "next/navigation";
+import { ROUTES } from "@/utils/routes";
+
 type Props = {
   params: { lang: Locale };
   className?: string;
@@ -76,7 +78,7 @@ export function Navbar({ className, params }: Props) {
           <div className="w-full flex items-center justify-between p-4">
             {/* Logo and mobile menu button */}
             <div className="w-full md:w-auto flex items-center justify-between md:justify-normal space-x-3">
-              <Link href="/" className="flex items-center">
+              <Link href={ROUTES.HOME} className="flex items-center">
                 <Image
                   className="w-auto h-10 md:h-12"
                   width={56}

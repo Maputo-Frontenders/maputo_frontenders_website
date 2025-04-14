@@ -1,4 +1,5 @@
 import { Locale } from "@/lib/getDictionary";
+import { ROUTES } from "@/utils/routes";
 
 export interface NavItem {
   label: string;
@@ -10,29 +11,29 @@ export const NavData: (lang: Locale) => NavItem[] = (lang: Locale) => {
     ? [
         {
           label: "Sobre",
-          link: "/sobre",
+          link: ROUTES.ABOUT,
         },
         {
           label: "Eventos",
-          link: "/eventos",
+          link: ROUTES.LIST_EVENTS,
         },
         {
           label: "Contacto",
-          link: "/contacto",
+          link: ROUTES.CONTACT,
         },
       ]
     : [
         {
           label: "About",
-          link: "/sobre",
+          link: ROUTES.ABOUT,
         },
         {
           label: "Events",
-          link: "#eventos",
+          link: ROUTES.LIST_EVENTS,
         },
         {
           label: "Contact",
-          link: "/contacto",
+          link: ROUTES.CONTACT,
         },
       ];
 };

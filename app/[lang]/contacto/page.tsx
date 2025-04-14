@@ -10,6 +10,7 @@ import { getDictionary, Locale } from "@/lib/getDictionary";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ContactForm } from "@/sections/contacto/form";
 import { FaqSection } from "@/sections/contacto/faq";
+import { ROUTES } from "@/utils/routes";
 
 export async function generateMetadata({ params }: Props) {
   const intl = await getDictionary(params.lang);
@@ -64,8 +65,11 @@ export default async function ContactPage({ params }: Props) {
         >
           <Breadcrumbs
             items={[
-              { title: intl.navigation.home, href: "/" },
-              { title: intl.navigation.contact, href: "/contacto" },
+              { title: intl.navigation.home, href: ROUTES.HOME },
+              {
+                title: intl.navigation.contact,
+                href: ROUTES.CONTACT,
+              },
             ]}
             aria-roledescription="breadcrumbs"
           />

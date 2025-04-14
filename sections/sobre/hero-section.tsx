@@ -7,6 +7,7 @@ import { ParserToHtml } from "@/utils";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { DictionaryProps } from "@/lib/getDictionary";
+import { ROUTES } from "@/utils/routes";
 
 export function HeroSection({
   intl,
@@ -54,8 +55,8 @@ export function HeroSection({
           >
             <Breadcrumbs
               items={[
-                { title: intl.navigation.home, href: "/" },
-                { title: intl.navigation.about, href: "/about" },
+                { title: intl.navigation.home, href: ROUTES.HOME },
+                { title: intl.navigation.about, href: ROUTES.ABOUT },
               ]}
               aria-roledescription="breadcrumbs"
             />

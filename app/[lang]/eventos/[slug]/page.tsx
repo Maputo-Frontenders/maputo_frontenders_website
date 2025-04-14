@@ -13,6 +13,7 @@ import { SpeakerCards } from "@/components/speaker-card";
 import { ListEventsOther } from "@/sections/events/list-events";
 import { CallTopicsSection } from "@/sections/call-topics";
 import { notFound } from "next/navigation";
+import { ROUTES } from "@/utils/routes";
 
 export async function generateMetadata({ params }: Props) {
   const event = await getEventBySlug({
@@ -66,8 +67,11 @@ export default async function EventPage({ params }: Props) {
         <div className=" text-mf-white container  md:px-12">
           <Breadcrumbs
             items={[
-              { title: intl.navigation.home, href: "/" },
-              { title: intl.navigation.events, href: "/eventos" },
+              { title: intl.navigation.home, href: ROUTES.HOME },
+              {
+                title: intl.navigation.events,
+                href: ROUTES.LIST_EVENTS,
+              },
               { title: event.title, href: "" },
             ]}
             aria-roledescription="breadcrumbs"

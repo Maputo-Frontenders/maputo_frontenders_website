@@ -10,7 +10,7 @@ import { getDictionary, Locale } from "@/lib/getDictionary";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ListEvents } from "@/sections/events/list-events";
 import { ParserToHtml } from "@/utils";
-
+import { ROUTES } from "@/utils/routes";
 export async function generateMetadata({ params }: Props) {
   const intl = await getDictionary(params.lang);
 
@@ -59,8 +59,11 @@ export default async function EventsPage({ params, searchParams }: Props) {
         <div className="  text-mf-white container  md:px-12">
           <Breadcrumbs
             items={[
-              { title: intl.navigation.home, href: "/" },
-              { title: intl.navigation.events, href: "/eventos" },
+              { title: intl.navigation.home, href: ROUTES.HOME },
+              {
+                title: intl.navigation.events,
+                href: ROUTES.LIST_EVENTS,
+              },
             ]}
             aria-roledescription="breadcrumbs"
           />
