@@ -75,7 +75,6 @@ export function ContactForm({ intl }: { intl: DictionaryProps }) {
     })
       .then((response) => {
         if (!response.ok) {
-          toast(intl.contact.form.error);
           throw new Error("Network response was not ok");
         }
         startCooldown();
