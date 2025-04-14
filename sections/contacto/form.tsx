@@ -166,13 +166,6 @@ export function ContactForm({ intl }: { intl: DictionaryProps }) {
           )}
         </div>
       </form>
-      <Button
-        onClick={() => {
-          toast("teste sooner");
-        }}
-      >
-        teste sooner
-      </Button>
     </Form>
   );
 }
