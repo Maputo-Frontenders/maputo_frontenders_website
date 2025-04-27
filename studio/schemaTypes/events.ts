@@ -78,10 +78,9 @@ export const events = {
       validation: (Rule: any) => Rule.required(),
     },
     {
-      name: 'agendaImages',
-      type: 'array',
-      title: 'Imagens da Agenda',
-      of: [{type: 'image'}],
+      name: 'agendaFile',
+      title: 'Arquivo da Agenda',
+      type: 'file',
     },
     {
       name: 'galleryLink',
