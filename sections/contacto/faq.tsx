@@ -16,7 +16,7 @@ type Props = {
 
 export function FaqSection({ intl, lang }: Props) {
   return (
-    <section className="md:container w-full text-white space-y-8" id="team">
+    <section className=" md:container w-full text-white space-y-8" id="team">
       <div className="container text-center space-y-2">
         <h2 className="text-4xl font-bold leading-normal">
           {intl.contact.faq.title}{" "}
@@ -27,7 +27,11 @@ export function FaqSection({ intl, lang }: Props) {
         <p className="max-w-2xl mx-auto">{intl.contact.faq.description}</p>
       </div>
 
-      <Accordion type="single" collapsible className="max-w-5xl mx-auto">
+      <Accordion
+        type="single"
+        collapsible
+        className="max-w-5xl mx-auto flex flex-col gap-4"
+      >
         {faqData(lang).map((item, index) => (
           <AccordionItem
             key={item.question}
@@ -36,10 +40,12 @@ export function FaqSection({ intl, lang }: Props) {
               index === faqData(lang).length - 1 ? "border-b-0" : "border-b"
             }`}
           >
-            <AccordionTrigger className="text-left">
+            <AccordionTrigger className="text-left text-2xl">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent>{item.answer}</AccordionContent>
+            <AccordionContent className="text-base">
+              {item.answer}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

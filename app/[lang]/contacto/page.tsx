@@ -74,7 +74,7 @@ export default async function ContactPage({ params }: Props) {
             aria-roledescription="breadcrumbs"
           />
           <div
-            className="space-y-8 "
+            className="space-y-20 "
             aria-roledescription="contact page content"
           >
             <div className="mx-auto text-center mt-8">
