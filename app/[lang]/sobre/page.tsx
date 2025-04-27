@@ -28,11 +28,16 @@ const TeamMembers = dynamic(() =>
 );
 
 type Props = {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 };
 
-export async function generateMetadata({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
 
   return {
     title: intl.about.pageTitle,
@@ -41,7 +46,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function AboutPage({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
 
   const backgroundImages = {
     blur: BlurBackground,
@@ -72,7 +78,7 @@ export default async function AboutPage({ params }: Props) {
         intl={intl}
         isSubtitle={true}
         isActiveAnimation={true}
-        lang={params.lang}
+        lang={paramsData.lang}
       />
 
       {/* <GoalSection intl={intl} /> */}

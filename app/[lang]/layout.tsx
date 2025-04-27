@@ -6,6 +6,7 @@ import { Footer } from "@/sections/footer";
 import { Locale } from "@/lib/getDictionary";
 import { metadata as siteMetadata, jsonLd } from "@/utils/configs";
 import { Toaster } from "@/components/ui/sonner";
+import { use } from "react";
 
 export { siteMetadata as metadata };
 
@@ -15,11 +16,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
-  params,
+  params: paramsPromise,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }>) {
+  const params = use(paramsPromise);
+
   return (
     <html lang={params.lang}>
       <head>

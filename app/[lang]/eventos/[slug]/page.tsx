@@ -31,10 +31,19 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export async function generateMetadata({ params }: Props) {
+type Props = {
+  params: Promise<{ lang: Locale; slug: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale; slug: string }>;
+}) {
+  const paramsData = await params;
   const event = await getEventBySlug({
-    slug: params.slug,
-    lang: params.lang,
+    slug: paramsData.slug,
+    lang: paramsData.lang,
   });
 
   return {
@@ -55,15 +64,12 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-type Props = {
-  params: { lang: Locale; slug: string };
-};
-
 export default async function EventPage({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
   const event = await getEventBySlug({
-    slug: params.slug,
-    lang: params.lang,
+    slug: paramsData.slug,
+    lang: paramsData.lang,
   });
 
   if (!event) {
@@ -148,46 +154,46 @@ export default async function EventPage({ params }: Props) {
                         </Button>
                       </a>
                     )}
-                    {event.agendaFile ||
-                      (event.galleryLink && (
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant={"outline"} className="w-fit">
-                              <EllipsisVertical className=" text-mf-secondProposal" />
-                            </Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent className="bg-mf-darkBlue border-mf-white/10 text-mf-white w-52 p-2 ">
-                            {event.agendaFile && (
-                              <a
-                                href={
-                                  getFile(
-                                    event.agendaFile,
-                                    client.config() as any
-                                  ).asset.url
-                                }
-                                type="file"
-                                download={document.title}
-                              >
-                                <DropdownMenuItem className="flex items-center justify-between">
-                                  Agenda
-                                  <DownloadIcon className="w-4 h-4" />
-                                </DropdownMenuItem>
-                              </a>
-                            )}
-                            {event.galleryLink && (
-                              <a href={event.galleryLink} target="_blank">
-                                <DropdownMenuItem className="flex items-center justify-between">
-                                  Geleria do evento
-                                  <ArrowUpRight
-                                    className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300"
-                                    aria-hidden="true"
-                                  />
-                                </DropdownMenuItem>
-                              </a>
-                            )}
-                          </DropdownMenuContent>
-                        </DropdownMenu>
-                      ))}
+                    {(event.agendaFile?.asset._ref || event.galleryLink) && (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant={"outline"} className="w-fit">
+                            <EllipsisVertical className=" text-mf-secondProposal" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="bg-mf-darkBlue border-mf-white/10 text-mf-white w-52 p-2 ">
+                          {event.agendaFile && (
+                            <a
+                              href={
+                                getFile(
+                                  event.agendaFile,
+                                  client.config() as any
+                                ).asset.url
+                              }
+                              type="file"
+                              download={`${event.slug.current}-agenda.pdf`}
+                              target="_blank"
+                            >
+                              <DropdownMenuItem className="flex items-center justify-between">
+                                Agenda
+                                <DownloadIcon className="w-4 h-4" />
+                              </DropdownMenuItem>
+                            </a>
+                          )}
+                          {event.galleryLink && (
+                            <a href={event.galleryLink} target="_blank">
+                              <DropdownMenuItem className="flex items-center justify-between">
+                                Geleria do evento
+                                <ArrowUpRight
+                                  className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300"
+                                  aria-hidden="true"
+                                />
+                              </DropdownMenuItem>
+                            </a>
+                          )}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    )}
                   </div>
                 </div>
               </div>
@@ -198,11 +204,9 @@ export default async function EventPage({ params }: Props) {
                 <Image
                   src={urlFor(event.image.asset._ref)?.url()}
                   alt={event.title}
-                  width={376}
-                  height={376}
-                  className="w-full h-full object-cover border-4 border-mf-white/10 rounded-[26px]"
-                  priority
-                  loading="eager"
+                  width={500}
+                  height={500}
+                  className="rounded-md object-cover"
                 />
               </div>
             </div>
@@ -250,7 +254,7 @@ export default async function EventPage({ params }: Props) {
               <h3 className="text-sm uppercase text-mf-orange">
                 {intl.events.otherEvents}
               </h3>
-              <ListEventsOther intl={intl} lang={params.lang} />
+              <ListEventsOther intl={intl} lang={paramsData.lang} />
             </div>
           </div>
         </div>

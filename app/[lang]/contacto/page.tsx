@@ -12,8 +12,17 @@ import { ContactForm } from "@/sections/contacto/form";
 import { FaqSection } from "@/sections/contacto/faq";
 import { ROUTES } from "@/utils/routes";
 
-export async function generateMetadata({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+type Props = {
+  params: Promise<{ lang: Locale }>;
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
 
   return {
     title: intl.contact.pageTitle,
@@ -21,12 +30,9 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-type Props = {
-  params: { lang: Locale };
-};
-
 export default async function ContactPage({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
 
   return (
     <main
@@ -89,7 +95,7 @@ export default async function ContactPage({ params }: Props) {
               </p>
             </div>
             <ContactForm intl={intl} />
-            <FaqSection intl={intl} lang={params.lang} />
+            <FaqSection intl={intl} lang={paramsData.lang} />
           </div>
         </div>
       </div>

@@ -18,21 +18,22 @@ const EventsSection = dynamic(() =>
 );
 
 type Props = {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 };
 
 export default async function Home({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
 
   return (
     <main className="h-full flex flex-col gap-16 justify-center  items-center overflow-x-hidden">
       <HeroSection intl={intl} />
       <PartenersSection intl={intl} />
       <ImpactSection intl={intl} />
-      <EventsSection intl={intl} lang={params.lang} />
+      <EventsSection intl={intl} lang={paramsData.lang} />
       <TestimonialSection intl={intl} />
       <InfiniteMovingCards data={cards} />
-      <TeamMembers intl={intl} lang={params.lang} isActiveAnimation />
+      <TeamMembers intl={intl} lang={paramsData.lang} isActiveAnimation />
       <CallTopicsSection intl={intl} />
     </main>
   );

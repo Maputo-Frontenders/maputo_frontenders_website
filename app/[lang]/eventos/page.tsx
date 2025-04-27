@@ -11,8 +11,19 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ListEvents } from "@/sections/events/list-events";
 import { ParserToHtml } from "@/utils";
 import { ROUTES } from "@/utils/routes";
-export async function generateMetadata({ params }: Props) {
-  const intl = await getDictionary(params.lang);
+
+type Props = {
+  params: Promise<{ lang: Locale }>;
+  searchParams: Promise<{ page?: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const paramsData = await params;
+  const intl = await getDictionary(paramsData.lang);
 
   return {
     title: intl.events.pageTitle,
@@ -20,13 +31,10 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-type Props = {
-  params: { lang: Locale };
-  searchParams: { page?: string };
-};
-
 export default async function EventsPage({ params, searchParams }: Props) {
-  const intl = await getDictionary(params.lang);
+  const paramsData = await params;
+  const searchParamsData = await searchParams;
+  const intl = await getDictionary(paramsData.lang);
 
   return (
     <main
@@ -84,8 +92,8 @@ export default async function EventsPage({ params, searchParams }: Props) {
         </div>
 
         <ListEvents
-          params={{ lang: params.lang, intl }}
-          searchParams={searchParams}
+          params={{ lang: paramsData.lang, intl }}
+          searchParams={searchParamsData}
         />
       </div>
 
