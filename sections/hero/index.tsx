@@ -9,6 +9,7 @@ import Image from "next/image";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 import { DictionaryProps } from "@/lib/getDictionary";
 import { ParserToHtml } from "@/utils";
+import { ROUTES } from "@/utils/routes";
 
 type Props = {
   intl: DictionaryProps;
@@ -59,7 +60,7 @@ export function HeroSection({ intl }: Props) {
       </div>
       <div className="flex mx-auto justify-center py-2 w-full">
         <Link
-          href={"#"}
+          href={ROUTES.ABOUT}
           className="flex items-center flex-row outline outline-1 outline-mf-turquoise hover:bg-gray-700 text-mf-turquoise font-bold py-2 px-4 rounded group"
           aria-label={intl.hero.cta}
         >
