@@ -34,12 +34,7 @@ export type EventProps = {
     end: string;
   };
   status: eventStatusTypes;
-  agendaImages?: {
-    asset: {
-      _ref: any;
-      _type: any;
-    };
-  }[];
+  agendaFile?: any;
   galleryLink?: string;
   rsvpLink?: string;
   speakers?: SpeakerProps[];

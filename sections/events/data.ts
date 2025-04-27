@@ -17,7 +17,7 @@ export async function getEventBySlug({
   slug: string;
   lang: string;
 }) {
-  const query = `*[_type == "events" && language == "${lang}" && slug.current == '${slug}'] {title, slug, type, image, tags, description, location, date, status, agendaImages, galleryLink, rsvpLink, speakers, partners}[0]`;
+  const query = `*[_type == "events" && language == "${lang}" && slug.current == '${slug}'] {title, slug, type, image, tags, description, location, date, status, agendaFile, galleryLink, rsvpLink, speakers, partners}[0]`;
   const data: EventProps = await client.fetch(query, { lang });
   return data;
 }

@@ -5,15 +5,31 @@ import { getDictionary, Locale } from "@/lib/getDictionary";
 import { getEventBySlug } from "@/sections/events/data";
 import { getSanityImageUrl } from "@/utils";
 import { urlFor } from "@/lib/sanity";
+import { getFile } from "@sanity/asset-utils";
+import { client } from "@/lib/sanity";
 import { formatDateToMonthDayYear, formatDateToHour } from "@/utils/formats";
 import { Button } from "@/components/ui/button";
-import { MapPinIcon, VideoIcon } from "lucide-react";
+import {
+  ArrowUpRight,
+  DownloadIcon,
+  EllipsisVertical,
+  MapPinIcon,
+  VideoIcon,
+} from "lucide-react";
 import { ColorizedTags } from "@/components/colorized-tags";
 import { SpeakerCards } from "@/components/speaker-card";
 import { ListEventsOther } from "@/sections/events/list-events";
 import { CallTopicsSection } from "@/sections/call-topics";
 import { notFound } from "next/navigation";
 import { ROUTES } from "@/utils/routes";
+import { generateCalendarUrl } from "@/utils/calendar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export async function generateMetadata({ params }: Props) {
   const event = await getEventBySlug({
@@ -98,11 +114,20 @@ export default async function EventPage({ params }: Props) {
                   aria-roledescription="event page description"
                 >
                   <p>{event.description}</p>
-                  <p className="text-sm">
-                    {formatDateToMonthDayYear(event.date.start)} |{" "}
-                    {formatDateToHour(event.date.start)}
-                    {event.date.end && ` - ${formatDateToHour(event.date.end)}`}
-                  </p>
+
+                  <a
+                    href={generateCalendarUrl(event)}
+                    target="_blank"
+                    className="block hover:underline"
+                  >
+                    <p className="text-sm">
+                      {formatDateToMonthDayYear(event.date.start)} |{" "}
+                      {formatDateToHour(event.date.start)}
+                      {event.date.end &&
+                        ` - ${formatDateToHour(event.date.end)}`}
+                    </p>
+                  </a>
+
                   <p className="text-sm flex items-center gap-2">
                     {event.type == "in-person" ? (
                       <MapPinIcon className="w-4 h-4" />
@@ -111,13 +136,59 @@ export default async function EventPage({ params }: Props) {
                     )}
                     {event.location}
                   </p>
-                  {new Date(event.date.start) > new Date() && (
-                    <a href={event.rsvpLink} target="_blank" className="block">
-                      <Button withArrow className="uppercase">
-                        {intl.events.participate}
-                      </Button>
-                    </a>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {new Date(event.date.start) > new Date() && (
+                      <a
+                        href={event.rsvpLink}
+                        target="_blank"
+                        className="block w-fit"
+                      >
+                        <Button withArrow className="uppercase">
+                          {intl.events.participate}
+                        </Button>
+                      </a>
+                    )}
+                    {event.agendaFile ||
+                      (event.galleryLink && (
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant={"outline"} className="w-fit">
+                              <EllipsisVertical className=" text-mf-secondProposal" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent className="bg-mf-darkBlue border-mf-white/10 text-mf-white w-52 p-2 ">
+                            {event.agendaFile && (
+                              <a
+                                href={
+                                  getFile(
+                                    event.agendaFile,
+                                    client.config() as any
+                                  ).asset.url
+                                }
+                                type="file"
+                                download={document.title}
+                              >
+                                <DropdownMenuItem className="flex items-center justify-between">
+                                  Agenda
+                                  <DownloadIcon className="w-4 h-4" />
+                                </DropdownMenuItem>
+                              </a>
+                            )}
+                            {event.galleryLink && (
+                              <a href={event.galleryLink} target="_blank">
+                                <DropdownMenuItem className="flex items-center justify-between">
+                                  Geleria do evento
+                                  <ArrowUpRight
+                                    className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300"
+                                    aria-hidden="true"
+                                  />
+                                </DropdownMenuItem>
+                              </a>
+                            )}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      ))}
+                  </div>
                 </div>
               </div>
               <div
