@@ -34,6 +34,26 @@ const faqEN = [
   {
     question: "How can I become a member of the community?",
     answer:
-      "To become a member of the community, simply register on our website and follow the instructions. You will receive a welcome email and can participate in our activities.",
+      "You can join us by participating in our online or physical events, following our social media, and subscribing to the communication groups we use, such as WhatsApp, linkedin, and twitter. All are welcome, regardless of the level of experience in programming!",
+  },
+  {
+    question: "Can I share a topic with the community?",
+    answer:
+      "Absolutely! We value knowledge exchange and encourage all members to share relevant topics. You can suggest your topic on social media or in the communication groups, and our team will help integrate your contribution into one of our events or discussions.",
+  },
+  {
+    question: "How can I become a speaker for an event?",
+    answer:
+      "If you have an interesting topic and would like to be a speaker, contact us through our official channels. We are always looking for new voices to enrich our events with different perspectives and knowledge.",
+  },
+  {
+    question: "Why join the community?",
+    answer:
+      "By joining our community, you connect with developers and technology enthusiasts, access growth opportunities, participate in exclusive events, receive mentorship, and directly contribute to strengthening the local technology ecosystem.",
+  },
+  {
+    question: "Is it only possible to find technical topics in the community?",
+    answer:
+      "No! Although the main focus is on technology and programming development, we also cover various topics, such as soft skills, networking, inclusion, and even well-being. The idea is to build a comprehensive community that values learning in all areas.",
   },
 ];
