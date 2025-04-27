@@ -206,7 +206,7 @@ export default async function EventPage({ params }: Props) {
                   alt={event.title}
                   width={500}
                   height={500}
-                  className="rounded-md object-cover"
+                  className=" rounded-[26px] object-cover border-4 border-mf-white/10"
                 />
               </div>
             </div>
