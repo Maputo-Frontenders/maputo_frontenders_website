@@ -3,7 +3,8 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "events": "Events"
+    "events": "Events",
+    "join": "Join Us"
   },
   "common": {
     "loading": "Loading...",
@@ -94,7 +95,8 @@
   "callTopics": {
     "title": "Call Topics",
     "subtitle": "Topics we discuss in our community calls",
-    "viewAll": "View All Topics"
+    "viewAll": "View All Topics",
+    "cta": "Share Topic"
   },
   "footer": {
     "allRightsReserved": "All rights reserved."

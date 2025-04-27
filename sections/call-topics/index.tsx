@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { DictionaryProps } from "@/lib/getDictionary";
-import { ROUTES } from "@/utils/routes";
+import { EXTERNAL_LINKS } from "@/utils/routes";
 
 type Props = {
   intl: DictionaryProps;
@@ -35,10 +35,10 @@ export function CallTopicsSection({ intl }: Props) {
 
             <Link
               target="_blank"
-              href={ROUTES.CONTACT}
+              href={EXTERNAL_LINKS.CALL_FOR_TOPICS}
               className="w-fit mx-right   flex items-center justify-center font-semibold uppercase text-center rounded-lg px-5 py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group"
             >
-              {intl.hero.cta}
+              {intl.callTopics.cta}
               <ArrowUpRight className="max-[400px]:hidden ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
             </Link>
           </div>

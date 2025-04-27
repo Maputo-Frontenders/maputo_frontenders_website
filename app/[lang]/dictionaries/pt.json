@@ -3,7 +3,8 @@
     "home": "Início",
     "about": "Sobre",
     "contact": "Contacto",
-    "events": "Eventos"
+    "events": "Eventos",
+    "join": "Junte-se a nós"
   },
   "common": {
     "loading": "Carregando...",
@@ -92,9 +93,10 @@
     "joinUs": "Junte-se a nós e faça parte de uma comunidade apaixonada que está moldando o futuro do desenvolvimento frontend em Moçambique! 💻✨"
   },
   "callTopics": {
-    "title": "Tem um tópico que gostava de partilhar com a comunidade?",
+    "title": "Tem um tópico que gostaria de partilhar com a comunidade?",
     "subtitle": "Temas que discutimos nas nossas chamadas comunitárias",
-    "viewAll": "Ver Todos os Temas"
+    "viewAll": "Ver Todos os Temas",
+    "cta": "Partilhar Tópico"
   },
   "footer": {
     "allRightsReserved": "Todos os direitos reservados."
