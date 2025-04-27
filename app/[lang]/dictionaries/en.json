@@ -93,7 +93,7 @@
     "role": "Role"
   },
   "callTopics": {
-    "title": "Call Topics",
+    "title": "Have a topic you would like to share with the community?",
     "subtitle": "Topics we discuss in our community calls",
     "viewAll": "View All Topics",
     "cta": "Share Topic"
@@ -107,7 +107,7 @@
     "history": {
       "title": "Our History",
       "subtitle": "Begins when...",
-      "founders": "Four young people: <em>Olímpio Adolfo</em>, <em>Wek'elwa Mala</em>, <em>Raimundo Moide</em> and <em>Otilia Cossa</em>, in a context where there were not many initiatives focused on specific niches of software development in the country. At the time, frontend development was seen as something basic, while most tech communities focused on more advanced languages like Java and Android, promoting complex topics that made it difficult for new developers to enter.",
+      "founders": "Four young people: <em>Olímpio Adolfo</em>, <em>Wak'Oleva Maia</em>, <em>Raimundo Moide</em> and <em>Otilia Cossa</em>, in a context where there were not many initiatives focused on specific niches of software development in the country. At the time, frontend development was seen as something basic, while most tech communities focused on more advanced languages like Java and Android, promoting complex topics that made it difficult for new developers to enter.",
       "origin": "It was in this scenario that Maputo Frontenders emerged, with the purpose of creating an accessible platform for beginners, especially those who were starting their journey with fundamental web technologies, such as HTML, CSS and JavaScript. In addition to popularizing web technologies, the community evolved over time, moving beyond just frontend, becoming a space for software developers in general, bringing together more than a thousand members from different areas, including frontend, backend and other specializations."
     },
     "mission": {
