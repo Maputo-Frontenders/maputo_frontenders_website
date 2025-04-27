@@ -136,37 +136,41 @@ export default async function EventPage({ params }: Props) {
               </div>
             </div>
 
-            <div
-              className="space-y-4"
-              aria-roledescription="event page speakers"
-            >
-              <h3 className="text-sm uppercase text-mf-purple">
-                {intl.events.speakers}
-              </h3>
-              <SpeakerCards speakers={event.speakers} />
-            </div>
-
-            <div
-              className="space-y-4 "
-              aria-roledescription="event page partners"
-            >
-              <h3 className="text-sm uppercase text-mf-cyan">
-                {intl.events.partners}
-              </h3>
-              <div className="w-full flex flex-wrap justify-start items-center gap-x-10 gap-y-2">
-                {event.partners?.map((image, index) => {
-                  return (
-                    <Image
-                      key={image.name}
-                      src={getSanityImageUrl(image.image)}
-                      alt={image.name}
-                      width={100}
-                      height={50}
-                    />
-                  );
-                })}
+            {event.speakers && (
+              <div
+                className="space-y-4"
+                aria-roledescription="event page speakers"
+              >
+                <h3 className="text-sm uppercase text-mf-purple">
+                  {intl.events.speakers}
+                </h3>
+                <SpeakerCards speakers={event.speakers} />
               </div>
-            </div>
+            )}
+
+            {event.partners && (
+              <div
+                className="space-y-4 "
+                aria-roledescription="event page partners"
+              >
+                <h3 className="text-sm uppercase text-mf-cyan">
+                  {intl.events.partners}
+                </h3>
+                <div className="w-full flex flex-wrap justify-start items-center gap-x-10 gap-y-2">
+                  {event.partners?.map((image, index) => {
+                    return (
+                      <Image
+                        key={image.name}
+                        src={getSanityImageUrl(image.image)}
+                        alt={image.name}
+                        width={100}
+                        height={50}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             <div
               className="space-y-4 "

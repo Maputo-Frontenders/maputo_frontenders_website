@@ -42,7 +42,7 @@ export type EventProps = {
   }[];
   galleryLink?: string;
   rsvpLink?: string;
-  speakers: SpeakerProps[];
+  speakers?: SpeakerProps[];
   partners?: {
     name: string;
     image: {
