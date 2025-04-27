@@ -32,6 +32,7 @@ export function CardEvent({ event, intl, index }: CardEventProps) {
   const isPresencial = event.type === "in-person";
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+  const slug = event.slug.current;
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -43,6 +44,26 @@ export function CardEvent({ event, intl, index }: CardEventProps) {
         delay: index ? index * 0.1 : 0,
       },
     },
+  };
+
+  const imageTransitionStyle = {
+    viewTransitionName: `event-image-${slug}`,
+    transformOrigin: "center",
+  };
+
+  const titleTransitionStyle = {
+    viewTransitionName: `event-title-${slug}`,
+    transformOrigin: "left center",
+  };
+
+  const dateTransitionStyle = {
+    viewTransitionName: `event-date-${slug}`,
+    transformOrigin: "left center",
+  };
+
+  const locationTransitionStyle = {
+    viewTransitionName: `event-location-${slug}`,
+    transformOrigin: "left center",
   };
 
   return (
@@ -57,9 +78,10 @@ export function CardEvent({ event, intl, index }: CardEventProps) {
       <Card
         className="bg-gradient-dark-blue p-4 relative border border-mf-white/10 text-mf-white rounded-lg overflow-hidden space-y-4 flex-1 flex flex-col"
         role="article"
+        style={{ viewTransitionName: `card-${slug}` }}
       >
         <div className="relative flex flex-col gap-4 w-full">
-          <div className="relative h-80 w-full">
+          <div className="relative h-80 w-full" style={imageTransitionStyle}>
             <Image
               src={urlFor(event.image.asset._ref)?.url()}
               alt={event.title}
@@ -93,7 +115,10 @@ export function CardEvent({ event, intl, index }: CardEventProps) {
         </Badge>
 
         <div className="flex flex-col gap-4 mt-auto">
-          <h4 className="text-base text-start font-semibold line-clamp-2">
+          <h4
+            className="text-base text-start font-semibold line-clamp-2"
+            style={titleTransitionStyle}
+          >
             {event.title}
             <p className="invisible">.</p>
           </h4>
@@ -103,6 +128,7 @@ export function CardEvent({ event, intl, index }: CardEventProps) {
               aria-label={`Event date: ${formatDateToDDMMYYYY(
                 event.date.start
               )}`}
+              style={dateTransitionStyle}
             >
               <CalendarDays className="w-4 h-4" aria-hidden="true" />
               <span className="text-sm tracking-wide ">
@@ -112,6 +138,7 @@ export function CardEvent({ event, intl, index }: CardEventProps) {
             <span
               className="flex items-center gap-2"
               aria-label={`Event location: ${event.location}`}
+              style={locationTransitionStyle}
             >
               {isPresencial ? (
                 <MapPin className="w-4 h-4" aria-hidden="true" />
@@ -151,6 +178,7 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
   const isPresencial = event.type === "in-person";
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+  const slug = event.slug.current;
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -163,6 +191,16 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
     },
   };
 
+  const titleTransitionStyle = {
+    viewTransitionName: `event-title-small-${slug}`,
+    transformOrigin: "left center",
+  };
+
+  const dateTransitionStyle = {
+    viewTransitionName: `event-date-small-${slug}`,
+    transformOrigin: "left center",
+  };
+
   return (
     <motion.div
       className="h-fit flex"
@@ -172,7 +210,8 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
       variants={cardVariants}
     >
       <div
-        className={cn("w-full rounded-xl  p-[1px] bg-gradient-white-dark-2")}
+        className={cn("w-full rounded-xl p-[1px] bg-gradient-white-dark-2")}
+        style={{ viewTransitionName: `card-small-${slug}` }}
       >
         <div
           className=" md:w-[350px] rounded-xl p-4 flex flex-col gap-4 h-full bg-mf-background "
@@ -194,14 +233,20 @@ export function CardEventSmall({ event, intl }: CardEventProps) {
           </Badge>
 
           <div className="flex flex-col gap-4 mt-auto">
-            <h4 className="text-lg text-start font-medium line-clamp-2">
+            <h4
+              className="text-lg text-start font-medium line-clamp-2"
+              style={titleTransitionStyle}
+            >
               {event.title}
               <p className="invisible">.</p>
             </h4>
 
             <hr />
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
+              <div
+                className="flex items-center gap-2"
+                style={dateTransitionStyle}
+              >
                 <span
                   className="text-sm tracking-wide "
                   aria-label={`Event date and time: ${formatDateToMonthDayYear(

@@ -7,6 +7,8 @@ import { Locale } from "@/lib/getDictionary";
 import { metadata as siteMetadata, jsonLd } from "@/utils/configs";
 import { Toaster } from "@/components/ui/sonner";
 import { use } from "react";
+// @ts-ignore - Using experimental React API
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 export { siteMetadata as metadata };
 
@@ -38,13 +40,15 @@ export default function RootLayout({
         />
       </head>
       <body className={cn(`bg-mf-background`, inter.className)}>
-        <div className="flex flex-col h-full">
-          <Navbar className="pt-8" params={{ lang: params.lang }} />
-          {/* <FloatingNav /> */}
-          <main className="h-full">{children}</main>
-          <Footer params={{ lang: params.lang }} />
-          <Toaster />
-        </div>
+        <ViewTransition>
+          <div className="flex flex-col h-full">
+            <Navbar className="pt-8" params={{ lang: params.lang }} />
+            {/* <FloatingNav /> */}
+            <main className="h-full">{children}</main>
+            <Footer params={{ lang: params.lang }} />
+          </div>
+        </ViewTransition>
+        <Toaster />
       </body>
     </html>
   );

@@ -76,6 +76,28 @@ export default async function EventPage({ params }: Props) {
     notFound();
   }
 
+  const slug = event.slug.current;
+
+  const imageTransitionStyle = {
+    viewTransitionName: `event-image-${slug}`,
+    transformOrigin: "center",
+  };
+
+  const titleTransitionStyle = {
+    viewTransitionName: `event-title-${slug}`,
+    transformOrigin: "left center",
+  };
+
+  const dateTransitionStyle = {
+    viewTransitionName: `event-date-${slug}`,
+    transformOrigin: "left center",
+  };
+
+  const locationTransitionStyle = {
+    viewTransitionName: `event-location-${slug}`,
+    transformOrigin: "left center",
+  };
+
   return (
     <main
       className="text-mf-white space-y-20 "
@@ -104,7 +126,10 @@ export default async function EventPage({ params }: Props) {
           >
             <div className="space-y-10 flex flex-col-reverse md:flex-row  justify-between">
               <div className="mx-left mt-8 max-w-md lg:max-w-xl xl:max-w-3xl space-y-4">
-                <h2 className="text-4xl font-bold leading-normal max-w-3xl">
+                <h2
+                  className="text-4xl font-bold leading-normal max-w-3xl"
+                  style={titleTransitionStyle}
+                >
                   {event.title}
                 </h2>
                 {event.tags && (
@@ -125,6 +150,7 @@ export default async function EventPage({ params }: Props) {
                     href={generateCalendarUrl(event)}
                     target="_blank"
                     className="block hover:underline"
+                    style={dateTransitionStyle}
                   >
                     <p className="text-sm">
                       {formatDateToMonthDayYear(event.date.start)} |{" "}
@@ -134,7 +160,10 @@ export default async function EventPage({ params }: Props) {
                     </p>
                   </a>
 
-                  <p className="text-sm flex items-center gap-2">
+                  <p
+                    className="text-sm flex items-center gap-2"
+                    style={locationTransitionStyle}
+                  >
                     {event.type == "in-person" ? (
                       <MapPinIcon className="w-4 h-4" />
                     ) : (
@@ -207,6 +236,7 @@ export default async function EventPage({ params }: Props) {
                   width={500}
                   height={500}
                   className=" rounded-[26px] object-cover border-4 border-mf-white/10"
+                  style={imageTransitionStyle}
                 />
               </div>
             </div>

@@ -14,6 +14,7 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["@/components", "@/sections"],
+    viewTransition: true,
   },
 };
 
