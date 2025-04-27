@@ -10,7 +10,7 @@ import Logo from "@/public/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Locale } from "@/lib/getDictionary";
 import { usePathname } from "next/navigation";
-import { ROUTES } from "@/utils/routes";
+import { EXTERNAL_LINKS, ROUTES } from "@/utils/routes";
 
 type Props = {
   params: { lang: Locale };
@@ -125,10 +125,11 @@ export function Navbar({ className, params }: Props) {
 
             {/* CTA Button */}
             <Link
-              href={""}
+              href={EXTERNAL_LINKS.LINKTREE}
+              target="_blank"
               className="hidden md:flex items-center justify-center font-semibold uppercase text-center rounded-lg px-4 py-2.5 md:px-5 md:py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group transition-all duration-300"
             >
-              <span>Junte-se a nós</span>
+              <span>{params.lang === "pt" ? "Junte-se a nós" : "Join Us"}</span>
               <ArrowUpRight className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
