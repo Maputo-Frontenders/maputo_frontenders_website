@@ -1,0 +1,184 @@
+{
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "events": "Eventos",
+    "join": "Junte-se a nós"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "previous": "Anterior",
+    "next": "Seguinte",
+    "seeDetails": "Ver Detalhes"
+  },
+  "hero": {
+    "title": "A maior comunidade <br /> de <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> em Moçambique",
+    "cta": "SAIBA MAIS"
+  },
+  "partners": {
+    "title": "Nossos Parceiros",
+    "subtitle": "Organizações que apoiam nossa comunidade"
+  },
+  "stats": {
+    "title": "Nosso Impacto",
+    "subtitle": "Contribuímos para o <span class='bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text'>crescimento do ecossistema</span> tecnológico local",
+    "description": "Oferecendo uma rede de contatos que permite a cada desenvolvedor aprender e compartilhar conhecimento através de encontros, code challenges, hackathons, fortalecendo a colaboração e o aprendizado contínuo na comunidade.",
+    "members": "Membros Ativos",
+    "events": "Eventos Organizados",
+    "projects": "Projetos Concluídos",
+    "mentors": "Mentores Ativos",
+    "cards": {
+      "events": {
+        "title": "+30 Eventos",
+        "description": "Foram encontros, virtuais ou presenciais."
+      },
+      "spaces": {
+        "title": "+15 Spaces",
+        "description": "Onde as vozes são ouvidas e as experiências são valorizadas."
+      },
+      "members": {
+        "title": "+1000 Membros",
+        "description": "Não nos limitamos apenas aos eventos, contamos grupo no WhatsApp."
+      }
+    },
+    "cardsLarge": {
+      "events": {
+        "title": "+30 Eventos",
+        "description": "Realizamos mais de 30 eventos, tanto online quanto presenciais, com o objetivo de ensinar e capacitar membros da comunidade e entusiastas de programação e tecnologia."
+      },
+      "spaces": {
+        "title": "+15 Spaces",
+        "description": "Para uma comunicação eficaz, utilizamos Spaces no X (Twitter), criando oportunidades para construir uma comunidade mais inclusiva e colaborativa, onde todas as vozes são ouvidas e as experiências compartilhadas são valorizadas."
+      },
+      "members": {
+        "title": "+1000 Membros",
+        "description": "Nosso grupo no WhatsApp, com mais de 1000 membros, promove interação e engajamento além dos eventos formais. Buscamos sempre trazer temas inclusivos e interessantes, que despertem a curiosidade e o aprendizado no mundo da tecnologia."
+      }
+    }
+  },
+  "events": {
+    "pageTitle": "Eventos",
+    "pageDescription": "Junte-se a nós e participe dos eventos que estão a moldar o futuro do desenvolvimento frontend em Moçambique",
+    "title": "Eventos Recentes",
+    "subtitle": "Junte-se a nós e participe dos eventos que estão a moldar <br class='hidden md:block' />o <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>futuro do desenvolvimento frontend</span> em Moçambique",
+    "noEvents": "Nenhum evento próximo no momento",
+    "register": "Registre-se Agora",
+    "viewAll": "Ver todos eventos",
+    "noEventsAvailable": "Nenhum evento disponível",
+    "participate": "Participar",
+    "speakers": "SPEAKERS",
+    "partners": "Parceirias e patrocínios",
+    "otherEvents": "Outros Eventos",
+    "page": {
+      "title": "A maior comunidade de <span class='bg-gradient-cyan-purple bg-clip-text text-transparent'> desenvolvedores frontend </span> em Moçambique",
+      "subtitle": "Criamos oportunidades para construir uma comunidade mais inclusiva e colaborativa, onde todas as vozes são ouvidas e as experiências compartilhadas são valorizadas."
+    },
+    "filters": {
+      "all": "Todos",
+      "inPerson": "Presencial",
+      "virtual": "Virtual"
+    }
+  },
+  "testimonials": {
+    "title": "Ouvimos Dizer",
+    "subtitle": "Descubra as <span class='bg-gradient-teal-cyan bg-clip-text text-transparent'>opiniões e experiências</span> que estão a ser compartilhadas sobre a comunidade",
+    "cta": "Junte-se a Nós"
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "subtitle": "  <span class='bg-gradient-orange-purple bg-clip-text text-transparent'>Conheça a equipe</span> por detrás da Maputo Frontenders ",
+    "role": "Função",
+    "joinUs": "Junte-se a nós e faça parte de uma comunidade apaixonada que está moldando o futuro do desenvolvimento frontend em Moçambique! 💻✨"
+  },
+  "callTopics": {
+    "title": "Tem um tópico que gostaria de partilhar com a comunidade?",
+    "subtitle": "Temas que discutimos nas nossas chamadas comunitárias",
+    "viewAll": "Ver Todos os Temas",
+    "cta": "Partilhar Tópico"
+  },
+  "footer": {
+    "allRightsReserved": "Todos os direitos reservados."
+  },
+  "about": {
+    "pageTitle": "Sobre Nós",
+    "pageDescription": "Saiba mais sobre a nossa organização, missão, visão e equipe.",
+    "history": {
+      "title": "A Nossa História",
+      "subtitle": "Inicia quando...",
+      "founders": "Quatro jovens: <em>Olímpio Adolfo</em>, <em>Wak'Oleva Maia</em>, <em>Raimundo Moide</em> e <em>Otilia Cossa</em>, em um contexto onde não havia muitas iniciativas focadas em nichos específicos do desenvolvimento de software no país. Na época, o desenvolvimento frontend era visto como algo básico, enquanto a maioria das comunidades tecnológicas se concentrava em linguagens mais avançadas como Java e Android, promovendo tópicos complexos que dificultavam a entrada de novos desenvolvedores.",
+      "origin": "Foi nesse cenário que surgiu o Maputo Frontenders, com o propósito de criar uma plataforma acessível para iniciantes, especialmente aqueles que começavam sua jornada com as tecnologias web fundamentais, como HTML, CSS e JavaScript. Além de popularizar as tecnologias web, a comunidade evoluiu ao longo do tempo, passando a abranger mais do que apenas o frontend, tornando-se um espaço para desenvolvedores de software em geral, reunindo mais de mil membros de diversas áreas, incluindo frontend, backend e outras especializações."
+    },
+    "mission": {
+      "title": "Missão",
+      "description": "Criar um ambiente inclusivo e estimulante onde a comunidade possa aprender, ensinar e colaborar uns com os outros. Buscamos compartilhar conhecimento, inspirar a excelência e promover o crescimento pessoal e profissional de nossos membros por meio de eventos, workshops, desafios e outras iniciativas educacionais."
+    },
+    "vision": {
+      "title": "Visão",
+      "description": "Ser a principal comunidade de desenvolvedores frontend em Moçambique, reconhecida pelo seu compromisso em promover o aprendizado, a inovação e a colaboração entre profissionais de tecnologia web, impulsionando o avanço da indústria de tecnologia no país."
+    },
+    "values": {
+      "title": "Valores",
+      "collaboration": {
+        "title": "1. Colaboração:",
+        "description": "Valorizamos a colaboração e a troca de conhecimento entre os membros da comunidade, reconhecendo que juntos podemos alcançar mais do que individualmente."
+      },
+      "inclusion": {
+        "title": "2. Inclusão:",
+        "description": "Acreditamos em criar um ambiente inclusivo e acolhedor, onde todas as pessoas sejam bem-vindas e respeitadas, independentemente de sua origem, identidade ou experiência."
+      },
+      "excellence": {
+        "title": "3. Excelência:",
+        "description": "Buscamos a excelência em tudo o que fazemos, incentivando o aprendizado contínuo, a melhoria constante e a adoção das melhores práticas de desenvolvimento frontend."
+      },
+      "innovation": {
+        "title": "4. Inovação:",
+        "description": "Estamos comprometidos em promover a inovação e a criatividade, incentivando a experimentação e a busca por soluções novas e eficazes para os desafios tecnológicos."
+      },
+      "integrity": {
+        "title": "5. Integridade:",
+        "description": "Agimos com integridade, transparência e ética em todas as nossas interações e iniciativas, mantendo a confiança e o respeito dentro da comunidade."
+      }
+    },
+    "cofounder": "Co-fundador",
+    "president": "Presidente",
+    "goal": {
+      "title": "NOSSO OBJECTIVO COMO COMUNIDADE",
+      "heading": "<span class='bg-gradient-orange-pink bg-clip-text text-transparent'>Contribuir para o crescimento</span> e fortalecimento  <br /> do ecossistema de desenvolvimento <br /> de software em Moçambique",
+      "description": "Desejamos moldar a geração de profissionais, promovendo um ambiente colaborativo e dinâmico onde o conhecimento circula livremente, impulsionando o crescimento tecnológico no país"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "pageDescription": "Contacte-nos e entre em contato com a nossa equipa.",
+    "form": {
+      "name": "Nome Apelido",
+      "email": "Teu e-mail",
+      "message": "Sua mensagem",
+      "messagePlaceholder": "Envie-nos uma mensagem...",
+      "submit": "Enviar",
+      "success": "Mensagem enviada com sucesso",
+      "error": "Erro ao enviar mensagem",
+      "cooldown": "Por favor, aguarde {{minutes}} minutos antes de enviar outra mensagem.",
+      "validation": {
+        "nameRequired": "Nome é obrigatório",
+        "nameMin": "Nome deve ter pelo menos 2 caracteres.",
+        "emailRequired": "E-mail é obrigatório",
+        "emailInvalid": "Endereço de e-mail inválido.",
+        "messageRequired": "Mensagem é obrigatória",
+        "messageMin": "Mensagem deve ter pelo menos 2 caracteres."
+      }
+    },
+    "faq": {
+      "title": "Perguntas",
+      "titleHighlight": "frequentes",
+      "description": "Esclarecer dúvidas, compartilhar ideias ou receber suporte personalizado no seu percurso de desenvolvimento frontend é a nossa paixão."
+    },
+    "hero": {
+      "title": "Fale",
+      "titleHighlight": "connosco",
+      "description": "Junte-se a nós e faça parte de uma comunidade apaixonada que está moldando o futuro do desenvolvimento frontend em Moçambique! 💻✨"
+    }
+  }
+}

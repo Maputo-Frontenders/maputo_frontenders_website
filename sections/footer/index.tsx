@@ -1,30 +1,56 @@
 import React from "react";
-import { socialMediaLinks } from "./data";
 import Link from "next/link";
+import { socialLinks } from "./data";
+import { Locale } from "@/lib/getDictionary";
+import { getDictionary } from "@/lib/getDictionary";
+import Navigation from "./links";
+import { LocaleSwitcher } from "@/components/locale-switcher";
 
-export const Footer = () => {
+type Props = {
+  params: { lang: Locale };
+  className?: string;
+};
+
+export async function Footer({ params }: Props) {
+  const intl = await getDictionary(params.lang);
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-mf-least flex flex-col-reverse gap-4 justify-between px-20 py-4 items-center md:flex-row">
-      <div className="text-white font-normal text-base">
-        Feito com 💜 pela MF
+    <footer
+      className="bg-mf-least text-mf-white py-16 px-4 md:px-8 lg:px-20"
+      role="contentinfo"
+    >
+      <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
+        <Navigation params={params} />
+        <div className="flex items-center gap-4 sm:gap-6 ">
+          <div
+            className="h-4 w-px bg-white hidden sm:block"
+            aria-hidden="true"
+          />
+          <LocaleSwitcher />
+        </div>
       </div>
 
-      <div className="flex gap-2 md:gap-4">
-        {socialMediaLinks.map((socialMedia) => (
+      <div className="flex justify-center items-center gap-6 mb-10">
+        {socialLinks.map((socialMedia) => (
           <Link
-            key={socialMedia.description}
+            key={socialMedia.name}
             href={socialMedia.href}
-            className=" bg-mf-dark rounded-full p-2  gap-3 "
+            className="text-gray-400 hover:text-mf-secondary transition-colors duration-300"
+            aria-label={`${socialMedia.name} (Opens in new tab)`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <socialMedia.icon className="py-1 px-0 text-white" />
+            <socialMedia.icon
+              className="py-px px-0 text-white hover:text-mf-secondary transition-all duration-300"
+              aria-hidden="true"
+            />
           </Link>
         ))}
       </div>
 
-      <div className="text-white font-medium text-sm">
-        &copy; {currentYear} Maputo Frontenders
+      <div className="text-center text-sm">
+        © {currentYear} Maputo Frontenders. {intl.footer.allRightsReserved}
       </div>
-    </div>
+    </footer>
   );
-};
+}

@@ -1,27 +1,46 @@
 import MagicIcon from "@/assets/icons/magic-icon.svg";
 import HouseIcon from "@/assets/icons/house-icon.svg";
 import MembersIcon from "@/assets/icons/members-icon.svg";
+import { DictionaryProps, Locale } from "@/lib/getDictionary";
 
-export const cards = [
+export const cards = ({ intl }: { intl: DictionaryProps }) => [
   {
-    title: "+30 Eventos",
+    title: intl.stats.cardsLarge.events.title,
     gradientColor: "bg-gradient-orange-purple",
     icon: HouseIcon,
-    description:
-      "Realizamos mais de 30 eventos, tanto online quanto presenciais, com o objetivo de ensinar e capacitar membros da comunidade e entusiastas de programação e tecnologia.",
+    description: intl.stats.cardsLarge.events.description,
   },
   {
-    title: "+15 Spaces",
+    title: intl.stats.cardsLarge.spaces.title,
     gradientColor: "bg-gradient-teal-cyan",
     icon: MagicIcon,
-    description:
-      "Para uma comunicação eficaz, utilizamos Spaces no X (Twitter), criando oportunidades para construir uma comunidade mais inclusiva e colaborativa, onde todas as vozes são ouvidas e as experiências compartilhadas são valorizadas.",
+    description: intl.stats.cardsLarge.spaces.description,
   },
   {
-    title: "+1000 Membros",
+    title: intl.stats.cardsLarge.members.title,
     gradientColor: "bg-gradient-cyan-purple",
     icon: MembersIcon,
-    description:
-      "Nosso grupo no WhatsApp, com mais de 1000 membros, promove interação e engajamento além dos eventos formais. Buscamos sempre trazer temas inclusivos e interessantes, que despertem a curiosidade e o aprendizado no mundo da tecnologia.",
+    description: intl.stats.cardsLarge.members.description,
+  },
+];
+
+export const cardsMini = ({ intl }: { intl: DictionaryProps }) => [
+  {
+    title: intl.stats.cards.events.title,
+    gradientColor: "bg-gradient-orange-purple",
+    icon: HouseIcon,
+    description: intl.stats.cards.events.description,
+  },
+  {
+    title: intl.stats.cards.spaces.title,
+    gradientColor: "bg-gradient-teal-cyan",
+    icon: MagicIcon,
+    description: intl.stats.cards.spaces.description,
+  },
+  {
+    title: intl.stats.cards.members.title,
+    gradientColor: "bg-gradient-cyan-purple",
+    icon: MembersIcon,
+    description: intl.stats.cards.members.description,
   },
 ];

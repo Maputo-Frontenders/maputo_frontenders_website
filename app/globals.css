@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -29,6 +43,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --view-transition-duration: 1.2s;
   }
 
   .dark {
@@ -56,6 +71,36 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+}
+
+/* View Transition Settings */
+::view-transition-group(*) {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--view-transition-duration);
+  mix-blend-mode: normal;
+}
+
+/* Fade animation for smooth page transitions */
+::view-transition-old(root) {
+  opacity: 1;
+}
+
+::view-transition-new(root) {
+  opacity: 0;
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

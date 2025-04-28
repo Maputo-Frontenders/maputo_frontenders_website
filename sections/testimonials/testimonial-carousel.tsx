@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Line from "./line";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Testimonial {
   name: string;
   role: string;
-  image: string;
+  image: StaticImageData;
   testimony: string;
 }
 
@@ -77,8 +77,16 @@ export function TestimonialCarousel({
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4">
-      <div className="h-56 mb-8 overflow-hidden flex items-center justify-center">
+    <div
+      className="max-w-3xl mx-auto px-4"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Testimonials carousel"
+    >
+      <div
+        className="h-56 mb-8 overflow-hidden flex items-center justify-center"
+        aria-live="polite"
+      >
         <AnimatePresence mode="wait">
           <motion.p
             key={currentTestimonial}
@@ -86,14 +94,19 @@ export function TestimonialCarousel({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="text-xl font-medium text-center  my-auto"
+            className="text-xl font-medium text-center my-auto"
+            role="blockquote"
           >
             {testimonial?.testimony}
           </motion.p>
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center items-center space-x-6 overflow-hidden no-scrollbar">
+      <div
+        className="flex justify-center items-center space-x-6 overflow-hidden no-scrollbar"
+        role="tablist"
+        aria-label="Testimonial navigation"
+      >
         {visibleTestimonials.map((testimonial, index) => (
           <div key={index} className="flex items-center">
             <motion.button
@@ -113,10 +126,14 @@ export function TestimonialCarousel({
                 scale: index === 1 ? 1 : 0.8,
                 transition: { duration: 0.3 },
               }}
+              role="tab"
+              aria-selected={index === 1}
+              aria-label={`View testimonial from ${testimonial?.name}`}
+              tabIndex={index === 1 ? 0 : -1}
             >
               <Image
-                src={testimonial?.image || "/placeholder.svg"}
-                alt={testimonial?.name || ""}
+                src={testimonial?.image}
+                alt={`${testimonial?.name}, ${testimonial?.role}`}
                 width={index === 1 ? 64 : 32}
                 height={index === 1 ? 64 : 32}
                 className={`rounded-full object-cover transition-all duration-300 ${
@@ -129,6 +146,7 @@ export function TestimonialCarousel({
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
+                aria-hidden="true"
               >
                 <Line className="ml-8" />
               </motion.div>
@@ -145,8 +163,14 @@ export function TestimonialCarousel({
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
+          aria-live="polite"
         >
-          <h3 className="mt-4  font-bold">{testimonial?.name}</h3>
+          <h3
+            className="mt-4 font-bold"
+            id={`testimonial-author-${currentTestimonial}`}
+          >
+            {testimonial?.name}
+          </h3>
           <p className="text-white text-sm font-light">{testimonial?.role}</p>
         </motion.div>
       </AnimatePresence>

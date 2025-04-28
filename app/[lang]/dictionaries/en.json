@@ -1,0 +1,184 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "events": "Events",
+    "join": "Join Us"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "previous": "Previous",
+    "next": "Next",
+    "seeDetails": "See Details"
+  },
+  "hero": {
+    "title": "The largest community <br /> of <span class='bg-gradient-to-r from-mf-purple via-mf-lightBlue to-mf-secondProposal text-transparent bg-clip-text'> frontend </span> in Mozambique",
+    "cta": "KNOW MORE"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Organizations that support our community"
+  },
+  "stats": {
+    "title": "Our Impact",
+    "subtitle": "We Contribute to the<span class='bg-gradient-to-r from-mf-secondProposal via-mf-lightBlue to-mf-purple text-transparent bg-clip-text'>growth of the local</span> tech ecosystem",
+    "description": "Providing a network that enables each developer to learn and share knowledge through meetups, code challenges, and hackathons, strengthening collaboration and continuous learning in the community.",
+    "members": "Active Members",
+    "events": "Events Organized",
+    "projects": "Projects Completed",
+    "mentors": "Active Mentors",
+    "cards": {
+      "events": {
+        "title": "+30 Events",
+        "description": "Both virtual and in-person meetups."
+      },
+      "spaces": {
+        "title": "+15 Spaces",
+        "description": "Where voices are heard and experiences are valued."
+      },
+      "members": {
+        "title": "+1000 Members",
+        "description": "We're not limited to events, we have a WhatsApp group."
+      }
+    },
+    "cardsLarge": {
+      "events": {
+        "title": "+30 Events",
+        "description": "We have held more than 30 events, both online and in-person, with the goal of teaching and empowering community members and programming and technology enthusiasts."
+      },
+      "spaces": {
+        "title": "+15 Spaces",
+        "description": "For effective communication, we use Spaces on X (Twitter), creating opportunities to build a more inclusive and collaborative community, where all voices are heard and shared experiences are valued."
+      },
+      "members": {
+        "title": "+1000 Members",
+        "description": "Our WhatsApp group, with more than 1000 members, promotes interaction and engagement beyond formal events. We always seek to bring inclusive and interesting topics that spark curiosity and learning in the world of technology."
+      }
+    }
+  },
+  "events": {
+    "pageTitle": "Events",
+    "pageDescription": "Join us and participate in events that are shaping the future of frontend development in Mozambique",
+    "title": "Recent Events",
+    "subtitle": "Join us and participate in events that are shaping the <br class='hidden md:block' />future of <span class='font-bold bg-gradient-cyan-pink bg-clip-text text-transparent '>frontend development</span> in Mozambique",
+    "noEvents": "No upcoming events at the moment",
+    "register": "Register Now",
+    "viewAll": "View All Events",
+    "noEventsAvailable": "No events available",
+    "participate": "Participate",
+    "speakers": "SPEAKERS",
+    "partners": "Partners and Sponsors",
+    "otherEvents": "Other Events",
+    "page": {
+      "title": "The largest community of <span class='bg-gradient-cyan-purple bg-clip-text text-transparent'> frontend developers </span> in Mozambique",
+      "subtitle": "We create opportunities to build a more inclusive and collaborative community, where all voices are heard and shared experiences are valued."
+    },
+    "filters": {
+      "all": "All",
+      "inPerson": "In-person",
+      "virtual": "Virtual"
+    }
+  },
+  "testimonials": {
+    "title": "What We Hear",
+    "subtitle": "Discover the <span class='bg-gradient-teal-cyan bg-clip-text text-transparent'>opinions and experiences</span> being shared about the community",
+    "cta": "Join Us"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": " <span class='bg-gradient-orange-purple bg-clip-text text-transparent'> Meet the people behind </span> Maputo Frontenders ",
+    "joinUs": "Join us and become part of a passionate community that is shaping the future of frontend development in Mozambique! 💻✨",
+    "role": "Role"
+  },
+  "callTopics": {
+    "title": "Have a topic you would like to share with the community?",
+    "subtitle": "Topics we discuss in our community calls",
+    "viewAll": "View All Topics",
+    "cta": "Share Topic"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved."
+  },
+  "about": {
+    "pageTitle": "About Us",
+    "pageDescription": "Learn more about our organization, mission, vision, and team.",
+    "history": {
+      "title": "Our History",
+      "subtitle": "Begins when...",
+      "founders": "Four young people: <em>Olímpio Adolfo</em>, <em>Wak'Oleva Maia</em>, <em>Raimundo Moide</em> and <em>Otilia Cossa</em>, in a context where there were not many initiatives focused on specific niches of software development in the country. At the time, frontend development was seen as something basic, while most tech communities focused on more advanced languages like Java and Android, promoting complex topics that made it difficult for new developers to enter.",
+      "origin": "It was in this scenario that Maputo Frontenders emerged, with the purpose of creating an accessible platform for beginners, especially those who were starting their journey with fundamental web technologies, such as HTML, CSS and JavaScript. In addition to popularizing web technologies, the community evolved over time, moving beyond just frontend, becoming a space for software developers in general, bringing together more than a thousand members from different areas, including frontend, backend and other specializations."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "Create an inclusive and stimulating environment where the community can learn, teach and collaborate with each other. We seek to share knowledge, inspire excellence and promote the personal and professional growth of our members through events, workshops, challenges and other educational initiatives."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be the leading frontend developers community in Mozambique, recognized for its commitment to promoting learning, innovation and collaboration among web technology professionals, driving the advancement of the technology industry in the country."
+    },
+    "values": {
+      "title": "Values",
+      "collaboration": {
+        "title": "1. Collaboration:",
+        "description": "We value collaboration and knowledge exchange among community members, recognizing that together we can achieve more than individually."
+      },
+      "inclusion": {
+        "title": "2. Inclusion:",
+        "description": "We believe in creating an inclusive and welcoming environment, where all people are welcome and respected, regardless of their origin, identity or experience."
+      },
+      "excellence": {
+        "title": "3. Excellence:",
+        "description": "We seek excellence in everything we do, encouraging continuous learning, constant improvement and the adoption of best practices in frontend development."
+      },
+      "innovation": {
+        "title": "4. Innovation:",
+        "description": "We are committed to promoting innovation and creativity, encouraging experimentation and the search for new and effective solutions to technological challenges."
+      },
+      "integrity": {
+        "title": "5. Integrity:",
+        "description": "We act with integrity, transparency and ethics in all our interactions and initiatives, maintaining trust and respect within the community."
+      }
+    },
+    "cofounder": "Co-founder",
+    "president": "President",
+    "goal": {
+      "title": "OUR GOAL AS A COMMUNITY",
+      "heading": "<span class='bg-gradient-orange-pink bg-clip-text text-transparent'>Contribute to the growth</span> and strengthening of   <br /> the software development ecosystem <br /> in Mozambique",
+      "description": "We aim to shape the generation of professionals, promoting a collaborative and dynamic environment where knowledge flows freely, boosting technological growth in the country"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageDescription": "Contact us and get in touch with our team.",
+    "form": {
+      "name": "Full Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "messagePlaceholder": "Send us a message...",
+      "submit": "Submit",
+      "success": "Message sent successfully",
+      "error": "Error sending message",
+      "cooldown": "Please wait {{minutes}} minutes before sending another message.",
+      "validation": {
+        "nameRequired": "Name is required",
+        "nameMin": "Name must be at least 2 characters.",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address.",
+        "messageRequired": "Message is required",
+        "messageMin": "Message must be at least 2 characters."
+      }
+    },
+    "faq": {
+      "title": "Frequently",
+      "titleHighlight": "Asked Questions",
+      "description": "Clarify doubts, share ideas or receive personalized support on your frontend development journey is our passion."
+    },
+    "hero": {
+      "title": "Talk",
+      "titleHighlight": "with us",
+      "description": "Join us and be part of a passionate community that is shaping the future of frontend development in Mozambique! 💻✨"
+    }
+  }
+}

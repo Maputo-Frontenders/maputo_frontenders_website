@@ -8,8 +8,19 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Logo from "@/public/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
+import { Locale } from "@/lib/getDictionary";
+import { usePathname } from "next/navigation";
+import { EXTERNAL_LINKS, ROUTES } from "@/utils/routes";
 
-export function Navbar({ className }: { className?: string }) {
+type Props = {
+  params: { lang: Locale };
+  className?: string;
+};
+
+export function Navbar({ className, params }: Props) {
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname.includes(path);
+
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -67,12 +78,12 @@ export function Navbar({ className }: { className?: string }) {
           <div className="w-full flex items-center justify-between p-4">
             {/* Logo and mobile menu button */}
             <div className="w-full md:w-auto flex items-center justify-between md:justify-normal space-x-3">
-              <Link href="/" className="flex items-center">
+              <Link href={ROUTES.HOME} className="flex items-center">
                 <Image
                   className="w-auto h-10 md:h-12"
                   width={56}
                   height={56}
-                  src={Logo || "/placeholder.svg"}
+                  src={Logo}
                   alt="Maputo Frontenders"
                   priority
                 />
@@ -95,11 +106,16 @@ export function Navbar({ className }: { className?: string }) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center ml-40  space-x-8">
-              {NavData.map((item: NavItem) => (
+              {NavData(params.lang).map((item: NavItem) => (
                 <Link
                   key={item.label}
                   href={item.link}
-                  className="text-white font-medium uppercase text-sm hover:text-mf-secondProposal transition-colors relative group"
+                  className={cn(
+                    "text-white font-medium uppercase text-sm hover:text-mf-secondProposal transition-colors relative group",
+                    isActive(item.link)
+                      ? "text-mf-secondProposal"
+                      : "text-mf-white"
+                  )}
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mf-secondProposal transition-all duration-300 group-hover:w-full"></span>
@@ -109,10 +125,11 @@ export function Navbar({ className }: { className?: string }) {
 
             {/* CTA Button */}
             <Link
-              href={""}
+              href={EXTERNAL_LINKS.LINKTREE}
+              target="_blank"
               className="hidden md:flex items-center justify-center font-semibold uppercase text-center rounded-lg px-4 py-2.5 md:px-5 md:py-3 bg-mf-secondProposal hover:bg-mf-secondProposalHover text-sm text-mf-least group transition-all duration-300"
             >
-              <span>Junte-se a nós</span>
+              <span>{params.lang === "pt" ? "Junte-se a nós" : "Join Us"}</span>
               <ArrowUpRight className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
@@ -128,7 +145,7 @@ export function Navbar({ className }: { className?: string }) {
                 className="md:hidden overflow-hidden"
               >
                 <div className="flex flex-col space-y-4 p-4 border-t border-white/10">
-                  {NavData.map((item: NavItem) => (
+                  {NavData(params.lang).map((item: NavItem) => (
                     <Link
                       key={item.label}
                       href={item.link}
