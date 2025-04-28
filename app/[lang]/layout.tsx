@@ -12,9 +12,6 @@ import { unstable_ViewTransition as ViewTransition } from "react";
 
 export { siteMetadata as metadata };
 
-export const revalidation = 3600; // 1 hour
-// export const dynamic = "force-static";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({

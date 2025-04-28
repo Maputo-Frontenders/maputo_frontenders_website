@@ -15,6 +15,13 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@/components", "@/sections"],
     viewTransition: true,
+    staleTimes: {
+      dynamic: 1800,
+      static: Infinity,
+    },
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 
