@@ -13,5 +13,5 @@ export const EXTERNAL_LINKS = {
   INSTAGRAM: "https://www.instagram.com/mptfrontenders/",
   YOUTUBE: "http://www.youtube.com/@mptfrontenders",
   LINKTREE: "https://linktr.ee/MaputoFrontenders",
-  CALL_FOR_TOPICS: "https://gjbkprs66s6.typeform.com/to/ttN2Krg7",
+  CALL_FOR_TOPICS: "https://bit.ly/mf-callforspeakers",
 };
