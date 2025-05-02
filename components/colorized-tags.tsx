@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "./ui/badge";
 
-const tagColors = ["bg-mf-secondProposal", "bg-mf-orange", "bg-mf-pink"];
+const tagColors = ["bg-mf-orange", "bg-mf-pink", "bg-mf-secondProposal"];
 
 export function ColorizedTags({ tags }: { tags: string[] }) {
   return tags.map((tag, index) => (
